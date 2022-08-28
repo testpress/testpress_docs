@@ -4,32 +4,30 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'Video DRM Encryption',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        No downloader, plugin or hack can download the videos streamed through Testpress.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Dynamic Watermarking',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Total Screen Capture Block in Mobile Apps. Discourage screen capture in websites with user based watermark like IP address, user id, email id, phone no. etc.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Upload & Embed on Your Site Or App',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Embed player with subtitles, multiple qualities & speed change options.
+        Option for the viewer to download securely in mobile app and play offline.
       </>
     ),
   },
