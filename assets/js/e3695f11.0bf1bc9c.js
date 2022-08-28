@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunktestpress_docs=self.webpackChunktestpress_docs||[]).push([[9861],{5101:s=>{s.exports=JSON.parse('{"label":"hola","permalink":"/testpress_docs/blog/tags/hola","allTagsPath":"/testpress_docs/blog/tags","count":1}')}}]);
