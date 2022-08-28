@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktestpress_docs=self.webpackChunktestpress_docs||[]).push([[151],{5185:s=>{s.exports=JSON.parse('{"permalink":"/testpress_docs/blog/tags/hello","page":1,"postsPerPage":10,"totalPages":1,"totalCount":2,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
