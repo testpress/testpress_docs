@@ -13,7 +13,7 @@ so use that with caution because if user have that code he can embed your video 
 You can prevent the above scenarios by generating access token using API with time-to-live or set to expire after one usage on back-end server and then sent to the website front-end. In the website front-end use the generate access_token as part of the video embed code.
 
 
-## Obtaining Access token using API
+### Obtaining Access token using API
 
 To generate the Access token you need to send an HTTP POST request to the API Endpoint, with the [authentication Header](https://testpress.github.io/testpress_docs/docs/intro) and the optional OTP request Body.
 
@@ -38,7 +38,7 @@ For valid requests the API server returns a JSON:
 ```
 
 
-## Time-to-live for token Validity
+### Time-to-live for token Validity
 
 By default the Access token validity is set to infinity. You can create shorter lived URLs by passing time_to_live parameter. This value is to be set in seconds.
 
@@ -55,7 +55,7 @@ This code below sets the time_to_live to 5 minutes.
 ```
 
 
-## Expire After one usage
+### Expire After one usage
 
 By passing true for expires_after_first_usage will make the access token to expire immediately after first usage, by this way to you can prevent the users from sharing and embedding the video into your site before expire time.  
 
