@@ -66,3 +66,44 @@ This code below sets the access_token to expire after usage.
 }
 ```
 
+
+### View Access token 
+
+Make get request to the below API with your video id and access token code to get the access token details
+
+**GET : **https://demo.testpress.in/api/v2.5/admin/chapter_contents/video-id/access-token/your_access_token_code/
+
+
+**Response**
+```js
+{
+    "expires_after_first_usage": false,
+    "code": "your_access_token_code",
+    "status": "Active",
+    "valid_until": "2022-08-30T14:24:23.835382Z"
+}
+```
+
+
+### Update Access token 
+
+**PUT : **https://demo.testpress.in/api/v2.5/admin/chapter_contents/video-id/access-token/your_access_token_code/
+
+This code below updates the access_token time_to_live.
+
+```js
+{
+    time_to_live: 300
+}
+```
+
+**Response**
+```js
+{
+    "expires_after_first_usage": false,
+    "code": "your_access_token_code",
+    "status": "Active",
+    "valid_until": "2022-08-30T14:24:23.835382Z"
+}
+```
+
