@@ -32,7 +32,8 @@ Now you use copied iframe code in your code to embed the video.
 <h2 style={{ textAlign: 'center' }}>Your site</h2>
 
 {/* Replace this with generate embed code */}
-<iframe width='560' height='315' src='https://lms.testpress.in/embed/cnwKtQwNmbG' title='DDE video 12' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div>
+<iframe width='560' height='315' src='https://lms.testpress.in/embed/7aBM7cOyDTi/?access_token=ef5c288a-ee85-4840-a4f3-f39d7091938f' title='Physical World, Units and Measurements' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
+</div>
 
 </body>
 </html>
