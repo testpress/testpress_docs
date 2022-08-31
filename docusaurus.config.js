@@ -51,7 +51,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Testpress Docs',
+        title: 'Testpress',
         logo: {
           alt: 'Testpress Logo',
           src: 'img/logo.png',
