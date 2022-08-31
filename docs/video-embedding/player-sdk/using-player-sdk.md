@@ -2,11 +2,11 @@
 sidebar_position: 2
 ---
 
-# Using player SDK
-
 The iframe embed lets you embed your Testpress videos and control the player using Javascript. You have access to the essential methods and properties of the players. There are events that you can listen for and execute custom actions in your web application.
 
-## 1. Adding the script
+
+
+###  Adding the script
 
 Add the following script to the html of your web page. This loads the interface that are used to establish communication with the video player. If this script is loaded on-demand later, make sure to wait for the load to complete before calling subsequent methods on the object.
 
@@ -14,7 +14,7 @@ Add the following script to the html of your web page. This loads the interface 
 <script src="https://sandbox.testpress.in/static/video_player/player.js"></script>
 ```
 
-## 2. Get a reference to the iframe
+### Get a reference to the iframe
 
 Note: Assuming the API script (above) is already loaded, 
 
@@ -24,7 +24,7 @@ To begin communicating with the player, get a reference to the iframe element. T
 const iframe = document.querySelector("iframe");
 ```
 
-## 3. Establish communication with the iframe
+### Establish communication with the iframe
 
 ```html
 <html>
@@ -59,7 +59,7 @@ const iframe = document.querySelector("iframe");
 
 ```
 
-## What's next
+### What's next
 
 It's time to start controlling some videos. We've compiled a comprehensive reference of [methods](http://localhost:3001/testpress_docs/docs/video-embedding/player-sdk/player-methods) and [events](http://localhost:3001/testpress_docs/docs/video-embedding/player-sdk/player-events) to make your dreams of absolute power a reality.
 
