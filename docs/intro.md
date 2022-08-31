@@ -17,7 +17,7 @@ You need to authentication token to access the private resources and to generate
 Make Post request to the below link with the credentials to generate an authentication token.
 
 
-**POST http://demo.testpress.in/api/v2.3/auth-token/ **
+**POST http://demo.testpress.in/api/v2.5/auth-token/ **
 
 | Name        | Type        | Description |
 | ----------- | ----------- |----------- |
