@@ -72,43 +72,6 @@ const config = {
       },
       footer: {
         style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Video embedding',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Youtube',
-                href: 'https://www.youtube.com/channel/UCBgclmGIY8dV3ju11WP31Ng',
-              },
-              {
-                label: 'Site',
-                href: 'https://www.testpress.tech/',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/TestpressIn',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/testpress',
-              },
-            ],
-          },
-        ],
         copyright: `Copyright © ${new Date().getFullYear()} Testpress Tech labs`,
       },
       prism: {
