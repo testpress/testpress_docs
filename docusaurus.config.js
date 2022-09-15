@@ -59,9 +59,15 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'intro',
             position: 'left',
-            label: 'Docs',
+            docId: 'intro',
+            label: 'Server APIs',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'videoEmbeddingSidebar',
+            label: 'Video Embedding',
           },
           {
             href: 'https://github.com/testpress/testpress_docs',

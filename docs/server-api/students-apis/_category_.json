@@ -1,0 +1,8 @@
+{
+    "label": "Students APIs",
+    "position": 3,
+    "link": {
+        "type": "generated-index",
+        "description": "Admin APIs provide access to all operations which can be done by an admin.\n\nAdmin APIs require authorization token with admin privileges. You check the following link to generate authorization token. You need to provide admin username and password to generate token with admin privileges."
+    }
+}
