@@ -64,7 +64,7 @@ const config = {
             label: 'Docs',
           },
           {
-            href: 'https://github.com/testpress/testpress_python',
+            href: 'https://github.com/testpress/testpress_docs',
             label: 'GitHub',
             position: 'right',
           },
