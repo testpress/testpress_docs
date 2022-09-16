@@ -1,0 +1,138 @@
+---
+sidebar_position: 4
+label: helow
+---
+
+# WaterMarking
+
+Videos hosted through testpress cannot be downloaded. There does however remain the risk of piracy from screen capture. Add text to videos with our dynamic watermark feature that effectively prevents users from pirating video content using screen capture, and goes a long way towards helping users protect their premium content.
+
+The dynamic watermark can be customized for movement, color, size and transparency. 
+
+
+## Create Watermark Code
+
+Here is a sample JSON string that adds a moving (dynamic) watermark and a static watermark.
+
+```js
+{
+	"annotations": [{
+			'type': 'dynamic',
+			'text': 'Moving Text',
+			'opacity': '0.8',
+			'color': '#FF0000',
+			'size': '15',
+			'interval': '5000'
+		},
+		{
+			'type': 'static',
+			'text': 'Static Text',
+			'opacity': '0.5',
+			'x': '10',
+			'y': '100',
+			'color': '#FF0000',
+			'size': '15'
+		}
+	]
+}
+```
+
+Technically, this is an array of JSON objects, where each object describe a single annotation item.
+
+Each of these items will be described by its parameters. Every item requires a **type** parameter which defines the type of watermark by default its value was static. The type of watermark can be either a moving text or a static text. The rest of the parameters depends on the type.
+
+Following is a short description of how each parameter affects the display of text.
+
+### Static text
+
+```js
+[{
+'type' : 'text',   //This defines the type of annotation item to static watermark
+'text' : 'the text you like to be displayed',
+'x' : '10',  //the distance from the left border of video.
+'y': '50',  //the distance from the top border of video.
+'opacity': '0.8', //the opacity of the rendered text, 0 is invisible, 1 is full opaque
+'color':'#FF0000',    //the color of the text specified as hexadecimal or uint
+'size':'15' //Height of the text, in pixels.
+}]
+```
+
+
+### Moving text
+
+The following code will display a dynamic watermark code, displaying text **testpress**. The text color will be red (#ff0000), opacity is 0.8, and font-size is 15. The watermark is configured to update position every 5 seconds (5000ms).
+
+```js
+[{
+	'type': 'dynamic',
+	'text': 'testpress',
+	'opacity': '0.8',
+	'color': '#FF0000',
+	'size': '15',
+	'interval': '5000',
+	'skip': '2000',
+}]
+```
+
+**Type of text**
+
+Set type parameter as dynamic for Dynamic watermark and static for Static watermark
+
+```
+'type':'rtext',
+```
+
+
+**Set the text to be shown**
+
+```
+'text" : 'testpress',
+```
+
+
+**Specify text opacity**
+
+This is the opacity of the text. For full opacity keep value 1.
+
+```
+'opacity':'0.8',
+```
+
+
+**Specify text color**
+
+This is the hex value of the watermark text color. 
+
+```
+'color':'#FF0000',
+```
+
+
+**Specify the font size**
+
+This is the font size
+
+```
+'size':'15',
+```
+
+
+**Specify the interval over which watermark changes position**
+
+The value is the interval in milliseconds when the text changes position
+
+```
+'interval':'5000',
+```
+
+
+**Skip feature for watermark**
+
+It is possible to have watermark skip for some time between two overlays. Here is a sample code for it –
+
+```
+'skip':'2000'
+```
+
+
+## Apply Watermark

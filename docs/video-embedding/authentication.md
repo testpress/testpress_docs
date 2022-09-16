@@ -24,6 +24,7 @@ API endpoint to retrieve OTP is https://demo.testpress.in/api/v2.5/admin/chapter
 | -----------                     | -----------  |
 | time_to_live                    | integer      | 
 | expires_after_first_usage       | boolean      | 
+| annotations                     | json         | 
 
 
 For valid requests the API server returns a JSON:
@@ -33,7 +34,8 @@ For valid requests the API server returns a JSON:
     "expires_after_first_usage": true,
     "code": "ea806eb5-4576-4bef-8489-204e78115d5a",
     "status": "Active",
-    "valid_until": "2022-08-29T12:43:11.288874Z"
+    "valid_until": "2022-08-29T12:43:11.288874Z",
+    "annotations":[]
 }
 ```
 
@@ -67,6 +69,37 @@ This code below sets the access_token to expire after usage.
 ```
 
 
+### Add Watermark
+
+To watermark a video, you need to pass a JSON string as annotation code. The JSON string would contain all the information about the watermark.
+
+Here is a sample JSON string that adds a moving (dynamic) watermark and a static watermark.
+
+```js
+{
+	"annotations": [{
+			'type': 'dynamic',
+			'text': 'Moving Text',
+			'opacity': '0.8',
+			'color': '#FF0000',
+			'size': '15',
+			'interval': '5000'
+		},
+		{
+			'type': 'static',
+			'text': 'Static Text',
+			'opacity': '0.5',
+			'x': '10',
+			'y': '100',
+			'color': '#FF0000',
+			'size': '15'
+		}
+	]
+}
+```
+
+Please refer to this [doc](http://localhost:3000/testpress_docs/docs/video-embedding/watermarking) for details on watermarking.
+
 ### View Access token 
 
 Make get request to the below API with your video id and access token code to get the access token details
@@ -80,7 +113,8 @@ Make get request to the below API with your video id and access token code to ge
     "expires_after_first_usage": false,
     "code": "your_access_token_code",
     "status": "Active",
-    "valid_until": "2022-08-30T14:24:23.835382Z"
+    "valid_until": "2022-08-30T14:24:23.835382Z",
+    "annotations":[]
 }
 ```
 
@@ -103,7 +137,8 @@ This code below updates the access_token time_to_live.
     "expires_after_first_usage": false,
     "code": "your_access_token_code",
     "status": "Active",
-    "valid_until": "2022-08-30T14:24:23.835382Z"
+    "valid_until": "2022-08-30T14:24:23.835382Z",
+    "annotations":[]
 }
 ```
 
