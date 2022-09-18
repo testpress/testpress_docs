@@ -2,6 +2,8 @@
 sidebar_position: 2
 ---
 
+# Using Player SDK
+
 The iframe embed lets you embed your Testpress videos and control the player using Javascript. You have access to the essential methods and properties of the players. There are events that you can listen for and execute custom actions in your web application.
 
 
