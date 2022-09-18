@@ -63,6 +63,6 @@ const iframe = document.querySelector("iframe");
 
 ### What's next
 
-It's time to start controlling some videos. We've compiled a comprehensive reference of [methods](http://localhost:3001/testpress_docs/docs/video-embedding/player-sdk/player-methods) and [events](http://localhost:3001/testpress_docs/docs/video-embedding/player-sdk/player-events) to make your dreams of absolute power a reality.
+It's time to start controlling some videos. We've compiled a comprehensive reference of [methods](./player-methods) and [events](./player-events) to make your dreams of absolute power a reality.
 
 If we've confused you going forward, contact us. We tend to get it right the second time.

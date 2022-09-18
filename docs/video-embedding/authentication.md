@@ -15,7 +15,7 @@ You can prevent the above scenarios by generating access token using API with ti
 
 ### Obtaining Access token using API
 
-To generate the Access token you need to send an HTTP POST request to the API Endpoint, with the [authentication Header](https://testpress.github.io/testpress_docs/docs/intro) and the optional OTP request Body.
+To generate the Access token you need to send an HTTP POST request to the API Endpoint, with the [authentication Header](../intro.md) and the optional OTP request Body.
 
 API endpoint to retrieve OTP is https://demo.testpress.in/api/v2.5/admin/chapter_contents/replace-with-video-id/access-token
 
