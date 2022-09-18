@@ -82,7 +82,7 @@ Here is a sample JSON string that adds a moving (dynamic) watermark and a static
 			'text': 'Moving Text',
 			'opacity': '0.8',
 			'color': '#FF0000',
-			'size': '15',
+			'size': '6',
 			'interval': '5000'
 		},
 		{
@@ -92,13 +92,13 @@ Here is a sample JSON string that adds a moving (dynamic) watermark and a static
 			'x': '10',
 			'y': '100',
 			'color': '#FF0000',
-			'size': '15'
+			'size': '6'
 		}
 	]
 }
 ```
 
-Please refer to this [doc](http://localhost:3000/testpress_docs/docs/video-embedding/watermarking) for details on watermarking.
+Please refer to this [doc](./watermarking.md) for details on watermarking.
 
 ### View Access token 
 

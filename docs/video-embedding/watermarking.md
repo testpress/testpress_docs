@@ -3,7 +3,7 @@ sidebar_position: 4
 label: helow
 ---
 
-# WaterMarking
+# Watermark Videos
 
 Videos hosted through testpress cannot be downloaded. There does however remain the risk of piracy from screen capture. Add text to videos with our dynamic watermark feature that effectively prevents users from pirating video content using screen capture, and goes a long way towards helping users protect their premium content.
 
@@ -21,7 +21,7 @@ Here is a sample JSON string that adds a moving (dynamic) watermark and a static
 			'text': 'Moving Text',
 			'opacity': '0.8',
 			'color': '#FF0000',
-			'size': '15',
+			'size': '6',
 			'interval': '5000'
 		},
 		{
@@ -31,7 +31,7 @@ Here is a sample JSON string that adds a moving (dynamic) watermark and a static
 			'x': '10',
 			'y': '100',
 			'color': '#FF0000',
-			'size': '15'
+			'size': '6'
 		}
 	]
 }
@@ -44,23 +44,24 @@ Each of these items will be described by its parameters. Every item requires a *
 Following is a short description of how each parameter affects the display of text.
 
 ### Static text
+The following code will display a static watermark code, placed at 10px distance from the left border of the video and 50px from top border, displaying text **hari** . The text color will be white (#fff), opacity is 0.5, and font-size is 6. 
 
 ```js
 [{
-'type' : 'text',   //This defines the type of annotation item to static watermark
-'text' : 'the text you like to be displayed',
-'x' : '10',  //the distance from the left border of video.
-'y': '50',  //the distance from the top border of video.
-'opacity': '0.8', //the opacity of the rendered text, 0 is invisible, 1 is full opaque
-'color':'#FF0000',    //the color of the text specified as hexadecimal or uint
-'size':'15' //Height of the text, in pixels.
+'type' : 'static',  
+'text' : 'hari',
+'x' : '10', 
+'y': '50',  
+'opacity': '0.5', 
+'color':'#FFF', 
+'size':'6' 
 }]
 ```
 
 
 ### Moving text
 
-The following code will display a dynamic watermark code, displaying text **testpress**. The text color will be red (#ff0000), opacity is 0.8, and font-size is 15. The watermark is configured to update position every 5 seconds (5000ms).
+The following code will display a dynamic watermark code, displaying text **testpress**. The text color will be red (#ff0000), opacity is 0.8, and font-size is 6. The watermark is configured to update position every 5 seconds (5000ms).
 
 ```js
 [{
@@ -68,7 +69,7 @@ The following code will display a dynamic watermark code, displaying text **test
 	'text': 'testpress',
 	'opacity': '0.8',
 	'color': '#FF0000',
-	'size': '15',
+	'size': '6',
 	'interval': '5000',
 	'skip': '2000',
 }]
@@ -79,7 +80,7 @@ The following code will display a dynamic watermark code, displaying text **test
 Set type parameter as dynamic for Dynamic watermark and static for Static watermark
 
 ```
-'type':'rtext',
+'type':'dynamic',
 ```
 
 
@@ -113,7 +114,7 @@ This is the hex value of the watermark text color.
 This is the font size
 
 ```
-'size':'15',
+'size':'6',
 ```
 
 
@@ -136,3 +137,8 @@ It is possible to have watermark skip for some time between two overlays. Here i
 
 
 ## Apply Watermark
+
+Now you just need pass the watermark code that you've created to the player to apply on the video. There two ways to do that
+
+- Pass the code as part of the [Access token Request](./authentication#add-watermark).
+- Pass the code via Player SDK method called [applyWatermark](./player-sdk/player-methods#apply-watermark-to-the-video).
