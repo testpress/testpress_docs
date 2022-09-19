@@ -423,3 +423,43 @@ player.setVolume(0.5).then(function(volume) {
   }
 });
 ```
+
+### Apply watermark to the video
+
+This method applies watermark to the video. Please refer to this [doc](../watermarking.md) for more details on watermarking.
+
+**Function**
+
+```js
+applyWatermark()
+```
+
+**Parameters**
+
+| Parameter      | Data type | Required? | 
+| ---------      | --------- | --------- | 
+| annotations    | json      |Yes        | 
+
+
+**Returns**
+```bash
+Promise <void>
+```
+
+**Example**
+
+```js 
+const annotations = [
+   {
+      "type":"dynamic",
+      "text":"Logesh",
+      "opacity":"0.8",
+      "color":"#FF0000",
+      "size":"5",
+      "interval":"5000"
+   }
+]
+player.applyWatermark(annotations).then(function() {
+  // The watermark is applied
+})
+```
