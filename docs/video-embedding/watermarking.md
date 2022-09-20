@@ -19,20 +19,20 @@ Here is a sample JSON string that adds a moving (dynamic) watermark and a static
       {
          "type":"static",
          "text":"Testpress",
-         "x":"10",
-         "y":"10",
+         "x":10,
+         "y":10,
          "opacity":"0.5",
          "color":"#FFF",
-         "size":"6"
+         "size":6
       },
       {
          "type":"dynamic",
          "text":"hari",
          "opacity":"0.5",
          "color":"#FF0000",
-         "size":"6",
-         "interval":"5000",
-         "skip":"2000"
+         "size":6,
+         "interval":5000,
+         "skip":2000
       }
    ]
 }
@@ -51,8 +51,8 @@ The following code will display a static watermark code, placed at 10px distance
 [{
 	"type": "static",
 	"text": "Testpress",
-	"x": "10",
-	"y": "10",
+	"x": 10",
+	"y": 10,
 	"opacity": "0.5",
 	"color": "#FFF",
 	"size": "6"
@@ -71,8 +71,8 @@ The following code will display a dynamic watermark code, displaying text **hari
 	'opacity': '0.8',
 	'color': '#FF0000',
 	'size': '6',
-	'interval': '5000',
-	'skip': '2000',
+	'interval': 5000,
+	'skip': 2000,
 }]
 ```
 
@@ -115,7 +115,7 @@ This is the hex value of the watermark text color.
 This is the font size
 
 ```
-'size':'6',
+'size':6,
 ```
 
 
@@ -124,7 +124,7 @@ This is the font size
 The value is the interval in milliseconds when the text changes position
 
 ```
-'interval':'5000',
+'interval':5000,
 ```
 
 
@@ -133,7 +133,7 @@ The value is the interval in milliseconds when the text changes position
 It is possible to have watermark skip for some time between two overlays. Here is a sample code for it –
 
 ```
-'skip':'2000'
+'skip':2000
 ```
 
 

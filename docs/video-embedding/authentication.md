@@ -81,20 +81,20 @@ Here is a sample JSON string that adds a moving (dynamic) watermark and a static
       {
          "type":"static",
          "text":"Testpress",
-         "x":"16",
-         "y":"16",
+         "x":16,
+         "y":16,
          "opacity":"0.8",
          "color":"#FF0000",
-         "size":"6"
+         "size":6
       },
       {
          "type":"dynamic",
          "text":"bharath",
          "opacity":"0.5",
          "color":"#FF0000",
-         "size":"6",
-         "interval":"5000",
-         "skip":"2000"
+         "size":6,
+         "interval":5000,
+         "skip":2000
       }
    ]
 }

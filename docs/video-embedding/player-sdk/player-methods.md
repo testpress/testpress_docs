@@ -452,11 +452,12 @@ Promise <void>
 const annotations = [
    {
       "type":"dynamic",
-      "text":"Logesh",
+      "text":"Dinesh",
       "opacity":"0.8",
       "color":"#FF0000",
       "size":"5",
-      "interval":"5000"
+      "interval":5000,
+      "skip": 2000
    }
 ]
 player.applyWatermark(annotations).then(function() {
