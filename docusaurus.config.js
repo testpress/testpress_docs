@@ -77,8 +77,7 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Testpress Tech labs`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: require('prism-react-renderer/themes/dracula'),
         additionalLanguages: ['java', "php", "ruby", "csharp", "go"],
       },
       liveCodeBlock: {
