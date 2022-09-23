@@ -21,7 +21,7 @@ You can prevent the above scenarios by generating an access token using API with
 To generate the Access token you need to send an HTTP POST request to the API Endpoint, with the [authentication Header](../intro.md) and the optional Access token request Body.
 
 ```bash
-https://demo.testpress.in/api/v2.5/admin/chapter_contents/{video-id}/access-token
+https://demo.testpress.in/api/v2.5/admin/videos/{video-id}/access-tokens
 ```
 
 
@@ -35,8 +35,9 @@ You can get the video ID from the admin portal under the video title.
 
 For valid requests the API server returns a JSON:
 
-```
+```js
 {
+    "url": "https://demo.testpress.in/api/v2.5/admin/videos/{video-id}/access-tokens/ea806eb5-4576-4bef-8489-204e78115d5a/",
     "expires_after_first_usage": true,
     "code": "ea806eb5-4576-4bef-8489-204e78115d5a",
     "status": "Active",
@@ -118,13 +119,14 @@ Please refer to this [doc](./watermarking.md) for details on watermarking.
 Make get request to the below API with your video id and access token code to get the access token details
 
 ```bash
-https://demo.testpress.in/api/v2.5/admin/chapter_contents/{video-id}/access-token/{access_token_code}/
+https://demo.testpress.in/api/v2.5/admin/videos/{video-id}/access-tokens/{access_token_code}/
 ```
 
 
 **Response**
 ```js
 {
+    "url": "https://demo.testpress.in/api/v2.5/admin/videos/{video-id}/access-tokens/your_access_token_code/",
     "expires_after_first_usage": false,
     "code": "your_access_token_code",
     "status": "Active",
@@ -137,7 +139,7 @@ https://demo.testpress.in/api/v2.5/admin/chapter_contents/{video-id}/access-toke
 ### Update Access token 
 
 ```bash
-https://demo.testpress.in/api/v2.5/admin/chapter_contents/{video-id}/access-token/{access_token_code}/
+https://demo.testpress.in/api/v2.5/admin/videos/{video-id}/access-tokens/{access_token_code}/
 ```
 
 This code below updates the access_token time_to_live.
@@ -151,6 +153,7 @@ This code below updates the access_token time_to_live.
 **Response**
 ```js
 {
+    "url": "https://demo.testpress.in/api/v2.5/admin/videos/{video-id}/access-tokens/your_access_token_code/",
     "expires_after_first_usage": false,
     "code": "your_access_token_code",
     "status": "Active",
