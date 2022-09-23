@@ -10,10 +10,10 @@ import TabItem from '@theme/TabItem';
 
 This endpoint is used to authenticate the user using your own existing authentication system.
 
-### HTTP REQUEST [#](#)
+### HTTP REQUEST 
 
 ```
-GET /sso_login/?sig=\<hmac-signature>&sso=\<payload>
+GET /sso_login/?sig=<hmac-signature>&sso=<payload>
 ```
 
 
@@ -23,7 +23,7 @@ To generate SSO URL, you need to generate
 1. Payload
 2. HMAC signature
 
-### PAYLOAD [#](#)
+### PAYLOAD 
 
 The payload is a special string which is generated as follows
 
@@ -99,7 +99,7 @@ ZW1haWw9ZGVtb0B0ZXN0cHJlc3MuaW4mdGltZT0xNTU0ODc5Njgx
 </TabItem>
 </Tabs>
 
-### HMAC Signature [#](#)
+### HMAC Signature 
 
 HMAC (Hash-based message authentication code) is used to avoid tampering during the request flow. We use a time-based HMAC algorithm to limit the lifetime of the HMAC.
 
@@ -175,7 +175,7 @@ aa747c502a898200f9e4fa21bac68136f886a0e27aec70ba06daf2e2a5cb5597
 </TabItem>
 </Tabs>
 
-### SSO URL [#](#)
+### SSO URL 
 
 The SSO URL format is as shown below
 
@@ -183,7 +183,7 @@ The SSO URL format is as shown below
 https://demo.testpress.in/sso_login/?sig=<hmac-signature>&sso=<payload>
 ```
 
-In the above URL replace the \<hmac-signature> and \<payload> with your hmac signature and payload values generated using the above steps.
+In the above URL replace the {hmac-signature} and {payload} with your hmac signature and payload values generated using the above steps.
 
 
 ```
