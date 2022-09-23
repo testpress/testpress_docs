@@ -284,9 +284,9 @@ The above command returns JSON structured like this:
 </TabItem>
 <TabItem value="PHP" label="PHP">
 
-```PHP
+
 The above command returns JSON structured like this:
-```
+
 ```PHP
 
 {
@@ -331,9 +331,9 @@ The above command returns JSON structured like this:
 </TabItem>
 <TabItem value="Java" label="Java">
 
-```Java
+
 The above command returns JSON structured like this:
-```
+
 ```Java
 
 {
@@ -378,9 +378,9 @@ The above command returns JSON structured like this:
 </TabItem>
 <TabItem value="Javascript" label="Nodejs">
 
-```
+
 The above command returns JSON structured like this:
-```
+
 ```Javascript
 
 {
@@ -425,9 +425,9 @@ The above command returns JSON structured like this:
 </TabItem>
 <TabItem value="Go" label="Go">
 
-```
+
 The above command returns JSON structured like this:
-```
+
 ```Go
 
 {
@@ -642,9 +642,8 @@ The above command returns JSON structured like this:
 </TabItem>
 <TabItem value="PHP" label="PHP">
 
-```
 The above command returns JSON structured like this:
-```
+
 ```PHP
 
 {
@@ -667,10 +666,10 @@ The above command returns JSON structured like this:
 </TabItem>
 <TabItem value="Java" label="Java">
 
-```
+
 
 The above command returns JSON structured like this:
-```
+
 ```Java
 
 {
@@ -692,9 +691,8 @@ The above command returns JSON structured like this:
 </TabItem>
 <TabItem value="Javascript" label="NodeJS">
 
-```
 The above command returns JSON structured like this:
-```
+
 ```Javascript
 
 {
@@ -717,9 +715,9 @@ The above command returns JSON structured like this:
 </TabItem>
 <TabItem value="Go" label="Go">
 
-```
+
 The above command returns JSON structured like this:
-```
+
 ```Go
 
 {
@@ -947,9 +945,8 @@ The above command returns JSON structured like this:
 </TabItem>
 <TabItem value="PHP" label="PHP">
 
-```
 The above command returns JSON structured like this:
-```
+
 ```PHP
 
 {
@@ -980,9 +977,9 @@ The above command returns JSON structured like this:
 </TabItem>
 <TabItem value="Java" label="Java">
 
-```
+
 The above command returns JSON structured like this:
-```
+
 ```Java
 {
   "first_name": "John",
@@ -1012,9 +1009,9 @@ The above command returns JSON structured like this:
 </TabItem>
 <TabItem value="Javascript" label="NodeJS">
 
-```
+
 The above command returns JSON structured like this:
-```
+
 ```Javascript
 
 {
@@ -1046,9 +1043,9 @@ The above command returns JSON structured like this:
 </TabItem>
 <TabItem value="Go" label="Go">
 
-```
+
 The above command returns JSON structured like this:
-```
+
 ```Go
 
 {
