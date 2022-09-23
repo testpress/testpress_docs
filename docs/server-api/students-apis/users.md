@@ -100,7 +100,7 @@ print(response.text)
 
 
 </TabItem>
-<TabItem value="c" label="c#">
+<TabItem value="c" label="C#">
 
 ```c
 var client = new RestClient("http://demo.testpress.in/api/v2.2/me/");
@@ -114,9 +114,7 @@ IRestResponse response = client.Execute(request);
 
 ### Response 
 
-The above command returns JSON structured like this:
-
-```JSON
+```json
 
 {
   "id": 17,
@@ -222,7 +220,7 @@ response = requests.request("GET", url, headers=headers)
 print(response.text)
 ```
 </TabItem>
-<TabItem value="c" label="c#">
+<TabItem value="c" label="C#">
 
 ```c
 var client = new RestClient("http://demo.testpress.in/api/v2.2/users/18/");
@@ -236,9 +234,7 @@ IRestResponse response = client.Execute(request);
 
 ### Response 
 
-The above command returns JSON structured like this:
-
-```JSON
+```json
 
 {
   "id": 18,
@@ -325,7 +321,7 @@ response = requests.request("PUT", url, data=payload, headers=headers)
 print(response.text)
 ```
 </TabItem>
-<TabItem value="c" label="c#">
+<TabItem value="c" label="C#">
 
 ```c
 var client = new RestClient("http://demo.testpress.in/api/v2.2/users/17/");
@@ -342,9 +338,7 @@ IRestResponse response = client.Execute(request);
 
 ### Response 
 
-The above command returns JSON structured like this:
-
-```JSON
+```json
 
 {
   "first_name": "John",
