@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 
 Users API gives you access to get basic information about other users present in the institute.
 
-> This endpoint protects the privacy of users. It is **NOT** possible to extra    personal details of all the users  from this endpoint. An admin however can extract the personal details using the Admin APIs.  
+This endpoint protects the privacy of users. It is **NOT** possible to extra    personal details of all the users  from this endpoint. An admin however can extract the personal details using the Admin APIs.  
 
 
 ## Get Current authenticated user
@@ -21,7 +21,7 @@ This endpoint retrieves details of the authenticated user.
 
 ### HTTP Request
 
->GET /api/v2.2/me/
+**GET** /api/v2.2/me/
 
 ### Fields
 
@@ -53,19 +53,16 @@ This endpoint retrieves details of the authenticated user.
 <Tabs>
 <TabItem value="URL" label="cURL">
 
-```URL
-
-
+```bash
 curl --request GET \
   --url http://demo.testpress.in/api/v2.2/me/ \
   --header 'authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RwcmVzcyIsInVzZXJfaWQiOjE3LCJlbWFpbCI6InRlc3RwcmVzcy5pbkBnbWFpbC5jb20iLCJleHAiOjE0NDc4MzMyMjl9.Ik_yi4lHbNbrRGhqmRpsW82Nls_O9lgXakk_syV-vSw' \
   --header 'cache-control: no-cache'
-
 ```
 
 The above command returns JSON structured like this:
 
-```URL
+```bash
 
 {
   "id": 17,
@@ -479,11 +476,11 @@ The above command returns JSON structured like this:
 
 This endpoint retrieves publicly available details of a single user.
 
->This endpoint retrieves publicly available details of a single user.
+This endpoint retrieves publicly available details of a single user.
 
 ### HTTP Request
 
->PUT /api/v2.2/users/<id>
+PUT /api/v2.2/users/{id}
 
 ### URL Parameters
 
@@ -494,7 +491,7 @@ This endpoint retrieves publicly available details of a single user.
 <Tabs>
 <TabItem value=".URL" label="cURL">
 
-```URL
+```bash
 
 curl --request PUT \
   --url http://demo.testpress.in/api/v2.2/users/17/ \
@@ -507,7 +504,7 @@ curl --request PUT \
 
 The above command returns JSON structured like this:
 
-```URL
+```bash
 
 {
   "first_name": "John",
@@ -747,11 +744,11 @@ The above command returns JSON structured like this:
 
 This endpoint will update a user profile details. The data to update should be posted in the request body in JSON format.
 
->An authenticated user can update only his profile.
+An authenticated user can update only his profile.
 
 ### HTTP Request
 
->PUT /api/v2.2/users/<id>
+**PUT** /api/v2.2/users/{id}
 
 ### URL Parameters
 
@@ -762,7 +759,7 @@ This endpoint will update a user profile details. The data to update should be p
 <Tabs>
 <TabItem value=".URL" label="cURL">
 
-```URL
+```bash
 curl --request PUT \
   --url http://demo.testpress.in/api/v2.2/users/17/ \
   --header 'authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RwcmVzcyIsInVzZXJfaWQiOjE3LCJlbWFpbCI6InRlc3RwcmVzcy5pbkBnbWFpbC5jb20iLCJleHAiOjE0NDc4MzMyMjl9.Ik_yi4lHbNbrRGhqmRpsW82Nls_O9lgXakk_syV-vSw' \
@@ -774,7 +771,7 @@ curl --request PUT \
 
 The above command returns JSON structured like this:
 
-```URL
+```bash
 
 {
   "first_name": "John",
