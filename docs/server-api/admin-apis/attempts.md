@@ -29,6 +29,8 @@ POST <exam_url>
 
 exam_url can be taken from Testpress Admin dashboard. Once an exam is created, URL can be copied from Exam's List Page
 
+#### Fields
+
 | Name                 | Type   | Description                                                                                                      |
 | -------------------- | ------ | ---------------------------------------------------------------------------------------------------------------- |
 | email                | string | Email Address of the user                                                                                        |
