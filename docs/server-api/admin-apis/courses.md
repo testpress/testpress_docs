@@ -3,10 +3,9 @@ sidebar_position: 7
 ---
 
 # Courses
-# Courses
 
 <details>
-<summary><b> GET</b> https://lmsdemo.testpress.in/api/v2.5/admin/courses/ <br/> <b>Get Course </b></summary>
+<summary><b> GET</b> https://lmsdemo.testpress.in/api/v2.5/admin/courses/ <br/> <b>Get Courses</b></summary>
 
 This endpoint allows you to get the list of courses.
 
