@@ -137,7 +137,7 @@ print(response.text)
 }
 ```
 
-# Get A Single Exam
+## Get A Single Exam
 
 This endpoint retrieves a single exam.
 
@@ -315,7 +315,7 @@ print(response.text)
   "comments_count": 0
 }
 ```
-# Get Available Exams
+## Get Available Exams
 
 This endpoint retrieves all available and unattempted exams for the authenticated user. This is same as getting all exams with `state` query parameter as `available`.
 
@@ -443,7 +443,7 @@ print(response.text)
 }
 ```
 
-# Get Upcoming Exams
+## Get Upcoming Exams
 
 This endpoint retrieves all upcoming exams for the authenticated user. This is same as getting all exams with `state` query parameter as `upcoming`.
 
@@ -570,7 +570,7 @@ print(response.text)
 }
 ```
 
-# Get History Of Exams
+## Get History Of Exams
 
 This endpoint retrieves all history exams for the authenticated user. This is same as getting all exams with `state` query parameter as `history`.
 
