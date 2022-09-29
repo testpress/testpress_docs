@@ -63,7 +63,7 @@ ZW1haWw9ZGVtb0B0ZXN0cHJlc3MuaW4mdGltZT0xNTU0ODc5Njgx
 ```
 
 </TabItem>
-<TabItem value="javascript" label="NodeJs">
+<TabItem value="javascript" label="NodeJS">
 
 ```javascript
 let epochTime = Math.floor((new Date).getTime()/1000);
@@ -79,7 +79,7 @@ ZW1haWw9ZGVtb0B0ZXN0cHJlc3MuaW4mdGltZT0xNTU0ODc5Njgx
 
 </TabItem>
 
-<TabItem value="php" label="php">
+<TabItem value="php" label="PHP">
 
 ```php
 
@@ -130,7 +130,7 @@ aa747c502a898200f9e4fa21bac68136f886a0e27aec70ba06daf2e2a5cb5597
 ```
 
 </TabItem>
-<TabItem value="javascript" label="NodeJs">
+<TabItem value="javascript" label="NodeJS">
 
 ```javascript
 var CryptoJS = require("crypto-js")
@@ -153,7 +153,7 @@ aa747c502a898200f9e4fa21bac68136f886a0e27aec70ba06daf2e2a5cb5597
 
 </TabItem>
 
-<TabItem value="php" label="php">
+<TabItem value="php" label="PHP">
 
 ```php
 
@@ -189,5 +189,8 @@ In the above URL replace the {hmac-signature} and {payload} with your hmac signa
 ```
 E.g. https://demo.testpress.in/sso_login/?sig=aa747c502a898200f9e4fa21bac68136f886a0e27aec70ba06daf2e2a5cb5597&sso=ZW1haWw9ZGVtb0B0ZXN0cHJlc3MuaW4mdGltZT0xNTU0ODc5Njgx
 ```
+:::important
 
 The epoch time limits the validity of the HMAC. We have a *30 minute* delta to ensure the validity of the HMAC. For e.g. if the HMAC was generated at 10.30 AM, it will be valid only for the next 30 minutes and expires after 11.00 AM.
+
+:::
