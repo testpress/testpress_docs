@@ -379,9 +379,11 @@ print(response.text)
 
 This endpoint retrieves a single attempt.
 
+:::caution
 
 Note that some attempts will return 403 Forbidden if they do not belong to the authenticated user.
 
+:::
 
 #### HTTP Request
 
@@ -686,9 +688,11 @@ POST /api/v2.2/exams/<exam_slug>/attempts/
 
 This endpoint starts a paused attempt. This is for restarting the timer calculation incase of a paused attempt.
 
+:::important
 
 It is best practice to always call this API when trying to resume a paused exam. If not done, the server might end the exam as time over if the time elapsed exceeds the assigned time for the exam.
 
+:::
 
 #### HTTP Request
 
@@ -696,7 +700,7 @@ It is best practice to always call this API when trying to resume a paused exam.
 PUT /api/v2.2/attempts/<id>/start/
 ```
 
-### URL Parameters
+#### URL Parameters
 
 | Parameter | Description |
 | --------- | ----------- |
@@ -973,8 +977,11 @@ print(response.text)
 
 This endpoint ends an attempt. The state of the attempt will return as Completed. An attempt which has been ended cannot be started again using the /start/ end point
 
+:::important
+
 One cannot review an attempt if this API is not called.
 
+:::
 
 #### HTTP Request
 
@@ -1101,8 +1108,11 @@ print(response.text)
 
 This endpoint returns all questions for an attempt.
 
+:::caution
 
 This will fail if the attempt is in Completed state.
+
+:::
 
 
 #### HTTP Request
@@ -1262,8 +1272,11 @@ print(response.text)
 
 This endpoint will update a question with the selected_answers and review.
 
+:::caution
 
 This will fail if the attempt is in Completed state.
+
+:::
 
 
 #### HTTP Request
@@ -1390,8 +1403,11 @@ print(response.text)
 
 This endpoint returns all questions for an attempt with correct answer & explanation.
 
+:::caution
 
 This API will work only if the attempt is in Completed state.
+
+:::
 
 
 #### HTTP Request
@@ -1583,7 +1599,11 @@ print(response.text)
 
 This endpoint returns subject wise analytics of the attempt.
 
+:::caution
+
 This API will work only if the attempt is in Completed state.
+
+:::
 
 
 #### HTTP Request
