@@ -8,7 +8,11 @@ import TabItem from '@theme/TabItem';
 
 # Batches
 
+:::important
+
 Admin APIs require authorization token with admin privileges. You check the following link to generate an authorization token. You need to provide an admin username and password to generate token with admin privileges.
+
+:::
 
 [Authentication](https://testpress.github.io/testpress_docs/docs/intro)
 
@@ -108,7 +112,7 @@ IRestResponse response = client.Execute(request);
 </TabItem>
 
 
-<TabItem value="php" label="php">
+<TabItem value="php" label="PHP">
 
 ```php
 
@@ -520,7 +524,7 @@ IRestResponse response = client.Execute(request);
 </TabItem>
 
 
-<TabItem value="php" label="php">
+<TabItem value="php" label="PHP">
 
 ```php
 
