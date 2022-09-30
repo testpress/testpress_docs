@@ -8,7 +8,11 @@ import TabItem from '@theme/TabItem'
 
 # Attempts
 
+:::important
+
 Admin APIs require authorization token with admin privileges. You check the following link to generate authorization token. You need to provide admin username and password to generate token with admin privileges
+
+:::
 
 [Authentication](https://testpress.github.io/testpress_docs/docs/intro/)
 
@@ -57,9 +61,12 @@ The HMAC is calculated using the following algorithm:
 
 Secret can be received from the admin dashboard
 
+:::important
 
-### Usage of time
+#### Usage of time
 The epoch time limits the validity of the HMAC. We have a *30 minute* delta to ensure the validity of the HMAC. For ex: if the HMAC was generated at 10.30 AM, it will be valid only for the next 30 minutes and can be used to start an attempt only till 11.00 AM.
+
+:::
 
 ### Response Parameters For Attempt Creation
 
@@ -125,7 +132,7 @@ This endpoint returns all attempts. Attempts can be filtered based on user or ex
 
 
 <details>
-  <summary> Get https:// institute_url /api/v2.5/admin/attempts<br />Attempts List API </summary>
+  <summary> <b>Get</b> https:// institute_url /api/v2.5/admin/attempts<br />Attempts List API </summary>
   
   <p> This endpoint returns all attempts.</p>
   <h4> Parameters</h4>
