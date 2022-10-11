@@ -9,7 +9,7 @@ const config = {
   title: 'Testpress docs',
   tagline: '',
   url: 'https://testpress.github.io',
-  baseUrl: '/testpress_docs/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/testpress_favicon.ico',
