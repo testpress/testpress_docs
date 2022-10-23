@@ -122,11 +122,11 @@ Make get request to the below API with your video id to list access tokens
 https://demo.testpress.in/api/v2.5/admin/videos/{video-id}/access-tokens
 ```
 
-**Query parameters**
+**Filter Query parameters**
 
 | Parameter      | Data type    | 
 | ---------      | ---------    |  
-| is_active      | boolean      | 
+| status         | string       | 
 
 
 **Response**
