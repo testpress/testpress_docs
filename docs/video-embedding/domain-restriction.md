@@ -8,7 +8,8 @@ By default vidoes are not domain restricted, so anyone can embed your video onto
 
 ## Restrict where your video can be embedded
 
-- Go to this path in your site **settings/video-embedding/**
+- Go to settings page.  
+- From the sidebar click on **Embed videos** 
  
  ![Domain restriction form](./img/domain_restriction-form.png)
 
