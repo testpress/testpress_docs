@@ -78,7 +78,7 @@ const config = {
       },
       prism: {
         theme: require('prism-react-renderer/themes/dracula'),
-        additionalLanguages: ['java', "php", "ruby", "csharp", "go"],
+        additionalLanguages: ['java', "php", "ruby", "csharp", "go", "kotlin"],
       },
       liveCodeBlock: {
         playgroundPosition: 'bottom',
