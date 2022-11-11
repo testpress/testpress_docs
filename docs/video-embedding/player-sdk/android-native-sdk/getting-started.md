@@ -8,14 +8,15 @@ This SDK enables you to securely stream DRM-protected videos through your Androi
 
 
 ## Adding dependency
-Put this aar [file](https://testpress.s3.ap-southeast-1.amazonaws.com/player.aar) in your libs directory and add a directory repository.
+- Download this [file](https://media.testpress.in/repository.zip).
+- If you have a settings.gradle file in your project root, then you need to add the repositories in the settings.gradle inside dependencyResolutionManagement with the downloaded file path. Else, this will go in build.gradle file in project root.
 
 ```
 repositories {
-  mavenCentral()
-  flatDir {
-    dirs 'libs'
-  }
+    // other repo, e.g. google() or mavenCentral()
+    maven {
+        url "C:\\Users\\Ragnar\\downloads\\repository"
+    }
 }
 ```
 
@@ -23,7 +24,7 @@ Then reference the library in the dependency section:
 
 ``` groovy
 dependencies {
-    implementation 'com.tpstream:player@aar'
+    implementation "com.testpress.player:player:1.0.0b"
 }
 ```
 
@@ -69,14 +70,14 @@ A TpInitParams object needs videoId, [accessToken](../../authentication.md) and 
 val parameters = TpInitParams.Builder()
     .setVideoId(videoId)
     .setAccessToken(accessToken)
-    .setOrgCode(orgCode)
+    .setOrgCode("your_subdomain")
     .build()
 player.load(parameters)
 player.setPlayWhenReady(true)
 ```
 
 
-Final code will be like this
+Final code will look like this
 ```java
 override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -88,7 +89,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
             val parameters = TpInitParams.Builder()
                 .setVideoId(videoId)
                 .setAccessToken(accessToken)
-                .setOrgCode(orgCode)
+                .setOrgCode("your_subdomain")
                 .build()
             player.load(parameters)
             player.setPlayWhenReady(true)
