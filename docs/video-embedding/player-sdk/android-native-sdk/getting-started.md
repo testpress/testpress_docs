@@ -6,6 +6,7 @@ sidebar_position: 1
 
 This SDK enables you to securely stream DRM-protected videos through your Android app.
 
+[Sample Android App](https://github.com/testpress/sample-android-app)
 
 ## Adding dependency
 - Download this [file](https://media.testpress.in/repository.zip).
