@@ -98,3 +98,9 @@ override fun onCreate(savedInstanceState: Bundle?) {
     });
 }
 ```
+
+Call this below method to enable auto fullscreen on rotate
+
+```bash
+  playerFragment.enableAutoFullScreenOnRotate()
+```
