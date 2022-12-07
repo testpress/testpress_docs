@@ -16,7 +16,7 @@ This SDK enables you to securely stream DRM-protected videos through your Androi
 repositories {
     // other repo, e.g. google() or mavenCentral()
     maven {
-        url "C:\\Users\\Ragnar\\downloads\\repository"
+        url "https://github.com/testpress/maven/raw/main/repo"
     }
 }
 ```
@@ -25,7 +25,7 @@ Then reference the library in the dependency section:
 
 ``` groovy
 dependencies {
-    implementation "com.testpress.player:player:1.0.0b"
+    implementation "com.testpress.player:player:1.0.2b"
 }
 ```
 
@@ -71,10 +71,10 @@ A TpInitParams object needs videoId, [accessToken](../../authentication.md) and 
 val parameters = TpInitParams.Builder()
     .setVideoId(videoId)
     .setAccessToken(accessToken)
-    .setOrgCode("your_subdomain")
+    .setOrgCode("your_subdomain") // demo for demo.testpress.in
+    .setAutoPlay(true)
     .build()
-player.load(parameters)
-player.setPlayWhenReady(true)
+playerFragment.load(parameters)
 ```
 
 
@@ -91,9 +91,9 @@ override fun onCreate(savedInstanceState: Bundle?) {
                 .setVideoId(videoId)
                 .setAccessToken(accessToken)
                 .setOrgCode("your_subdomain")
+                .setAutoPlay(true)
                 .build()
-            player.load(parameters)
-            player.setPlayWhenReady(true)
+            playerFragment.load(parameters)
         }
     });
 }
