@@ -9,8 +9,7 @@ This SDK enables you to securely stream DRM-protected videos through your Androi
 [Sample Android App](https://github.com/testpress/sample-android-app)
 
 ## Adding dependency
-- Download this [file](https://media.testpress.in/repository.zip).
-- If you have a settings.gradle file in your project root, then you need to add the repositories in the settings.gradle inside dependencyResolutionManagement with the downloaded file path. Else, this will go in build.gradle file in project root.
+- If you have a settings.gradle file in your project root, then you need to add the repositories in the settings.gradle inside dependencyResolutionManagement with the given path below. Else, this will go in build.gradle file in project root.
 
 ```
 repositories {
@@ -25,7 +24,7 @@ Then reference the library in the dependency section:
 
 ``` groovy
 dependencies {
-    implementation "com.testpress.player:player:1.0.3b"
+    implementation "com.testpress.player:player:1.0.4b"
 }
 ```
 
