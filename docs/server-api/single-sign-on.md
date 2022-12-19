@@ -194,3 +194,11 @@ E.g. https://demo.testpress.in/sso_login/?sig=aa747c502a898200f9e4fa21bac68136f8
 The epoch time limits the validity of the HMAC. We have a *30 minute* delta to ensure the validity of the HMAC. For e.g. if the HMAC was generated at 10.30 AM, it will be valid only for the next 30 minutes and expires after 11.00 AM.
 
 :::
+
+### Redirect user to a particular exam
+
+Redirect the user to a particular by passing the exam start URL as a redirect path to the above SSO login link, like below
+
+```curl
+https://demo.testpress.in/sso_login/?sig=<hmac-signature>&sso=<payload>&next=/exams/run/<exam-slug>/start/
+```
