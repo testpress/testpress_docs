@@ -63,7 +63,7 @@ tpStreamDownloadManager.cancelDownload(offlineVideoInfo)
 
 ## Playing downloaded media
 
-Create offline params and pass them to intent and start the player activity.
+Create offline params and pass them to player activity via intent to play an offline video.
 
 ``` kotlin
 val intent = Intent(activityContext,PlayerActivity::class.java)
