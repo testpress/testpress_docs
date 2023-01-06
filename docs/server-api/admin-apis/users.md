@@ -26,7 +26,7 @@ This endpoint creates a user.
 
 Except for username and password, all other fields are optional.
 
-### Feilds
+### Fields
 
 | Name       | Type       | Description                                                                         |
 | ---------- | ---------- | ----------------------------------------------------------------------------------- |
@@ -279,7 +279,7 @@ This endpoint allows you to view details of a particular user.
 | ---------- | --------------------------------- |
 | id         | Unique Id of the user to retrieve |
 
-### Feilds
+### Fields
 
 | Name         | Type       | Description                                                                         |
 | ------------ | ---------- | ----------------------------------------------------------------------------------- |
@@ -530,7 +530,7 @@ This endpoint allows you to update details of a particular user.
 | ---------- | ------------------------------- |
 | id         | Unique Id of the user to update |
 
-### Feilds
+### Fields
 
 | Name         | Type       | Description                                                                         |
 | ------------ | ---------- | ----------------------------------------------------------------------------------- |
@@ -805,7 +805,7 @@ This endpoint allows you to view details of a particular user by email address
 | ---------- | ------------------------- |
 | id         | Email Address of the user |
 
-### Feilds
+### Fields
 
 | Name         | Type       | Description                                                                         |
 | ------------ | ---------- | ----------------------------------------------------------------------------------- |
@@ -1075,7 +1075,7 @@ This endpoint allows you to view batches of a particular user.
 | ---------- | --------------------------------- |
 | id         | Unique Id of the user to retrieve |
 
-### Response Feilds
+### Response Fields
 
 | Name | Type   | Description                   |
 | ---- | ------ | ----------------------------- |
@@ -1286,7 +1286,7 @@ This endpoint allows you to add users to batches
 | ---------- | --------------------------------- |
 | id         | Unique Id of the user to retrieve |
 
-### Response Feilds
+### Response Fields
 
 | Name | Type   | Description                   |
 | ---- | ------ | ----------------------------- |
