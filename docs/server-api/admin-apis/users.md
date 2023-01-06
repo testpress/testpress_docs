@@ -41,6 +41,8 @@ Except for username and password, all other fields are optional.
 | zip        | string     | Pincode of the user                                                                 |
 | state      | string     | State of user in ISO 3166-2:IN format (https://en.wikipedia.org/wiki/ISO_3166-2:IN) |
 | phone      | string     | Phone of the user                                                                   |
+| batches    | list       | Batches of the user                                                                 |
+| expires    | datestring | Expire date of the batches added                                                    |
 
 
 <Tabs>
@@ -52,7 +54,7 @@ curl --request POST \
   --header 'authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84' \
   --header 'cache-control: no-cache' \
   --header 'content-type: application/json' \
-  --data '{"username": "lorem", "password": "ipsum1$", "first_name": "John", "last_name": "Appleseed", "email": "test@example.com", "birth_date": "03/07/2016", "state": "IN-TN", "batches": ["Test Batch", "UPSC Morning Batch"]}'
+  --data '{"username": "lorem", "password": "ipsum1$", "first_name": "John", "last_name": "Appleseed", "email": "test@example.com", "birth_date": "03/07/2016", "state": "IN-TN", "batches": ["Test Batch", "UPSC Morning Batch"],"expires":"2023-01-13"}'
 ```
 
 </TabItem>
@@ -70,7 +72,7 @@ request = Net::HTTP::Post.new(url)
 request["content-type"] = 'application/json'
 request["authorization"] = 'JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84'
 request["cache-control"] = 'no-cache'
-request.body = "{\n    \"username\": \"lorem\",\n    \"password\": \"ipsum1$\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Appleseed\",\n    \"email\": \"test@example.com\",\n    \"birth_date\": \"03/07/2016\",\n    \"state\": \"IN-TN\",\n    \"batches\": [\"Test Batch\", \"UPSC Morning Batch\"]\n}"
+request.body = "{\n    \"username\": \"lorem\",\n    \"password\": \"ipsum1$\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Appleseed\",\n    \"email\": \"test@example.com\",\n    \"birth_date\": \"03/07/2016\",\n    \"state\": \"IN-TN\",\n    \"batches\": [\"Test Batch\", \"UPSC Morning Batch\"],\n    \"expires\": \"2023-01-13\"}"
 
 response = http.request(request)
 puts response.read_body
@@ -84,7 +86,7 @@ import requests
 
 url = "http://demo.testpress.in/api/v2.5/admin/users/"
 
-payload = "{\n    \"username\": \"lorem\",\n    \"password\": \"ipsum1$\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Appleseed\",\n    \"email\": \"test@example.com\",\n    \"birth_date\": \"03/07/2016\",\n    \"state\": \"IN-TN\",\n    \"batches\": [\"Test Batch\", \"UPSC Morning Batch\"]\n}"
+payload = "{\n    \"username\": \"lorem\",\n    \"password\": \"ipsum1$\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Appleseed\",\n    \"email\": \"test@example.com\",\n    \"birth_date\": \"03/07/2016\",\n    \"state\": \"IN-TN\",\n    \"batches\": [\"Test Batch\", \"UPSC Morning Batch\"],\n    \"expires\": \"2023-01-13\"}"
 headers = {
     'content-type': "application/json",
     'authorization': "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84",
@@ -104,7 +106,7 @@ var request = new RestRequest(Method.POST);
 request.AddHeader("cache-control", "no-cache");
 request.AddHeader("authorization", "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84");
 request.AddHeader("content-type", "application/json");
-request.AddParameter("application/json", "{\n    \"username\": \"lorem\",\n    \"password\": \"ipsum1$\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Appleseed\",\n    \"email\": \"test@example.com\",\n    \"birth_date\": \"03/07/2016\",\n    \"state\": \"IN-TN\",\n    \"batches\": [\"Test Batch\", \"UPSC Morning Batch\"]\n}", ParameterType.RequestBody);
+request.AddParameter("application/json", "{\n    \"username\": \"lorem\",\n    \"password\": \"ipsum1$\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Appleseed\",\n    \"email\": \"test@example.com\",\n    \"birth_date\": \"03/07/2016\",\n    \"state\": \"IN-TN\",\n    \"batches\": [\"Test Batch\", \"UPSC Morning Batch\"],\n    \"expires\": \"2023-01-13\"}", ParameterType.RequestBody);
 IRestResponse response = client.Execute(request);
 ```
 </TabItem>
@@ -126,7 +128,8 @@ curl_setopt_array($curl, array(
     "email": "test1@example.com",
     "birth_date": "03/07/2016",
     "state": "IN-TN",
-    "batches": ["Test Batch", "UPSC Morning Batch"]
+    "batches": ["Test Batch", "UPSC Morning Batch"],
+    "expires": "2023-01-13"
 }',
   CURLOPT_HTTPHEADER => array(
     'Authorization: JWT <Enter authorization code here>',
@@ -147,7 +150,7 @@ echo $response;
 OkHttpClient client = new OkHttpClient();
 
 MediaType mediaType = MediaType.parse("application/json");
-RequestBody body = RequestBody.create(mediaType, "{\n    \"username\": \"lorem\",\n    \"password\": \"ipsum1$\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Appleseed\",\n    \"email\": \"test@example.com\",\n    \"birth_date\": \"03/07/2016\",\n    \"state\": \"IN-TN\",\n    \"batches\": [\"Test Batch\", \"UPSC Morning Batch\"]\n}");
+RequestBody body = RequestBody.create(mediaType, "{\n    \"username\": \"lorem\",\n    \"password\": \"ipsum1$\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Appleseed\",\n    \"email\": \"test@example.com\",\n    \"birth_date\": \"03/07/2016\",\n    \"state\": \"IN-TN\",\n    \"batches\": [\"Test Batch\", \"UPSC Morning Batch\"],\n    \"expires\": \"2023-01-13\"}");
 Request request = new Request.Builder()
   .url("http://demo.testpress.in/api/v2.5/admin/users/")
   .post(body)
@@ -196,7 +199,8 @@ req.write(JSON.stringify({ username: 'lorem',
   email: 'test@example.com',
   birth_date: '03/07/2016',
   state: 'IN-TN',
-  batches: [ 'Test Batch', 'UPSC Morning Batch' ] }));
+  batches: [ 'Test Batch', 'UPSC Morning Batch' ],
+  expires: "2023-01-13" }));
 req.end();
 ```
 </TabItem>
@@ -216,7 +220,7 @@ func main() {
 
     url := "http://demo.testpress.in/api/v2.5/admin/users/"
 
-    payload := strings.NewReader("{\n    \"username\": \"lorem\",\n    \"password\": \"ipsum1$\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Appleseed\",\n    \"email\": \"test@example.com\",\n    \"birth_date\": \"03/07/2016\",\n    \"state\": \"IN-TN\",\n    \"batches\": [\"Test Batch\", \"UPSC Morning Batch\"]\n}")
+    payload := strings.NewReader("{\n    \"username\": \"lorem\",\n    \"password\": \"ipsum1$\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Appleseed\",\n    \"email\": \"test@example.com\",\n    \"birth_date\": \"03/07/2016\",\n    \"state\": \"IN-TN\",\n    \"batches\": [\"Test Batch\", \"UPSC Morning Batch\"],\n    \"expires\": \"2023-01-13\"}")
 
     req, _ := http.NewRequest("POST", url, payload)
 
