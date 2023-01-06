@@ -42,7 +42,7 @@ Except for username and password, all other fields are optional.
 | state      | string     | State of user in ISO 3166-2:IN format (https://en.wikipedia.org/wiki/ISO_3166-2:IN) |
 | phone      | string     | Phone of the user                                                                   |
 | batches    | list       | Batches of the user                                                                 |
-| expires    | datestring | Expire date of the batches added                                                    |
+| expires    | datestring | Expiry date of the batches subscription. Format yyyy-mm-dd. After which the user will be removed form the batch
 
 
 <Tabs>
