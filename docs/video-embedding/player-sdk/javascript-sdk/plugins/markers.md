@@ -8,7 +8,7 @@ sidebar_position: 1
 
   You can enable a plugin by passing query param **plugins** with value "markers to src URL" 
 
-## Intialize markers
+## Initialize markers
  You can intialize markers through [Player SDK](../using-player-sdk.md) method call setMarkers
 
  ** Arguments ** 
