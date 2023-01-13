@@ -180,8 +180,6 @@ player.played().then(function(ranges) {
 });
 ```
 
-
-
 ### Pause a video
 
 This method pauses the playback of a video.
