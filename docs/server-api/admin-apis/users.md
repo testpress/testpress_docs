@@ -2212,7 +2212,7 @@ This endpoint allows you to view subscriptions of a particular user.
 
 ### HTTP Request
 
-`GET /api/v2.5/admin/users/<id>/subscribe/`
+`GET /api/v2.5/admin/users/<id>/subscriptions/`
 
 ### URL Parameters
 
@@ -2224,9 +2224,10 @@ This endpoint allows you to view subscriptions of a particular user.
 
 | Name | Type   | Description                   |
 | ---- | ------ | ----------------------------- |
-| id   | string | Id of the batch               |
-| url  | string | Unique endpoint of that batch |
-| name | string | Name of the batch             |
+| id   | string | Id of the user subsciption    |
+| batch.id   | string | Id of the batch    |
+| batch.url  | string | Unique endpoint of that batch |
+| batch.name | string | Name of the batch             |
 | expires    | datestring | Expiry date of the batches subscription. Format yyyy-mm-dd. After which the user will be removed form the batch
 
 <Tabs>
@@ -2234,7 +2235,7 @@ This endpoint allows you to view subscriptions of a particular user.
 
 ```bash
 curl --request GET \
-  --url http://demo.testpress.in/api/v2.5/admin/users/1892/subscribe/ \
+  --url http://demo.testpress.in/api/v2.5/admin/users/1892/subscriptions/ \
   --header 'authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84' \
   --header 'cache-control: no-cache' \
   --header 'content-type: application/json'
@@ -2246,7 +2247,7 @@ curl --request GET \
 ```rubyrequire 'uri'
 require 'net/http'
 
-url = URI("http://demo.testpress.in/api/v2.5/admin/users/1892/subscribe/")
+url = URI("http://demo.testpress.in/api/v2.5/admin/users/1892/subscriptions/")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -2265,7 +2266,7 @@ puts response.read_body
 ```python
 import requests
 
-url = "http://demo.testpress.in/api/v2.5/admin/users/1892/subscribe/"
+url = "http://demo.testpress.in/api/v2.5/admin/users/1892/subscriptions/"
 
 payload = ""
 headers = {
@@ -2282,7 +2283,7 @@ print(response.text)
 <TabItem value="`c`" label="C#">
 
 ```c
-var client = new RestClient("http://demo.testpress.in/api/v2.5/admin/users/1892/subscribe/");
+var client = new RestClient("http://demo.testpress.in/api/v2.5/admin/users/1892/subscriptions/");
 var request = new RestRequest(Method.GET);
 request.AddHeader("cache-control", "no-cache");
 request.AddHeader("authorization", "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84");
@@ -2296,7 +2297,7 @@ IRestResponse response = client.Execute(request);
 <?php
 
 $request = new HttpRequest();
-$request->setUrl('http://demo.testpress.in/api/v2.5/admin/users/1892/subscribe/');
+$request->setUrl('http://demo.testpress.in/api/v2.5/admin/users/1892/subscriptions/');
 $request->setMethod(HTTP_METH_GET);
 
 $request->setHeaders(array(
@@ -2320,7 +2321,7 @@ try {
 OkHttpClient client = new OkHttpClient();
 
 Request request = new Request.Builder()
-  .url("http://demo.testpress.in/api/v2.5/admin/users/1892/subscribe/")
+  .url("http://demo.testpress.in/api/v2.5/admin/users/1892/subscriptions/")
   .get()
   .addHeader("content-type", "application/json")
   .addHeader("authorization", "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84")
@@ -2339,7 +2340,7 @@ var options = {
   "method": "GET",
   "hostname": "demo.testpress.in",
   "port": null,
-  "path": "/api/v2.5/admin/users/1892/subscribe/",
+  "path": "/api/v2.5/admin/users/1892/subscriptions/",
   "headers": {
     "content-type": "application/json",
     "authorization": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84",
@@ -2376,7 +2377,7 @@ import (
 
 func main() {
 
-    url := "http://demo.testpress.in/api/v2.5/admin/users/1892/subscribe/"
+    url := "http://demo.testpress.in/api/v2.5/admin/users/1892/subscriptions/"
 
     req, _ := http.NewRequest("GET", url, nil)
 
@@ -2407,6 +2408,7 @@ func main() {
     "per_page": 20,
     "results": [
         {
+            "id":70,
             "batch": {
                 "id": 85,
                 "name": "Test Batch",
@@ -2418,6 +2420,7 @@ func main() {
             "expires": "2023-01-13"
         },
         {
+            "id":33,
             "batch": {
                 "id": 86,
                 "name": "UPSC Batch",
@@ -2438,7 +2441,7 @@ This endpoint allows you to add users to a subscription
 
 ### HTTP Request
 
-`POST /api/v2.5/admin/users/<id>/subscribe/`
+`POST /api/v2.5/admin/users/<id>/subscriptions/`
 
 ### URL Parameters
 
@@ -2450,7 +2453,7 @@ This endpoint allows you to add users to a subscription
 
 | Name       | Type       | Description                                                                         |
 | ---------- | ---------- | ----------------------------------------------------------------------------------- |
-| batches    | list       | Batch ids of the user                                                                 |
+| batches    | list       | Batch ids                                                                           |
 | expires    | datestring | Expiry date of the batches subscription. Format yyyy-mm-dd. After which the user will be removed form the batch
 
 
@@ -2459,7 +2462,7 @@ This endpoint allows you to add users to a subscription
 
 ```bash
 curl --request POST \
-  --url http://demo.testpress.in/api/v2.5/admin/users/1892/subscribe/ \
+  --url http://demo.testpress.in/api/v2.5/admin/users/1892/subscriptions/ \
   --header 'authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84' \
   --header 'cache-control: no-cache' \
   --header 'content-type: application/json' \
@@ -2473,7 +2476,7 @@ curl --request POST \
 require 'uri'
 require 'net/http'
 
-url = URI("http://demo.testpress.in/api/v2.5/admin/users/1892/subscribe/")
+url = URI("http://demo.testpress.in/api/v2.5/admin/users/1892/subscriptions/")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -2493,7 +2496,7 @@ puts response.read_body
 ```python
 import requests
 
-url = "http://demo.testpress.in/api/v2.5/admin/users/1892/subscribe/"
+url = "http://demo.testpress.in/api/v2.5/admin/users/1892/subscriptions/"
 
 payload = "{\n    \"batches\": [24, 22],\n    \"expires\": \"2023-01-13\"}"
 headers = {
@@ -2510,7 +2513,7 @@ print(response.text)
 <TabItem value="`c`" label="C#">
 
 ```c
-var client = new RestClient("http://demo.testpress.in/api/v2.5/admin/users/1892/subscribe/");
+var client = new RestClient("http://demo.testpress.in/api/v2.5/admin/users/1892/subscriptions/");
 var request = new RestRequest(Method.POST);
 request.AddHeader("cache-control", "no-cache");
 request.AddHeader("authorization", "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84");
@@ -2527,7 +2530,7 @@ IRestResponse response = client.Execute(request);
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'http://demo.testpress.in/api/v2.5/admin/users/1892/subscribe/',
+  CURLOPT_URL => 'http://demo.testpress.in/api/v2.5/admin/users/1892/subscriptions/',
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => 'POST',
   CURLOPT_POSTFIELDS =>'{
@@ -2555,7 +2558,7 @@ OkHttpClient client = new OkHttpClient();
 MediaType mediaType = MediaType.parse("application/json");
 RequestBody body = RequestBody.create(mediaType, "{\n    \"batches\": [24, 22],\n    \"expires\": \"2023-01-13\"}");
 Request request = new Request.Builder()
-  .url("http://demo.testpress.in/api/v2.5/admin/users/1892/subscribe/")
+  .url("http://demo.testpress.in/api/v2.5/admin/users/1892/subscriptions/")
   .post(body)
   .addHeader("content-type", "application/json")
   .addHeader("authorization", "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84")
@@ -2574,7 +2577,7 @@ var options = {
   "method": "POST",
   "hostname": "demo.testpress.in",
   "port": null,
-  "path": "/api/v2.5/admin/users/1892/subscribe/",
+  "path": "/api/v2.5/admin/users/1892/subscriptions/",
   "headers": {
     "content-type": "application/json",
     "authorization": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84",
@@ -2613,7 +2616,7 @@ import (
 
 func main() {
 
-    url := "http://demo.testpress.in/api/v2.5/admin/users/1892/subscribe/"
+    url := "http://demo.testpress.in/api/v2.5/admin/users/1892/subscriptions/"
 
     payload := strings.NewReader("{\n    \"batches\": [24, 22],\n    \"expires\": \"2023-01-13\"}")
 
@@ -2641,24 +2644,20 @@ func main() {
 ```json
 [
     {
+        "id": 33,
         "batch": {
             "id": 85,
-            "name": "Test Batch 1",
+            "name": "Test Batch",
             "url": "http://demo.testbench.in:8000/api/v2.5/admin/batches/85/",
-            "created": "2023-01-12T11:06:19.298526+05:30",
-            "modified": "2023-01-12T11:06:19.298526+05:30",
-            "is_local": false
         },
         "expires": "2023-01-13"
     },
     {
+        "id": 34,
         "batch": {
             "id": 86,
-            "name": "Test Batch 2",
+            "name": "UPSC Batch",
             "url": "http://demo.testbench.in:8000/api/v2.5/admin/batches/86/",
-            "created": "2023-01-12T11:07:16.060993+05:30",
-            "modified": "2023-01-12T11:07:16.060993+05:30",
-            "is_local": false
         },
         "expires": "2023-01-13"
     }
