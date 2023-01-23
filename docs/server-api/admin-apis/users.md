@@ -2206,3 +2206,460 @@ func main() {
 
 > The above command on success will return 204 NO CONTENT
 
+## View User Subscriptions
+
+This endpoint allows you to view subscriptions of a particular user.
+
+### HTTP Request
+
+`GET /api/v2.5/admin/users/<id>/subscriptions/`
+
+### URL Parameters
+
+| Parametter | Description                       |
+| ---------- | --------------------------------- |
+| id         | Unique Id of the user to retrieve |
+
+### Response Fields
+
+| Name | Type   | Description                   |
+| ---- | ------ | ----------------------------- |
+| id   | string | Id of the user subsciption    |
+| batch.id   | string | Id of the batch    |
+| batch.url  | string | Unique endpoint of that batch |
+| batch.name | string | Name of the batch             |
+| expires    | datestring | Expiry date of the batches subscription. Format yyyy-mm-dd. After which the user will be removed form the batch
+
+<Tabs>
+<TabItem value="`URL`" label="cURL">
+
+```bash
+curl --request GET \
+  --url http://demo.testpress.in/api/v2.5/admin/users/1892/subscriptions/ \
+  --header 'authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84' \
+  --header 'cache-control: no-cache' \
+  --header 'content-type: application/json'
+```
+
+</TabItem>
+<TabItem value="`ruby`" label="Ruby">
+
+```rubyrequire 'uri'
+require 'net/http'
+
+url = URI("http://demo.testpress.in/api/v2.5/admin/users/1892/subscriptions/")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Get.new(url)
+request["content-type"] = 'application/json'
+request["authorization"] = 'JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84'
+request["cache-control"] = 'no-cache'
+
+response = http.request(request)
+puts response.read_body
+```
+
+</TabItem>
+<TabItem value="`python`" label="Python">
+
+```python
+import requests
+
+url = "http://demo.testpress.in/api/v2.5/admin/users/1892/subscriptions/"
+
+payload = ""
+headers = {
+    'content-type': "application/json",
+    'authorization': "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84",
+    'cache-control': "no-cache"
+    }
+
+response = requests.request("GET", url, data=payload, headers=headers)
+
+print(response.text)
+```
+</TabItem>
+<TabItem value="`c`" label="C#">
+
+```c
+var client = new RestClient("http://demo.testpress.in/api/v2.5/admin/users/1892/subscriptions/");
+var request = new RestRequest(Method.GET);
+request.AddHeader("cache-control", "no-cache");
+request.AddHeader("authorization", "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84");
+request.AddHeader("content-type", "application/json");
+IRestResponse response = client.Execute(request);
+```
+</TabItem>
+<TabItem value="`php`" label="PHP">
+
+```php
+<?php
+
+$request = new HttpRequest();
+$request->setUrl('http://demo.testpress.in/api/v2.5/admin/users/1892/subscriptions/');
+$request->setMethod(HTTP_METH_GET);
+
+$request->setHeaders(array(
+  'cache-control' => 'no-cache',
+  'authorization' => 'JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84',
+  'content-type' => 'application/json'
+));
+
+try {
+  $response = $request->send();
+
+  echo $response->getBody();
+} catch (HttpException $ex) {
+  echo $ex;
+}
+```
+</TabItem>
+<TabItem value="`java`" label="Java">
+
+```java
+OkHttpClient client = new OkHttpClient();
+
+Request request = new Request.Builder()
+  .url("http://demo.testpress.in/api/v2.5/admin/users/1892/subscriptions/")
+  .get()
+  .addHeader("content-type", "application/json")
+  .addHeader("authorization", "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84")
+  .addHeader("cache-control", "no-cache")
+  .build();
+
+Response response = client.newCall(request).execute();
+```
+</TabItem>
+<TabItem value="`nodejs`" label="NodeJs">
+
+```js
+var http = require("http");
+
+var options = {
+  "method": "GET",
+  "hostname": "demo.testpress.in",
+  "port": null,
+  "path": "/api/v2.5/admin/users/1892/subscriptions/",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84",
+    "cache-control": "no-cache"
+  }
+};
+
+var req = http.request(options, function (res) {
+  var chunks = [];
+
+  res.on("data", function (chunk) {
+    chunks.push(chunk);
+  });
+
+  res.on("end", function () {
+    var body = Buffer.concat(chunks);
+    console.log(body.toString());
+  });
+});
+
+req.end();
+```
+</TabItem>
+<TabItem value="`go`" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "net/http"
+    "io/ioutil"
+)
+
+func main() {
+
+    url := "http://demo.testpress.in/api/v2.5/admin/users/1892/subscriptions/"
+
+    req, _ := http.NewRequest("GET", url, nil)
+
+    req.Header.Add("content-type", "application/json")
+    req.Header.Add("authorization", "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84")
+    req.Header.Add("cache-control", "no-cache")
+
+    res, _ := http.DefaultClient.Do(req)
+
+    defer res.Body.Close()
+    body, _ := ioutil.ReadAll(res.Body)
+
+    fmt.Println(res)
+    fmt.Println(string(body))
+
+}
+```
+</TabItem>
+</Tabs>
+
+### Response 
+
+```json
+{
+    "count": 2,
+    "next": null,
+    "previous": null,
+    "per_page": 20,
+    "results": [
+        {
+            "id":70,
+            "batch": {
+                "id": 85,
+                "name": "Test Batch",
+                "url": "http://demo.testbench.in:8000/api/v2.5/admin/batches/85/",
+                "created": "2023-01-12T11:06:19.298526+05:30",
+                "modified": "2023-01-12T11:06:19.298526+05:30",
+                "is_local": false
+            },
+            "expires": "2023-01-13"
+        },
+        {
+            "id":33,
+            "batch": {
+                "id": 86,
+                "name": "UPSC Batch",
+                "url": "http://demo.testbench.in:8000/api/v2.5/admin/batches/86/",
+                "created": "2023-01-12T11:07:16.060993+05:30",
+                "modified": "2023-01-12T11:07:16.060993+05:30",
+                "is_local": false
+            },
+            "expires": "2023-01-13"
+        }
+    ]
+}
+```
+
+## Add User Subscriptions
+
+This endpoint allows you to add users to a subscription
+
+### HTTP Request
+
+`POST /api/v2.5/admin/users/<id>/subscriptions/`
+
+### URL Parameters
+
+| Parametter | Description                       |
+| ---------- | --------------------------------- |
+| id         | Unique Id of the user to retrieve |
+
+### Fields
+
+| Name       | Type       | Description                                                                         |
+| ---------- | ---------- | ----------------------------------------------------------------------------------- |
+| batches    | list       | Batch ids                                                                           |
+| expires    | datestring | Expiry date of the batches subscription. Format yyyy-mm-dd. After which the user will be removed form the batch
+
+
+<Tabs>
+<TabItem value="`URL`" label="cURL">
+
+```bash
+curl --request POST \
+  --url http://demo.testpress.in/api/v2.5/admin/users/1892/subscriptions/ \
+  --header 'authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84' \
+  --header 'cache-control: no-cache' \
+  --header 'content-type: application/json' \
+  --data '{"batches": [24, 22],"expires":"2023-01-13"}'
+```
+
+</TabItem>
+<TabItem value="`ruby`" label="Ruby">
+
+```ruby
+require 'uri'
+require 'net/http'
+
+url = URI("http://demo.testpress.in/api/v2.5/admin/users/1892/subscriptions/")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Post.new(url)
+request["content-type"] = 'application/json'
+request["authorization"] = 'JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84'
+request["cache-control"] = 'no-cache'
+request.body = "{\n    \"batches\": [24, 22],\n    \"expires\": \"2023-01-13\"}"
+
+response = http.request(request)
+puts response.read_body
+```
+
+</TabItem>
+<TabItem value="`python`" label="Python">
+
+```python
+import requests
+
+url = "http://demo.testpress.in/api/v2.5/admin/users/1892/subscriptions/"
+
+payload = "{\n    \"batches\": [24, 22],\n    \"expires\": \"2023-01-13\"}"
+headers = {
+    'content-type': "application/json",
+    'authorization': "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84",
+    'cache-control': "no-cache"
+    }
+
+response = requests.request("POST", url, data=payload, headers=headers)
+
+print(response.text)
+```
+</TabItem>
+<TabItem value="`c`" label="C#">
+
+```c
+var client = new RestClient("http://demo.testpress.in/api/v2.5/admin/users/1892/subscriptions/");
+var request = new RestRequest(Method.POST);
+request.AddHeader("cache-control", "no-cache");
+request.AddHeader("authorization", "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84");
+request.AddHeader("content-type", "application/json");
+request.AddParameter("application/json", "{\n    \"batches\": [24, 22],\n    \"expires\": \"2023-01-13\"}", ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);
+```
+</TabItem>
+<TabItem value="`php`" label="PHP">
+
+```php
+<?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'http://demo.testpress.in/api/v2.5/admin/users/1892/subscriptions/',
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{
+    "batches": [24, 22],
+    "expires":"2023-01-13"
+}',
+  CURLOPT_HTTPHEADER => array(
+    'Authorization: JWT <Type Authorization code here>',
+    'Content-Type: application/json'
+  ),
+));
+
+$response = curl_exec($curl);
+
+curl_close($curl);
+echo $response;
+
+```
+</TabItem>
+<TabItem value="`java`" label="Java">
+
+```java
+OkHttpClient client = new OkHttpClient();
+
+MediaType mediaType = MediaType.parse("application/json");
+RequestBody body = RequestBody.create(mediaType, "{\n    \"batches\": [24, 22],\n    \"expires\": \"2023-01-13\"}");
+Request request = new Request.Builder()
+  .url("http://demo.testpress.in/api/v2.5/admin/users/1892/subscriptions/")
+  .post(body)
+  .addHeader("content-type", "application/json")
+  .addHeader("authorization", "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84")
+  .addHeader("cache-control", "no-cache")
+  .build();
+
+Response response = client.newCall(request).execute();
+```
+</TabItem>
+<TabItem value="`nodejs`" label="NodeJs">
+
+```js
+var http = require("http");
+
+var options = {
+  "method": "POST",
+  "hostname": "demo.testpress.in",
+  "port": null,
+  "path": "/api/v2.5/admin/users/1892/subscriptions/",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84",
+    "cache-control": "no-cache"
+  }
+};
+
+var req = http.request(options, function (res) {
+  var chunks = [];
+
+  res.on("data", function (chunk) {
+    chunks.push(chunk);
+  });
+
+  res.on("end", function () {
+    var body = Buffer.concat(chunks);
+    console.log(body.toString());
+  });
+});
+
+req.write(JSON.stringify({ batches: [24, 22], expires: "2023-01-13" }));
+req.end();
+```
+</TabItem>
+<TabItem value="`go`" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "strings"
+    "net/http"
+    "io/ioutil"
+)
+
+func main() {
+
+    url := "http://demo.testpress.in/api/v2.5/admin/users/1892/subscriptions/"
+
+    payload := strings.NewReader("{\n    \"batches\": [24, 22],\n    \"expires\": \"2023-01-13\"}")
+
+    req, _ := http.NewRequest("POST", url, payload)
+
+    req.Header.Add("content-type", "application/json")
+    req.Header.Add("authorization", "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84")
+    req.Header.Add("cache-control", "no-cache")
+
+    res, _ := http.DefaultClient.Do(req)
+
+    defer res.Body.Close()
+    body, _ := ioutil.ReadAll(res.Body)
+
+    fmt.Println(res)
+    fmt.Println(string(body))
+
+}
+```
+</TabItem>
+</Tabs>
+
+### Response 
+
+```json
+[
+    {
+        "id": 33,
+        "batch": {
+            "id": 85,
+            "name": "Test Batch",
+            "url": "http://demo.testbench.in:8000/api/v2.5/admin/batches/85/",
+        },
+        "expires": "2023-01-13"
+    },
+    {
+        "id": 34,
+        "batch": {
+            "id": 86,
+            "name": "UPSC Batch",
+            "url": "http://demo.testbench.in:8000/api/v2.5/admin/batches/86/",
+        },
+        "expires": "2023-01-13"
+    }
+]
+```
