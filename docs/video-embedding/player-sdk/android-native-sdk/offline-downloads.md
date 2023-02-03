@@ -15,7 +15,6 @@ var parameters = TpInitParams.Builder()
     .setVideoId(videoId)
     .setAccessToken(accessToken)
     .setOrgCode("your_subdomain") // demo for demo.testpress.in
-    .setAutoPlay(true)
     .enableDownloadSupport(true)
     .build()
 ```
