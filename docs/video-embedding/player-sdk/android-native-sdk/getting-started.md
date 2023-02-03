@@ -75,7 +75,6 @@ val parameters = TpInitParams.Builder()
     .setVideoId(videoId)
     .setAccessToken(accessToken)
     .setOrgCode("your_subdomain") // demo for demo.testpress.in
-    .setAutoPlay(true)
     .build()
 playerFragment.load(parameters)
 ```
@@ -94,7 +93,6 @@ override fun onCreate(savedInstanceState: Bundle?) {
                 .setVideoId(videoId)
                 .setAccessToken(accessToken)
                 .setOrgCode("your_subdomain")
-                .setAutoPlay(true)
                 .build()
             playerFragment.load(parameters)
         }
