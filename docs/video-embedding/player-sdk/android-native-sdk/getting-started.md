@@ -28,7 +28,11 @@ dependencies {
 }
 ```
 
-
+### Using ProGuard
+If you use ProGuard in your app, you might need to add the following rule to your ProGuard file.
+``` groovy
+-keep class com.tpstream.player.models.* { *; }
+```
 
 ## Integrating player fragment
 Drop a TpStreamPlayerFragment into your activity layout with an id. This is the fastest and easiest way to integrate the player into your application. TpStreamPlayerFragment includes a prebuilt UI for the player with ample features and functionality.
