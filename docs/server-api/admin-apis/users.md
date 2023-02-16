@@ -550,6 +550,7 @@ This endpoint allows you to update details of a particular user.
 | state        | string     | State of user in ISO 3166-2:IN format (https://en.wikipedia.org/wiki/ISO_3166-2:IN) |
 | phone        | string     | Phone of the user                                                                   |
 | is_active    | boolean    | Used to activate/deactivate the user. Accepts "true"/"false".                       |
+| expires      | datestring | Expiry date of the batches subscription. Format yyyy-mm-dd. After which the user will be removed form the batch
 
 
 ### Read Only Fields
@@ -558,7 +559,7 @@ password_hash, gender, state, large_image, medium_image, medium_small_image, sma
 
 ### Write Only Fields
 
-password
+password,expires
 
 <Tabs>
 <TabItem value="`URL`" label="cURL">
@@ -570,7 +571,7 @@ url --request PUT \
   --header 'cache-control: no-cache' \
   --header 'content-type: application/json' \
   --header 'postman-token: 5bdb17f6-db4d-c72e-a30f-c1776f0d8384' \
-  --data '{\n   "password": "welcome"\n}'
+  --data '{\n   "password": "welcome",\n "expires": "2023-01-14"\n }'
 ```
 
 </TabItem>
@@ -589,7 +590,7 @@ request["authorization"] = 'JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmF
 request["content-type"] = 'application/json'
 request["cache-control"] = 'no-cache'
 request["postman-token"] = 'e395af73-374f-75e4-4ca2-3751f84b0598'
-request.body = "{\n\t\"password\": \"welcome\"\n}"
+request.body = "{\n\t\"password\": \"welcome\",\n\t\"expires\": \"2023-01-14\"}"
 
 response = http.request(request)
 puts response.read_body
@@ -603,7 +604,7 @@ import requests
 
 url = "http://demo.testpress.in/api/v2.5/admin/users/2120/"
 
-payload = "{\n\t\"password\": \"welcome\"\n}"
+payload = "{\n\t\"password\": \"welcome\",\n\t\"expires\": \"2023-01-14\"}"
 headers = {
     'authorization': "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAzNDI4NTB9.Dsc2NZ_q0e3GRaBTArgwkPs81RbQEt-FnH0u_TBs2hc",
     'content-type': "application/json",
@@ -625,7 +626,7 @@ request.AddHeader("postman-token", "0ce5b8e5-0793-457c-32e7-f5c96be55aa9");
 request.AddHeader("cache-control", "no-cache");
 request.AddHeader("content-type", "application/json");
 request.AddHeader("authorization", "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAzNDI4NTB9.Dsc2NZ_q0e3GRaBTArgwkPs81RbQEt-FnH0u_TBs2hc");
-request.AddParameter("application/json", "{\n\t\"password\": \"welcome\"\n}", ParameterType.RequestBody);
+request.AddParameter("application/json", "{\n\t\"password\": \"welcome\",\n\t\"expires\": \"2023-01-14\"}", ParameterType.RequestBody);
 IRestResponse response = client.Execute(request);
 ```
 </TabItem>
@@ -646,7 +647,8 @@ $request->setHeaders(array(
 ));
 
 $request->setBody('{
-    "password": "welcome"
+    "password": "welcome",
+    "expires":"2023-01-14"
 }');
 
 try {
@@ -664,7 +666,7 @@ try {
 OkHttpClient client = new OkHttpClient();
 
 MediaType mediaType = MediaType.parse("application/json");
-RequestBody body = RequestBody.create(mediaType, "{\n\t\"password\": \"welcome\"\n}");
+RequestBody body = RequestBody.create(mediaType, "{\n\t\"password\": \"welcome\",\n\t\"expires\": \"2023-01-14\"}");
 Request request = new Request.Builder()
   .url("http://demo.testpress.in/api/v2.5/admin/users/2120/")
   .put(body)
@@ -708,7 +710,7 @@ var req = http.request(options, function (res) {
   });
 });
 
-req.write(JSON.stringify({ password: 'welcome' }));
+req.write(JSON.stringify({ password: 'welcome',expires:'2023-01-14' }));
 req.end();
 ```
 </TabItem>
@@ -728,7 +730,7 @@ func main() {
 
     url := "http://demo.testpress.in/api/v2.5/admin/users/2120/"
 
-    payload := strings.NewReader("{\n\t\"password\": \"welcome\"\n}")
+    payload := strings.NewReader("{\n\t\"password\": \"welcome\",\n\t\"expires\": \"2023-01-14\"}")
 
     req, _ := http.NewRequest("PUT", url, payload)
 
