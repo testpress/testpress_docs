@@ -19,7 +19,7 @@ This endpoint creates a mentor.
 
 ### HTTP Request
 
-**POST** /api/v2.2/admin/mentors/
+**POST** /api/v2.5/admin/mentors/
 
 ### Fields
 
@@ -44,12 +44,12 @@ This endpoint creates a mentor.
 
 ```bash
 curl --request POST \
-  --url http://demo.testpress.in/api/v2.2/admin/mentors/ \
+  --url http://demo.testpress.in/api/v2.5/admin/mentors/ \
   --header 'authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6InN0ZWVwaGFuc2VsdmFyYWpAdGVzdHByZXNzLmluIiwiZXhwIjoxNDc1MDYyMTkwfQ.iwVg_UM4HBB6qs21fe2b6FlNz_JjRfqcs2VTML4Te3k' \
   --header 'cache-control: no-cache' \
   --header 'content-type: application/json' \
   --header 'postman-token: 9624f4b4-d495-aaaa-df27-b99f0cef13b4' \
-  --data '{\n    "username": "Georgebobby", \n    "password":"password",\n    "first_name": "George", \n    "last_name": "Bobby", \n    "email": "george@hotmail.com", \n    "birth_date": "03/07/1990", \n    "gender_code": "1", \n    "address1": "21 New Street", \n    "address2": "Chrompet", \n    "city": "Chennai", \n    "zip": "641003", \n    "state_code": "IN-TN", \n    "phone": "9876543210"\n}'
+  --data '{\n    "username": "Georgebobby", \n    "password":"password",\n    "first_name": "George", \n    "last_name": "Bobby", \n    "email": "george@hotmail.com", \n    "birth_date": "03/07/1990", \n    "gender_code": "male", \n    "address1": "21 New Street", \n    "address2": "Chrompet", \n    "city": "Chennai", \n    "zip": "641003", \n    "state_code": "IN-TN", \n    "phone": "9876543210"\n}'
 ```
 
 </TabItem>
@@ -59,7 +59,7 @@ curl --request POST \
 require 'uri'
 require 'net/http'
 
-url = URI("http://demo.testpress.in/api/v2.2/admin/mentors/")
+url = URI("http://demo.testpress.in/api/v2.5/admin/mentors/")
 
 http = Net::HTTP.new(url.host, url.port)
 
@@ -68,7 +68,7 @@ request["authorization"] = 'JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmF
 request["content-type"] = 'application/json'
 request["cache-control"] = 'no-cache'
 request["postman-token"] = '02729f65-07a8-b865-41cd-09fd9281a489'
-request.body = "{\n    \"username\": \"Georgebobby\", \n    \"password\":\"password\",\n    \"first_name\": \"George\", \n    \"last_name\": \"Bobby\", \n    \"email\": \"george@hotmail.com\", \n    \"birth_date\": \"03/07/1990\", \n    \"gender_code\": \"1\", \n    \"address1\": \"21 New Street\", \n    \"address2\": \"Chrompet\", \n    \"city\": \"Chennai\", \n    \"zip\": \"641003\", \n    \"state_code\": \"IN-TN\", \n    \"phone\": \"9876543210\"\n}"
+request.body = "{\n    \"username\": \"Georgebobby\", \n    \"password\":\"password\",\n    \"first_name\": \"George\", \n    \"last_name\": \"Bobby\", \n    \"email\": \"george@hotmail.com\", \n    \"birth_date\": \"03/07/1990\", \n    \"gender_code\": \"male\", \n    \"address1\": \"21 New Street\", \n    \"address2\": \"Chrompet\", \n    \"city\": \"Chennai\", \n    \"zip\": \"641003\", \n    \"state_code\": \"IN-TN\", \n    \"phone\": \"9876543210\"\n}"
 
 response = http.request(request)
 puts response.read_body
@@ -80,9 +80,9 @@ puts response.read_body
 ```py
 import requests
 
-url = "http://demo.testpress.in/api/v2.2/admin/mentors/"
+url = "http://demo.testpress.in/api/v2.5/admin/mentors/"
 
-payload = "{\n    \"username\": \"Georgebobby\", \n    \"password\":\"password\",\n    \"first_name\": \"George\", \n    \"last_name\": \"Bobby\", \n    \"email\": \"george@hotmail.com\", \n    \"birth_date\": \"03/07/1990\", \n    \"gender_code\": \"1\", \n    \"address1\": \"21 New Street\", \n    \"address2\": \"Chrompet\", \n    \"city\": \"Chennai\", \n    \"zip\": \"641003\", \n    \"state_code\": \"IN-TN\", \n    \"phone\": \"9876543210\"\n}"
+payload = "{\n    \"username\": \"Georgebobby\", \n    \"password\":\"password\",\n    \"first_name\": \"George\", \n    \"last_name\": \"Bobby\", \n    \"email\": \"george@hotmail.com\", \n    \"birth_date\": \"03/07/1990\", \n    \"gender_code\": \"male\", \n    \"address1\": \"21 New Street\", \n    \"address2\": \"Chrompet\", \n    \"city\": \"Chennai\", \n    \"zip\": \"641003\", \n    \"state_code\": \"IN-TN\", \n    \"phone\": \"9876543210\"\n}"
 headers = {
     'authorization': "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6InN0ZWVwaGFuc2VsdmFyYWpAdGVzdHByZXNzLmluIiwiZXhwIjoxNDc1MDYyMTkwfQ.iwVg_UM4HBB6qs21fe2b6FlNz_JjRfqcs2VTML4Te3k",
     'content-type': "application/json",
@@ -99,13 +99,13 @@ print(response.text)
 <TabItem value="c" label="C#">
 
 ```c
-var client = new RestClient("http://demo.testpress.in/api/v2.2/admin/mentors/");
+var client = new RestClient("http://demo.testpress.in/api/v2.5/admin/mentors/");
 var request = new RestRequest(Method.POST);
 request.AddHeader("postman-token", "60b37cc0-352b-c122-a41f-31a27db2f08d");
 request.AddHeader("cache-control", "no-cache");
 request.AddHeader("content-type", "application/json");
 request.AddHeader("authorization", "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6InN0ZWVwaGFuc2VsdmFyYWpAdGVzdHByZXNzLmluIiwiZXhwIjoxNDc1MDYyMTkwfQ.iwVg_UM4HBB6qs21fe2b6FlNz_JjRfqcs2VTML4Te3k");
-request.AddParameter("application/json", "{\n    \"username\": \"Georgebobby\", \n    \"password\":\"password\",\n    \"first_name\": \"George\", \n    \"last_name\": \"Bobby\", \n    \"email\": \"george@hotmail.com\", \n    \"birth_date\": \"03/07/1990\", \n    \"gender_code\": \"1\", \n    \"address1\": \"21 New Street\", \n    \"address2\": \"Chrompet\", \n    \"city\": \"Chennai\", \n    \"zip\": \"641003\", \n    \"state_code\": \"IN-TN\", \n    \"phone\": \"9876543210\"\n}", ParameterType.RequestBody);
+request.AddParameter("application/json", "{\n    \"username\": \"Georgebobby\", \n    \"password\":\"password\",\n    \"first_name\": \"George\", \n    \"last_name\": \"Bobby\", \n    \"email\": \"george@hotmail.com\", \n    \"birth_date\": \"03/07/1990\", \n    \"gender_code\": \"male\", \n    \"address1\": \"21 New Street\", \n    \"address2\": \"Chrompet\", \n    \"city\": \"Chennai\", \n    \"zip\": \"641003\", \n    \"state_code\": \"IN-TN\", \n    \"phone\": \"9876543210\"\n}", ParameterType.RequestBody);
 IRestResponse response = client.Execute(request);
 
 ```
@@ -118,7 +118,7 @@ IRestResponse response = client.Execute(request);
 <?php
 
 $request = new HttpRequest();
-$request->setUrl('http://demo.testpress.in/api/v2.2/admin/mentors/');
+$request->setUrl('http://demo.testpress.in/api/v2.5/admin/mentors/');
 $request->setMethod(HTTP_METH_POST);
 
 $request->setHeaders(array(
@@ -135,7 +135,7 @@ $request->setBody('{
     "last_name": "Bobby", 
     "email": "george@hotmail.com", 
     "birth_date": "03/07/1990", 
-    "gender_code": "1", 
+    "gender_code": "male", 
     "address1": "21 New Street", 
     "address2": "Chrompet", 
     "city": "Chennai", 
@@ -160,9 +160,9 @@ try {
 OkHttpClient client = new OkHttpClient();
 
 MediaType mediaType = MediaType.parse("application/json");
-RequestBody body = RequestBody.create(mediaType, "{\n    \"username\": \"Georgebobby\", \n    \"password\":\"password\",\n    \"first_name\": \"George\", \n    \"last_name\": \"Bobby\", \n    \"email\": \"george@hotmail.com\", \n    \"birth_date\": \"03/07/1990\", \n    \"gender_code\": \"1\", \n    \"address1\": \"21 New Street\", \n    \"address2\": \"Chrompet\", \n    \"city\": \"Chennai\", \n    \"zip\": \"641003\", \n    \"state_code\": \"IN-TN\", \n    \"phone\": \"9876543210\"\n}");
+RequestBody body = RequestBody.create(mediaType, "{\n    \"username\": \"Georgebobby\", \n    \"password\":\"password\",\n    \"first_name\": \"George\", \n    \"last_name\": \"Bobby\", \n    \"email\": \"george@hotmail.com\", \n    \"birth_date\": \"03/07/1990\", \n    \"gender_code\": \"male\", \n    \"address1\": \"21 New Street\", \n    \"address2\": \"Chrompet\", \n    \"city\": \"Chennai\", \n    \"zip\": \"641003\", \n    \"state_code\": \"IN-TN\", \n    \"phone\": \"9876543210\"\n}");
 Request request = new Request.Builder()
-  .url("http://demo.testpress.in/api/v2.2/admin/mentors/")
+  .url("http://demo.testpress.in/api/v2.5/admin/mentors/")
   .post(body)
   .addHeader("authorization", "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6InN0ZWVwaGFuc2VsdmFyYWpAdGVzdHByZXNzLmluIiwiZXhwIjoxNDc1MDYyMTkwfQ.iwVg_UM4HBB6qs21fe2b6FlNz_JjRfqcs2VTML4Te3k")
   .addHeader("content-type", "application/json")
@@ -179,7 +179,7 @@ Response response = client.newCall(request).execute();
 var request = require("request");
 
 var options = { method: 'POST',
-  url: 'http://demo.testpress.in/api/v2.2/admin/mentors/',
+  url: 'http://demo.testpress.in/api/v2.5/admin/mentors/',
   headers: 
    { 'postman-token': '0c99111c-c13f-eddf-a0bb-0e2eef469765',
      'cache-control': 'no-cache',
@@ -192,7 +192,7 @@ var options = { method: 'POST',
      last_name: 'Bobby',
      email: 'george@hotmail.com',
      birth_date: '03/07/1990',
-     gender_code: '1',
+     gender_code: 'male',
      address1: '21 New Street',
      address2: 'Chrompet',
      city: 'Chennai',
@@ -224,9 +224,9 @@ import (
 
 func main() {
 
-    url := "http://demo.testpress.in/api/v2.2/admin/mentors/"
+    url := "http://demo.testpress.in/api/v2.5/admin/mentors/"
 
-    payload := strings.NewReader("{\n    \"username\": \"Georgebobby\", \n    \"password\":\"password\",\n    \"first_name\": \"George\", \n    \"last_name\": \"Bobby\", \n    \"email\": \"george@hotmail.com\", \n    \"birth_date\": \"03/07/1990\", \n    \"gender_code\": \"1\", \n    \"address1\": \"21 New Street\", \n    \"address2\": \"Chrompet\", \n    \"city\": \"Chennai\", \n    \"zip\": \"641003\", \n    \"state_code\": \"IN-TN\", \n    \"phone\": \"9876543210\"\n}")
+    payload := strings.NewReader("{\n    \"username\": \"Georgebobby\", \n    \"password\":\"password\",\n    \"first_name\": \"George\", \n    \"last_name\": \"Bobby\", \n    \"email\": \"george@hotmail.com\", \n    \"birth_date\": \"03/07/1990\", \n    \"gender_code\": \"male\", \n    \"address1\": \"21 New Street\", \n    \"address2\": \"Chrompet\", \n    \"city\": \"Chennai\", \n    \"zip\": \"641003\", \n    \"state_code\": \"IN-TN\", \n    \"phone\": \"9876543210\"\n}")
 
     req, _ := http.NewRequest("POST", url, payload)
 
@@ -262,10 +262,7 @@ func main() {
   "gender": "Male",
   "state": "Tamil Nadu",
   "created": "2016-09-28T19:06:18.177Z",
-  "students": {
-    "url": "http://demo.testpress.in/api/v2.2/admin/mentors/45/students/",
-    "students_count": 0
-  }
+}
 
 
 ```
