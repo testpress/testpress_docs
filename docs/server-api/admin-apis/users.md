@@ -265,6 +265,296 @@ func main() {
 }
 ```
 
+## View  All Users
+
+This endpoint allows you to get all users.
+
+### HTTP Request
+`GET /api/v2.5/admin/users/`
+
+#### Query Parameters
+
+
+| Parameter        | Type        | Description |
+| ----------- | ----------- |----------- |
+| q    | string      | Filters by Username or Email |
+
+### Examples:
+
+/api/v2.5/admin/users/?q=john
+
+/api/v2.5/admin/users/?q=test@gmail.com
+
+
+### Fields
+
+| Name         | Type       | Description                                                                         |
+| ------------ | ---------- | ----------------------------------------------------------------------------------- |
+| username     | string     | Username of the user                                                                |
+| first_name   | string     | First name of the user                                                              |
+| last_name    | string     | Last of the user                                                                    |
+| display_name | string     | Name of the user to be displayed                                                    |
+| email        | string     | Email of the user                                                                   |
+| photo        | string     | Original image of the user as uploaded                                              |
+| birth_date   | datestring | Birth date of user. Should be in DD/MM/YYYY format                                  |
+| gender       | string     | (Read only) Human readable gender of user. Can be "Male", "Female" or "Transgender" |
+| address1     | string     | Address of the user                                                                 |
+| address2     | string     | Address of the user                                                                 |
+| city         | string     | City of the user                                                                    |
+| zip          | string     | Pincode of the user                                                                 |
+| state        | string     | State of user in ISO 3166-2:IN format (https://en.wikipedia.org/wiki/ISO_3166-2:IN) |
+| phone        | string     | Phone of the user                                                                   |
+
+<Tabs>
+<TabItem value="`URL`" label="cURL">
+
+```bash
+curl --request GET \
+  --url http://demo.testpress.in/api/v2.5/admin/users/ \
+  --header 'authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAzNDI4NTB9.Dsc2NZ_q0e3GRaBTArgwkPs81RbQEt-FnH0u_TBs2hc' \
+  --header 'cache-control: no-cache' \
+  --header 'content-type: application/json' \
+  --data '{"username": "admin15", "password": "demouser", "first_name": "Cool", "last_name": "dude", "email": "cool@dude.com", "birth_date": "03/07/2016", "state": "IN-TN"\n}'
+```
+
+</TabItem>
+<TabItem value="`ruby`" label="Ruby">
+
+```ruby
+require 'uri'
+require 'net/http'
+
+url = URI("http://demo.testpress.in/api/v2.5/admin/users/")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Get.new(url)
+request["content-type"] = 'application/json'
+request["authorization"] = 'JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAzNDI4NTB9.Dsc2NZ_q0e3GRaBTArgwkPs81RbQEt-FnH0u_TBs2hc'
+request["cache-control"] = 'no-cache'
+request.body = "{\n    \"username\": \"admin15\",\n    \"password\": \"demouser\",\n    \"first_name\": \"Cool\",\n    \"last_name\": \"dude\",\n    \"email\": \"cool@dude.com\",\n    \"birth_date\": \"03/07/2016\",\n    \"state\": \"IN-TN\"\n}"
+
+response = http.request(request)
+puts response.read_body
+```
+
+</TabItem>
+<TabItem value="`python`" label="Python">
+
+```python
+import requests
+
+url = "http://demo.testpress.in/api/v2.5/admin/users/"
+
+payload = "{\n    \"username\": \"admin15\",\n    \"password\": \"demouser\",\n    \"first_name\": \"Cool\",\n    \"last_name\": \"dude\",\n    \"email\": \"cool@dude.com\",\n    \"birth_date\": \"03/07/2016\",\n    \"state\": \"IN-TN\"\n}"
+headers = {
+    'content-type': "application/json",
+    'authorization': "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAzNDI4NTB9.Dsc2NZ_q0e3GRaBTArgwkPs81RbQEt-FnH0u_TBs2hc",
+    'cache-control': "no-cache"
+    }
+
+response = requests.request("GET", url, data=payload, headers=headers)
+
+print(response.text)
+```
+</TabItem>
+<TabItem value="`c`" label="C#">
+
+```c
+var client = new RestClient("http://demo.testpress.in/api/v2.5/admin/users/");
+var request = new RestRequest(Method.GET);
+request.AddHeader("cache-control", "no-cache");
+request.AddHeader("authorization", "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAzNDI4NTB9.Dsc2NZ_q0e3GRaBTArgwkPs81RbQEt-FnH0u_TBs2hc");
+request.AddHeader("content-type", "application/json");
+request.AddParameter("application/json", "{\n    \"username\": \"admin15\",\n    \"password\": \"demouser\",\n    \"first_name\": \"Cool\",\n    \"last_name\": \"dude\",\n    \"email\": \"cool@dude.com\",\n    \"birth_date\": \"03/07/2016\",\n    \"state\": \"IN-TN\"\n}", ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);
+```
+</TabItem>
+<TabItem value="`php`" label="PHP">
+
+```php
+<?php
+
+$request = new HttpRequest();
+$request->setUrl('http://demo.testpress.in/api/v2.5/admin/users/');
+$request->setMethod(HTTP_METH_GET);
+
+$request->setHeaders(array(
+  'cache-control' => 'no-cache',
+  'authorization' => 'JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAzNDI4NTB9.Dsc2NZ_q0e3GRaBTArgwkPs81RbQEt-FnH0u_TBs2hc',
+  'content-type' => 'application/json'
+));
+
+$request->setBody('{
+    "username": "admin15",
+    "password": "demouser",
+    "first_name": "Cool",
+    "last_name": "dude",
+    "email": "cool@dude.com",
+    "birth_date": "03/07/2016",
+    "state": "IN-TN"
+}');
+
+try {
+  $response = $request->send();
+
+  echo $response->getBody();
+} catch (HttpException $ex) {
+  echo $ex;
+}
+```
+</TabItem>
+<TabItem value="`java`" label="Java">
+
+```java
+OkHttpClient client = new OkHttpClient();
+
+MediaType mediaType = MediaType.parse("application/json");
+RequestBody body = RequestBody.create(mediaType, "{\n    \"username\": \"admin15\",\n    \"password\": \"demouser\",\n    \"first_name\": \"Cool\",\n    \"last_name\": \"dude\",\n    \"email\": \"cool@dude.com\",\n    \"birth_date\": \"03/07/2016\",\n    \"state\": \"IN-TN\"\n}");
+Request request = new Request.Builder()
+  .url("http://demo.testpress.in/api/v2.5/admin/users/")
+  .get()
+  .addHeader("content-type", "application/json")
+  .addHeader("authorization", "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAzNDI4NTB9.Dsc2NZ_q0e3GRaBTArgwkPs81RbQEt-FnH0u_TBs2hc")
+  .addHeader("cache-control", "no-cache")
+  .build();
+
+Response response = client.newCall(request).execute();
+```
+</TabItem>
+<TabItem value="`nodejs`" label="NodeJs">
+
+```js
+var http = require("http");
+
+var options = {
+  "method": "GET",
+  "hostname": "demo.testpress.in",
+  "port": null,
+  "path": "/api/v2.5/admin/users/",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAzNDI4NTB9.Dsc2NZ_q0e3GRaBTArgwkPs81RbQEt-FnH0u_TBs2hc",
+    "cache-control": "no-cache"
+  }
+};
+
+var req = http.request(options, function (res) {
+  var chunks = [];
+
+  res.on("data", function (chunk) {
+    chunks.push(chunk);
+  });
+
+  res.on("end", function () {
+    var body = Buffer.concat(chunks);
+    console.log(body.toString());
+  });
+});
+
+req.write(JSON.stringify({ username: 'admin15',
+  password: 'demouser',
+  first_name: 'Cool',
+  last_name: 'dude',
+  email: 'cool@dude.com',
+  birth_date: '03/07/2016',
+  state: 'IN-TN' }));
+req.end();
+```
+</TabItem>
+<TabItem value="`go`" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "strings"
+    "net/http"
+    "io/ioutil"
+)
+
+func main() {
+
+    url := "http://demo.testpress.in/api/v2.5/admin/users/"
+
+    payload := strings.NewReader("{\n    \"username\": \"admin15\",\n    \"password\": \"demouser\",\n    \"first_name\": \"Cool\",\n    \"last_name\": \"dude\",\n    \"email\": \"cool@dude.com\",\n    \"birth_date\": \"03/07/2016\",\n    \"state\": \"IN-TN\"\n}")
+
+    req, _ := http.NewRequest("GET", url, payload)
+
+    req.Header.Add("content-type", "application/json")
+    req.Header.Add("authorization", "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAzNDI4NTB9.Dsc2NZ_q0e3GRaBTArgwkPs81RbQEt-FnH0u_TBs2hc")
+    req.Header.Add("cache-control", "no-cache")
+
+    res, _ := http.DefaultClient.Do(req)
+
+    defer res.Body.Close()
+    body, _ := ioutil.ReadAll(res.Body)
+
+    fmt.Println(res)
+    fmt.Println(string(body))
+
+}
+```
+</TabItem>
+</Tabs>
+
+### Response 
+
+```json
+{
+  "count": 756,
+  "next": "https://demo.testpress.in/api/v2.5/admin/users/?page=2",
+  "previous": null,
+  "per_page": 20,
+  "results": [
+
+{
+  "id": 1889,
+  "url": "http://demo.testpress.in/api/v2.5/admin/users/",
+  "username": "lorem",
+  "first_name": "John",
+  "last_name": "Appleseed",
+  "display_name": "John Appleseed",
+  "email": "test@example.com",
+  "photo": null,
+  "birth_date": "03/07/2016",
+  "address1": "",
+  "address2": "",
+  "city": "",
+  "zip": "",
+  "state": "IN-TN",
+  "phone": "",
+  "batches_url": "http://demo.testpress.in/api/v2.5/admin/users/1/batches/"
+},
+
+{
+  "id": 1890,
+  "url": "http://demo.testpress.in/api/v2.5/admin/users/",
+  "username": "lorem2",
+  "first_name": "John2",
+  "last_name": "Appleseed",
+  "display_name": "John Appleseed",
+  "email": "test3@example.com",
+  "photo": null,
+  "birth_date": "23/07/2000",
+  "address1": "",
+  "address2": "",
+  "city": "",
+  "zip": "",
+  "state": "IN-TN",
+  "phone": "",
+  "batches_url": "http://demo.testpress.in/api/v2.5/admin/users/2/batches/"
+}
+
+  ]
+
+}
+
+
+```
+
+
 ## View User
 
 This endpoint allows you to view details of a particular user.
