@@ -24,14 +24,14 @@ Then reference the library in the dependency section:
 
 ``` groovy
 dependencies {
-    implementation "com.testpress.player:player:1.0.12b"
+    implementation "com.testpress.player:player:1.0.13b"
 }
 ```
 
 ### Using ProGuard
 If you use ProGuard in your app, you might need to add the following rule to your ProGuard file.
 ``` groovy
--keep class com.tpstream.player.models.* { *; }
+-keep class com.tpstream.player.* { *; }
 ```
 
 ## Integrating player fragment

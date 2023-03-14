@@ -32,32 +32,32 @@ Using this TpStreamDownloadManager we can get a list of downloaded media and the
 #### Get list of downloaded media
 
 ``` kotlin
-val downloads : LiveData<List<OfflineVideoInfo>?> = tpStreamDownloadManager.getAllDownloads()
+val downloads : LiveData<List<Video>?> = tpStreamDownloadManager.getAllDownloads()
 ```
 It will return a list of OfflineVideoInfo in LiveData to monitor the download progress use ViewModel and observe.
 
 #### Delete
 
 ``` kotlin
-tpStreamDownloadManager.deleteDownload(offlineVideoInfo)
+tpStreamDownloadManager.deleteDownload(video)
 ```
 
 #### Pause
 
 ``` kotlin
-tpStreamDownloadManager.pauseDownload(offlineVideoInfo)
+tpStreamDownloadManager.pauseDownload(video)
 ```
 
 #### Resume
 
 ``` kotlin
-tpStreamDownloadManager.resumeDownload(offlineVideoInfo)
+tpStreamDownloadManager.resumeDownload(video)
 ```
 
 #### Cancel
 
 ``` kotlin
-tpStreamDownloadManager.cancelDownload(offlineVideoInfo)
+tpStreamDownloadManager.cancelDownload(video)
 ```
 
 ## Playing downloaded media
@@ -66,6 +66,6 @@ Create offline params and pass them to player activity via intent to play an off
 
 ``` kotlin
 val intent = Intent(activityContext,PlayerActivity::class.java)
-intent.putExtra(TP_OFFLINE_PARAMS,TpInitParams.createOfflineParams(offlineVideoInfo.videoId))
+intent.putExtra(TP_OFFLINE_PARAMS,TpInitParams.createOfflineParams(video.videoId))
 startActivity(intent)
 ```
