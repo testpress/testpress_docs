@@ -1,12 +1,19 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 # Exam webhook
 
+
+## How To Enable Exam Webhook
+
+* In the Institute settings, locate the Exam webhook URL field and add the desired URL for the   webhook.
+* To test the webhook, use a URL generated from a webhook site like [Webhook site](https://webhook.site/)
+* The webhook will automatically post data to the provided URL when Exam attempts are started or completed.
 ## Data Posted To The Exam Webhook URL
 
-Below are the response parameters posted by Testpress to Institute when an attempt is completed.
+Below are the response parameters posted by Testpress to Institute when an attempt is started and completed.
+
 
 | Name                     | Type           | Description                                                                                             |
 | ------------------------ | -------------- | ------------------------------------------------------------------------------------------------------- |
@@ -22,36 +29,99 @@ Below are the response parameters posted by Testpress to Institute when an attem
 | percentage               | integer        | score percentage                                                                                        |
 | key                      | string         | Public institute key provided by Testpress to identify the Institute                                    |
 | hash                     | string         | Hash generated using above algorithm.                                                                   |
+| subject_stats            | key/value pair | This key/value pair will contain subject wise details  |
+| difficulty_level_stats   | key/value pair | This key/value pair will contain difficulty wise details |
+
 
 In the above data `hash` value is used to identify that the data is indeed posted from testpress.
 
+## Start Exam Webhook Response
 
 ```json
 {
- "username": "test_user",
- "hash": "815aad5656f99ac131ab1ab57f1044c6c1c656b2a7f13b41feca74fd48a603f94a7024d6835204e463fbd79f6a4",
- "exam": {
-  "duration": "0:30:00",
-  "start_date": "2019-01-21T12:52:41.075Z",
-  "id": 2,
-  "end_date": "2019-03-21T12:52:41.075Z",
-  "title": "test_exam"
- },
- "partial_correct_answers_count": "0",
- "attempt_id": "93",
- "key": "sxe7uKykEUT7WSnh",
- "speed": "960",
- "percentage": "100",
- "correct_answers_count": "50",
- "user_id": "3",
- "score": "50",
- "unanswered_answers_count": "0",
- "incorrect_answers_count": "0",
- "email": "test_user@gmail.com",
- "accuracy": "100"
+  "username": "test_user",
+  "accuracy": 0,
+  "hash": "8291fc65f59336716b072ae3936aeaeabbe56685e812144d87722430e80ae6c10feaf82c83dfb75ca4696e2b1f60eb72a68b376e15b3dfb5a2717d3a51973c88",
+  "exam": {
+    "id": 27,
+    "title": "File type exam",
+    "duration": null,
+    "start_date": "2023-03-15T12:04:32+05:30",
+    "end_date": null
+  },
+  "subject_stats": [],
+  "email": "karthiktest51@gmail.com",
+  "partial_correct_answers_count": null,
+  "attempt_id": 130,
+  "attempt_state": "started",
+  "incorrect_answers_count": 0,
+  "difficulty_level_stats": {},
+  "completed_on": null,
+  "unanswered_answers_count": 0,
+  "key": "YDRAXrgV3STf7EH5",
+  "attempt_start_time": "2023-03-31T10:55:54.968829Z",
+  "user_id": 2,
+  "percentage": "0.00",
+  "score": "0.00",
+  "speed": 0,
+  "institute_attempt_id": null,
+  "correct_answers_count": 0
 }
 ```
 
+## End Exam Webhook Response
+
+```json
+{
+  "username": "student",
+  "accuracy": 0,
+  "hash": "dc206631d1fb9a73dd1b8119b63bcfd6f2700bbd20dc6bbb7999e11f182697104cc72cb323b153ff42565481ff3d777087de7c88956c637897b43272d5b9dc9f",
+  "exam": {
+    "id": 27,
+    "title": "File type exam",
+    "duration": null,
+    "start_date": "2023-03-15T12:04:32+05:30",
+    "end_date": null
+  },
+  "subject_stats": [
+    {
+      "subject_name": "Quantitative",
+      "parent_subject_id": null,
+      "correct_answers_count": 0,
+      "incorrect_answers_count": 0,
+      "partial_correct_answers_count": 0,
+      "unanswered_count": 1,
+      "answered_count": 0,
+      "total_count": 1,
+      "score": "0.00"
+    }
+  ],
+  "email": "karthiktest51@gmail.com",
+  "partial_correct_answers_count": 0,
+  "attempt_id": 130,
+  "attempt_state": "completed",
+  "incorrect_answers_count": 0,
+  "difficulty_level_stats": {
+    "uncategorized": {
+      "correct_answers_count": 0,
+      "incorrect_answers_count": 0,
+      "partial_correct_answers_count": 0,
+      "unanswered_count": 1,
+      "total_count": 1
+    }
+  },
+  "completed_on": "2023-03-31T16:27:41.151586+05:30",
+  "unanswered_answers_count": 1,
+  "key": "YDRAXrgV3STf7EH5",
+  "attempt_start_time": "2023-03-31T10:55:54.968829Z",
+  "user_id": 2,
+  "percentage": "0.00",
+  "score": "0.00",
+  "speed": 0,
+  "institute_attempt_id": null,
+  "correct_answers_count": 0
+}
+```
 ## How To Generate The Hash And Verify The Authenticity Of The Data
 HMAC (Hash-based message authentication code) is used to avoid tampering during the request flow.
 The hash is calculated using the following algorithm:
