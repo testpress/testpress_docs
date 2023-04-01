@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 import Tabs from '@theme/Tabs';
 
@@ -101,13 +101,8 @@ ZW1haWw9ZGVtb0B0ZXN0cHJlc3MuaW4mdGltZT0xNTU0ODc5Njgx
 
 ### HMAC Signature 
 
-HMAC (Hash-based message authentication code) is used to avoid tampering during the request flow. We use a time-based HMAC algorithm to limit the lifetime of the HMAC.
-
-
-To generate the HMAC signature, the following are need
-
-- payload - Generate from the above step
-- secret_key - Obtained from Testpress Team
+- HMAC (Hash-based Message Authentication Code) is used to ensure the security and integrity of requests during data transfer.
+- To generate an HMAC signature for Testpress exam software, you'll need a payload (generated in a previous step) and a secret key obtained from the Testpress team.
 
 <Tabs>
 <TabItem value="py" label="Python">
