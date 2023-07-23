@@ -66,12 +66,6 @@ const config = {
             label: 'Video Embedding',
           },
           {
-            type: 'docSidebar',
-            position: 'left',
-            sidebarId: 'mobileSdk',
-            label: 'Mobile SDK',
-          },
-          {
             href: 'https://github.com/testpress/testpress_docs',
             label: 'GitHub',
             position: 'right',
