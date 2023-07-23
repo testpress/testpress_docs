@@ -95,4 +95,4 @@ player.removeAllMarkers([1,2,4]);
 ### Output
 
 
-![Domain restriction form](../../../img/markers_output.png)
+![Domain restriction form](../../img/markers_output.png)
