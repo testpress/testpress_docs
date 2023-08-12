@@ -66,7 +66,6 @@ tpStreamDownloadManager.cancelDownload(video)
 tpStreamDownloadManager.deleteAllDownload()
 ```
 
-
 ## Playing downloaded media
 
 Create offline params and pass them to player activity via intent to play an offline video.
