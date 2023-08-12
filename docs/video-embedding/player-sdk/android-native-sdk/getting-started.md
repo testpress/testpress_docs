@@ -24,7 +24,7 @@ Then reference the library in the dependency section:
 
 ``` groovy
 dependencies {
-    implementation "com.testpress.player:player:1.0.13b"
+    implementation "com.testpress.player:player:1.0.14b"
 }
 ```
 
@@ -76,7 +76,7 @@ val parameters = TpInitParams.Builder()
     .setAccessToken(accessToken)
     .setOrgCode("your_subdomain") // demo for demo.testpress.in
     .build()
-playerFragment.load(parameters)
+player.load(parameters)
 ```
 
 
@@ -94,7 +94,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
                 .setAccessToken(accessToken)
                 .setOrgCode("your_subdomain")
                 .build()
-            playerFragment.load(parameters)
+            player.load(parameters)
         }
     });
 }
