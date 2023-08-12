@@ -94,7 +94,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
                 .setAccessToken(accessToken)
                 .setOrgCode("your_subdomain")
                 .build()
-        player.load(parameters)
+            player.load(parameters)
         }
     });
 }
