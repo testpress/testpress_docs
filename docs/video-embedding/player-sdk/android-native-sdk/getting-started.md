@@ -31,7 +31,7 @@ dependencies {
 ### Using ProGuard
 If you use ProGuard in your app, you might need to add the following rule to your ProGuard file.
 ``` groovy
--keep class com.tpstream.player.* { *; }
+-keep class com.tpstream.player.** { *; }
 ```
 
 ## Integrating player fragment
