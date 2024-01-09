@@ -24,7 +24,7 @@ Then reference the library in the dependency section:
 
 ``` groovy
 dependencies {
-    implementation "com.testpress.player:player:1.0.14b"
+    implementation "com.testpress.player:player:3.0.13b"
 }
 ```
 
@@ -34,10 +34,25 @@ If you use ProGuard in your app, you might need to add the following rule to you
 -keep class com.tpstream.player.** { *; }
 ```
 
+## Initializing Player SDK
+
+You need to initialize the Player SDK at the top level in the Activity.
+
+```kotlin
+class PlayerActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_player)
+        TPStreamsSDK.initialize(TPStreamsSDK.Provider.TestPress, "your_subdomain")  // demo for demo.testpress.in
+    }
+}
+```
+
 ## Integrating player fragment
 Drop a TpStreamPlayerFragment into your activity layout with an id. This is the fastest and easiest way to integrate the player into your application. TpStreamPlayerFragment includes a prebuilt UI for the player with ample features and functionality.
 
-``` xml
+```xml
 <androidx.fragment.app.FragmentContainerView
     android:id="@+id/tpstream_player_fragment"
     android:name="com.tpstream.player.TpStreamPlayerFragment"
@@ -48,7 +63,7 @@ Drop a TpStreamPlayerFragment into your activity layout with an id. This is the 
 ```
 and receive its instance in your activity using findFragmentbyId()
 
-``` kotlin
+```kotlin
 playerFragment = supportFragmentManager.findFragmentById(R.id.tpstream_player_fragment) as TpStreamPlayerFragment
 ```
 
@@ -57,7 +72,7 @@ playerFragment = supportFragmentManager.findFragmentById(R.id.tpstream_player_fr
 
 You can set listener class with onInitializationSuccess method and receive the player in the onInitializationSuccess callback.
 
-```java
+```kotlin
 playerFragment.setOnInitializationListener(object: InitializationListener {
     override fun onInitializationSuccess(player: TpStreamPlayer) {
         Log.i(TAG, "onInitializationSuccess");
@@ -70,18 +85,17 @@ Once you have a player, you can start loading media onto it for playback. You'll
 
 A TpInitParams object needs videoId, [accessToken](../../authentication.md) and orgCode.
 
-``` java
+```kotlin
 val parameters = TpInitParams.Builder()
     .setVideoId(videoId)
     .setAccessToken(accessToken)
-    .setOrgCode("your_subdomain") // demo for demo.testpress.in
     .build()
 player.load(parameters)
 ```
 
 
 Final code will look like this
-```java
+```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_player)
@@ -92,12 +106,27 @@ override fun onCreate(savedInstanceState: Bundle?) {
             val parameters = TpInitParams.Builder()
                 .setVideoId(videoId)
                 .setAccessToken(accessToken)
-                .setOrgCode("your_subdomain")
                 .build()
             player.load(parameters)
         }
     });
 }
+```
+
+## Initializing Player Even Listener
+
+Set up a listener to handle player even.
+
+```kotlin
+player.setListener(object : TPStreamPlayerListener {
+    override fun onPlaybackStateChanged(playbackState: Int) {
+        Log.d(TAG, "onPlaybackStateChanged: $playbackState")
+    }
+
+    override fun onPlayerError(playbackError: PlaybackError) {
+        Log.d(TAG, "onPlayerError: $playbackError")
+    }
+})
 ```
 
 Call this below method to enable auto fullscreen on rotate
