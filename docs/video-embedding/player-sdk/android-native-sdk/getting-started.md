@@ -11,7 +11,7 @@ This SDK enables you to securely stream DRM-protected videos through your Androi
 ## Adding dependency
 - If you have a settings.gradle file in your project root, then you need to add the repositories in the settings.gradle inside dependencyResolutionManagement with the given path below. Else, this will go in build.gradle file in project root.
 
-```
+```groovy
 repositories {
     // other repo, e.g. google() or mavenCentral()
     maven {
@@ -22,7 +22,7 @@ repositories {
 
 Then reference the library in the dependency section:
 
-``` groovy
+```groovy
 dependencies {
     implementation "com.testpress.player:player:3.0.13b"
 }
@@ -75,7 +75,6 @@ You can set listener class with onInitializationSuccess method and receive the p
 ```kotlin
 playerFragment.setOnInitializationListener(object: InitializationListener {
     override fun onInitializationSuccess(player: TpStreamPlayer) {
-        Log.i(TAG, "onInitializationSuccess");
         this.player = player
     }
 })
