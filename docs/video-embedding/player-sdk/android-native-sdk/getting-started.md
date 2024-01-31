@@ -24,7 +24,7 @@ Then reference the library in the dependency section:
 
 ```groovy
 dependencies {
-    implementation "com.testpress.player:player:3.0.13b"
+    implementation "com.testpress.player:player:3.0.14b"
 }
 ```
 
