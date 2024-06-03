@@ -43,6 +43,7 @@ Except for username and password, all other fields are optional.
 | phone      | string     | Phone of the user                                                                   |
 | batches    | list       | Batches of the user                                                                 |
 | expires    | datestring | Expiry date of the batches subscription. Format yyyy-mm-dd. After which the user will be removed form the batch
+| custom_fields | json | A dictionary containing custom field name and the response to be recorded for the user. The custom field name is case-insensitive. |
 
 
 <Tabs>
@@ -54,7 +55,7 @@ curl --request POST \
   --header 'authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84' \
   --header 'cache-control: no-cache' \
   --header 'content-type: application/json' \
-  --data '{"username": "lorem", "password": "ipsum1$", "first_name": "John", "last_name": "Appleseed", "email": "test@example.com", "birth_date": "03/07/2016", "state": "IN-TN", "batches": ["Test Batch", "UPSC Morning Batch"],"expires":"2023-01-13"}'
+  --data '{"username": "lorem", "password": "ipsum1$", "first_name": "John", "last_name": "Appleseed", "email": "test@example.com", "birth_date": "03/07/2016", "state": "IN-TN", "batches": ["Test Batch", "UPSC Morning Batch"],"expires":"2023-01-13", "custom_fields": {"Graduation University": "Delhi University", "Graduation Year": 2020}}'
 ```
 
 </TabItem>
@@ -72,7 +73,7 @@ request = Net::HTTP::Post.new(url)
 request["content-type"] = 'application/json'
 request["authorization"] = 'JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84'
 request["cache-control"] = 'no-cache'
-request.body = "{\n    \"username\": \"lorem\",\n    \"password\": \"ipsum1$\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Appleseed\",\n    \"email\": \"test@example.com\",\n    \"birth_date\": \"03/07/2016\",\n    \"state\": \"IN-TN\",\n    \"batches\": [\"Test Batch\", \"UPSC Morning Batch\"],\n    \"expires\": \"2023-01-13\"}"
+request.body = "{\n    \"username\": \"lorem\",\n    \"password\": \"ipsum1$\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Appleseed\",\n    \"email\": \"test@example.com\",\n    \"birth_date\": \"03/07/2016\",\n    \"state\": \"IN-TN\",\n    \"batches\": [\"Test Batch\", \"UPSC Morning Batch\"],\n    \"expires\": \"2023-01-13\",\n    \"custom_fields\": {\"Graduation University\": \"Delhi University\", \"Graduation Year\": 2020}}"
 
 response = http.request(request)
 puts response.read_body
@@ -86,7 +87,7 @@ import requests
 
 url = "http://demo.testpress.in/api/v2.5/admin/users/"
 
-payload = "{\n    \"username\": \"lorem\",\n    \"password\": \"ipsum1$\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Appleseed\",\n    \"email\": \"test@example.com\",\n    \"birth_date\": \"03/07/2016\",\n    \"state\": \"IN-TN\",\n    \"batches\": [\"Test Batch\", \"UPSC Morning Batch\"],\n    \"expires\": \"2023-01-13\"}"
+payload = "{\n    \"username\": \"lorem\",\n    \"password\": \"ipsum1$\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Appleseed\",\n    \"email\": \"test@example.com\",\n    \"birth_date\": \"03/07/2016\",\n    \"state\": \"IN-TN\",\n    \"batches\": [\"Test Batch\", \"UPSC Morning Batch\"],\n    \"expires\": \"2023-01-13\",\n    \"custom_fields\": {\"Graduation University\": \"Delhi University\", \"Graduation Year\": 2020}}"
 headers = {
     'content-type': "application/json",
     'authorization': "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84",
@@ -106,7 +107,7 @@ var request = new RestRequest(Method.POST);
 request.AddHeader("cache-control", "no-cache");
 request.AddHeader("authorization", "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6MzgsInVzZXJfaWQiOjM4LCJlbWFpbCI6ImRpbmVzaEB0ZXN0cHJlc3MuaW4iLCJleHAiOjE0NzAyMjk2MDd9.ynLE30wWup2CXMqgpNjT4ZBAUAtttqebzat-stuVB84");
 request.AddHeader("content-type", "application/json");
-request.AddParameter("application/json", "{\n    \"username\": \"lorem\",\n    \"password\": \"ipsum1$\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Appleseed\",\n    \"email\": \"test@example.com\",\n    \"birth_date\": \"03/07/2016\",\n    \"state\": \"IN-TN\",\n    \"batches\": [\"Test Batch\", \"UPSC Morning Batch\"],\n    \"expires\": \"2023-01-13\"}", ParameterType.RequestBody);
+request.AddParameter("application/json", "{\n    \"username\": \"lorem\",\n    \"password\": \"ipsum1$\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Appleseed\",\n    \"email\": \"test@example.com\",\n    \"birth_date\": \"03/07/2016\",\n    \"state\": \"IN-TN\",\n    \"batches\": [\"Test Batch\", \"UPSC Morning Batch\"],\n    \"expires\": \"2023-01-13\",\n    \"custom_fields\": {\"Graduation University\": \"Delhi University\", \"Graduation Year\": 2020}}", ParameterType.RequestBody);
 IRestResponse response = client.Execute(request);
 ```
 </TabItem>
@@ -129,7 +130,9 @@ curl_setopt_array($curl, array(
     "birth_date": "03/07/2016",
     "state": "IN-TN",
     "batches": ["Test Batch", "UPSC Morning Batch"],
-    "expires": "2023-01-13"
+    "expires": "2023-01-13",
+    "custom_fields": {"Graduation University": "Delhi University", "Graduation Year": 2020}
+
 }',
   CURLOPT_HTTPHEADER => array(
     'Authorization: JWT <Enter authorization code here>',
@@ -150,7 +153,7 @@ echo $response;
 OkHttpClient client = new OkHttpClient();
 
 MediaType mediaType = MediaType.parse("application/json");
-RequestBody body = RequestBody.create(mediaType, "{\n    \"username\": \"lorem\",\n    \"password\": \"ipsum1$\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Appleseed\",\n    \"email\": \"test@example.com\",\n    \"birth_date\": \"03/07/2016\",\n    \"state\": \"IN-TN\",\n    \"batches\": [\"Test Batch\", \"UPSC Morning Batch\"],\n    \"expires\": \"2023-01-13\"}");
+RequestBody body = RequestBody.create(mediaType, "{\n    \"username\": \"lorem\",\n    \"password\": \"ipsum1$\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Appleseed\",\n    \"email\": \"test@example.com\",\n    \"birth_date\": \"03/07/2016\",\n    \"state\": \"IN-TN\",\n    \"batches\": [\"Test Batch\", \"UPSC Morning Batch\"],\n    \"expires\": \"2023-01-13\",\n    \"custom_fields\": {\"Graduation University\": \"Delhi University\", \"Graduation Year\": 2020}}");
 Request request = new Request.Builder()
   .url("http://demo.testpress.in/api/v2.5/admin/users/")
   .post(body)
@@ -200,7 +203,8 @@ req.write(JSON.stringify({ username: 'lorem',
   birth_date: '03/07/2016',
   state: 'IN-TN',
   batches: [ 'Test Batch', 'UPSC Morning Batch' ],
-  expires: "2023-01-13" }));
+  expires: "2023-01-13",
+  custom_fields: {"Graduation University": "Delhi University", "Graduation Year": 2020}}));
 req.end();
 ```
 </TabItem>
@@ -220,7 +224,7 @@ func main() {
 
     url := "http://demo.testpress.in/api/v2.5/admin/users/"
 
-    payload := strings.NewReader("{\n    \"username\": \"lorem\",\n    \"password\": \"ipsum1$\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Appleseed\",\n    \"email\": \"test@example.com\",\n    \"birth_date\": \"03/07/2016\",\n    \"state\": \"IN-TN\",\n    \"batches\": [\"Test Batch\", \"UPSC Morning Batch\"],\n    \"expires\": \"2023-01-13\"}")
+    payload := strings.NewReader("{\n    \"username\": \"lorem\",\n    \"password\": \"ipsum1$\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Appleseed\",\n    \"email\": \"test@example.com\",\n    \"birth_date\": \"03/07/2016\",\n    \"state\": \"IN-TN\",\n    \"batches\": [\"Test Batch\", \"UPSC Morning Batch\"],\n    \"expires\": \"2023-01-13\",\n    \"custom_fields\": {\"Graduation University\": \"Delhi University\", \"Graduation Year\": 2020}}")
 
     req, _ := http.NewRequest("POST", url, payload)
 
@@ -261,7 +265,11 @@ func main() {
   "state": "Tamil Nadu",
   "state_code": "IN-TN",
   "phone": "",
-  "batches_url": "http://demo.testpress.in/api/v2.5/admin/users/1892/batches/"
+  "batches_url": "http://demo.testpress.in/api/v2.5/admin/users/1892/batches/",
+  "custom_fields": {
+    "Graduation University": "Delhi University",
+    "Graduation Year": 2020
+  }
 }
 ```
 
@@ -840,6 +848,8 @@ This endpoint allows you to update details of a particular user.
 | state        | string     | State of user in ISO 3166-2:IN format (https://en.wikipedia.org/wiki/ISO_3166-2:IN) |
 | phone        | string     | Phone of the user                                                                   |
 | is_active    | boolean    | Used to activate/deactivate the user. Accepts "true"/"false".                       |
+| custom_fields | json | A dictionary containing custom field name and the response to be recorded for the user. The custom field name is case-insensitive. |
+
 
 
 ### Read Only Fields
@@ -1063,7 +1073,11 @@ func main() {
     "batches_url": "http://demo.testpress.in/api/v2.5/admin/users/2120/batches/",
     "url": "http://demo.testpress.in/api/v2.5/admin/users/2120/",
     "created": "2017-08-03T18:25:45.949568Z",
-    "modified": "2017-08-03T18:29:24.712464Z"
+    "modified": "2017-08-03T18:29:24.712464Z",
+    "custom_fields": {
+      "Graduation University": "Delhi University",
+      "Graduation Year": 2020
+    }
 }
 ```
 
