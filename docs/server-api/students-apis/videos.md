@@ -18,6 +18,24 @@ This endpoint retrieves all watched videos for the authenticated user.
 ### HTTP Request
 
 `GET /api/v2.5/me/videos_watched/`
+
+### Query Parameters
+
+
+| Parameter        | Type        | Description |
+| ----------- | ----------- |----------- |
+| start_date    | string      | start date in the format yyyy-mm-dd |
+| end_date    | string      | end date in the format yyyy-mm-dd |
+| course    | string      | unique coure id |
+| chapter    | string      | unique chapter id |
+
+### Example:
+
+/api/v2.5/me/videos_watched/?start_date=2023-12-29&end_date=2024-05-06&course=14
+
+This endpoint will get the list of videos watched from the course with ID 14 from December 29, 2023, to May 6, 2024.
+
+
 <Tabs>
 <TabItem value="bash" label="cURL">
 
