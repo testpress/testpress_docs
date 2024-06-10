@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 
 # Videos
-Video API gives you access to read all the videos which can be accessed by the authenticated user.
+The Video API allows authenticated users to access and read all available videos.
 
 ## Get All Watched Videos
 
@@ -31,9 +31,9 @@ This endpoint retrieves all watched videos for the authenticated user.
 
 ### Example:
 
-/api/v2.5/me/videos_watched/?start_date=2023-12-29&end_date=2024-05-06&course=14
+/api/v2.5/me/videos_watched/?start_date=2023-12-29&end_date=2024-05-29&course=14
 
-This endpoint will get the list of videos watched from the course with ID 14 from December 29, 2023, to May 6, 2024.
+This endpoint will get the list of videos watched from the course with ID 14 from December 29, 2023, to May 29, 2024.
 
 
 <Tabs>

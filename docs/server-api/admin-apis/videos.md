@@ -15,6 +15,8 @@ Admin APIs require authorization token with admin privileges. You check the foll
 
 [Authentication](https://testpress.github.io/testpress_docs/docs/intro)
 
+The Video API allows admin to access and read all videos.
+
 ## Get Watched Videos of User
 
 This endpoint can be used to retrieve the videos watched by a particular user.
@@ -41,9 +43,9 @@ This endpoint can be used to retrieve the videos watched by a particular user.
 
 #### Example:
 
-/api/v2.5/admin/users/10/videos_watched/?start_date=2023-12-29&end_date=2024-05-06&course=14
+/api/v2.5/admin/users/10/videos_watched/?start_date=2023-12-29&end_date=2024-05-29&course=14
 
-This endpoint will get the list of videos watched by user with ID 10 from the course with ID 14 from December 29, 2023, to May 6, 2024.
+This endpoint will get the list of videos watched by user with ID 10 from the course with ID 14 from December 29, 2023, to May 29, 2024.
 
 <Tabs>
 <TabItem value="bash" label="cURL">
