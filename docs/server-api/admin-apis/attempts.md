@@ -314,3 +314,119 @@ print(response.text)
 }
 
 ```
+
+## Get Video Conference Attempts 
+
+This endpoint retrieves the details of attempts for a video conference.
+
+#### HTTP Request
+
+```
+GET /api/v3/admin/attempts/<id>/video-conference/
+```
+
+#### URL Parameters
+
+
+| Parameter | Description |
+| --------- | ----------- |
+| id | The unique id of the video conference |  
+
+#### Example
+
+`/api/v3/admin/attempts/12/video-conference/`
+
+This endpoint will retrieve the details of attempts for the video conference with ID 12.
+
+#### Response Fields
+
+|Name|Type|Description|
+|----|----|-----------|
+|name|string|Name of the user|
+|email|string|Email of the user|
+|joined_time|string|Time of joining the video conference in ISO 8601 format|
+|leave_time|string|Time of leaving the video conference in ISO 8601 format|
+|duration|int|Duration of attendance in seconds|
+
+<Tabs>
+<TabItem value="bash" label="cURL">
+
+
+```bash
+curl --request GET \
+  --url http://demo.testpress.in/api/v3/admin/attempts/12/video-conference/ \
+  --header 'authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RwcmVzcyIsInVzZXJfaWQiOjE3LCJlbWFpbCI6InRlc3RwcmVzcy5pbkBnbWFpbC5jb20iLCJleHAiOjE0NDc4MzMyMjl9.Ik_yi4lHbNbrRGhqmRpsW82Nls_O9lgXakk_syV-vSw' \
+  --header 'cache-control: no-cache'
+
+```
+
+</TabItem>
+<TabItem value="rb" label="Ruby">
+
+```rb
+require 'uri'
+require 'net/http'
+
+url = URI("http://demo.testpress.in/api/v3/admin/attempts/12/video-conference/")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Get.new(url)
+request["authorization"] = 'JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RwcmVzcyIsInVzZXJfaWQiOjE3LCJlbWFpbCI6InRlc3RwcmVzcy5pbkBnbWFpbC5jb20iLCJleHAiOjE0NDc4MzMyMjl9.Ik_yi4lHbNbrRGhqmRpsW82Nls_O9lgXakk_syV-vSw'
+request["cache-control"] = 'no-cache'
+
+response = http.request(request)
+puts response.read_body
+```
+
+</TabItem>
+<TabItem value="py" label="Python">
+
+```py
+import requests
+
+url = "http://demo.testpress.in/api/v3/admin/attempts/12/video-conference/"
+
+headers = {
+    'authorization': "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RwcmVzcyIsInVzZXJfaWQiOjE3LCJlbWFpbCI6InRlc3RwcmVzcy5pbkBnbWFpbC5jb20iLCJleHAiOjE0NDc4MzMyMjl9.Ik_yi4lHbNbrRGhqmRpsW82Nls_O9lgXakk_syV-vSw",
+    'cache-control': "no-cache"
+    }
+
+response = requests.request("GET", url, headers=headers)
+
+print(response.text)
+
+```
+
+</TabItem>
+
+</Tabs>
+
+
+#### Response
+
+
+```json
+{
+    "count": 2,
+    "next": null,
+    "previous": null,
+    "per_page": 20,
+    "results": [
+        {
+            "name": "deva",
+            "email": "deva@testpress.in",
+            "join_time": "2024-06-10T16:20:26+05:30",
+            "leave_time": "2024-06-10T16:22:26+05:30",
+            "duration": 120
+        },
+        {
+            "name": "alwin",
+            "email": "alwin@testpress.in",
+            "join_time": "2024-06-10T16:19:55+05:30",
+            "leave_time": "2024-06-10T16:22:27+05:30",
+            "duration": 152
+        }
+    ]
+}
+```
