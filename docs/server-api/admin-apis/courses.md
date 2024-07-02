@@ -134,7 +134,7 @@ This endpoint allows you to get the list of courses.
 
 <details>
 
-<summary> <b>GET</b> https://lmsdemo.testpress.in/api/v2.5/courses/:id/ <br />
+<summary> <b>GET</b> https://lmsdemo.testpress.in/api/v2.5/admin/courses/:id/ <br />
 <b>Get Course</b></summary>
 
 This endpoint allows you to get a course
@@ -201,7 +201,7 @@ This endpoint allows you to get a course
 </details>
 
 <details>
-<summary><b> GET</b> https://lmsdemo.testpress.in/api/v2.5/courses/:id/chapters/ <br/> <b>Get Course's Chapters </b></summary>
+<summary><b> GET</b> https://lmsdemo.testpress.in/api/v2.5/admin/courses/:id/chapters/ <br/> <b>Get Course's Chapters </b></summary>
 
 This endpoint allows you to get the list of course's chapters.
 
@@ -379,7 +379,7 @@ This endpoint allows you to get the list of course's chapters.
 </details>
 
 <details>
-<summary><b> GET</b> https://lmsdemo.testpress.in/api/v2.5/courses/:id/contents/<br/> <b>Get Course's Contents </b></summary>
+<summary><b> GET</b> https://lmsdemo.testpress.in/api/v2.5/admin/courses/:id/contents/<br/> <b>Get Course's Contents </b></summary>
 
 This endpoint allows you to get the list of course's contents.
 
@@ -955,7 +955,7 @@ This endpoint allows you to get the list of course's contents.
 </details>
 
 <details>
-<summary><b> GET</b> https://lmsdemo.testpress.in/api/v2.5/courses/:id/batches/<br/> <b>Get Course's Batches </b></summary>
+<summary><b> GET</b> https://lmsdemo.testpress.in/api/v2.5/admin/courses/:id/batches/<br/> <b>Get Course's Batches </b></summary>
 
 ### Parameters
 
@@ -1015,7 +1015,7 @@ This endpoint allows you to get the list of course's contents.
 </details>
 
 <details>
-<summary><b> POST</b> https://lmsdemo.testpress.in/api/v2.5/courses/:id/batches/<br/> <b>Add Batches to the  Course </b></summary>
+<summary><b> POST</b> https://lmsdemo.testpress.in/api/v2.5/admin/courses/:id/batches/<br/> <b>Add Batches to the  Course </b></summary>
 
 ### Parameters
 
@@ -1086,7 +1086,7 @@ This endpoint allows you to get the list of course's contents.
 </details>
 
 <details>
-<summary><b> DELETE</b> https://lmsdemo.testpress.in/api/v2.5/courses/:id/batches/<br/> <b>Remove Batches from the  Course </b></summary>
+<summary><b> DELETE</b> https://lmsdemo.testpress.in/api/v2.5/admin/courses/:id/batches/<br/> <b>Remove Batches from the  Course </b></summary>
 
 ### Parameters
 
