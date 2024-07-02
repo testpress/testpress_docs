@@ -1133,3 +1133,110 @@ This endpoint allows you to get the list of course's contents.
 </details>
 
 </details>
+
+<details>
+<summary><b> GET</b> https://lmsdemo.testpress.in/api/v3/admin/courses/:user_id/available/ <br/> <b>Get Available Courses for a User</b></summary>
+
+This endpoint allows you to get the list of courses available for a particular user
+
+### Parameters
+
+#### Query
+
+<table>
+  <tr>
+    <td>user_id</td>
+    <td>string</td>
+    <td>Unique Id of the User</td>
+  </tr>
+</table>
+
+#### Header 
+
+<table>
+  <tr>
+    <td>authorization</td>
+    <td>string</td>
+    <td>Authentication token to track down who is accessing the API. E.g. JWT Token</td>
+  </tr>
+</table>
+
+#### Responses
+
+<details >
+<summary> 
+<b>200</b>    Courses Successfully retrieved 
+  </summary>
+<pre>
+
+{
+  "count": 2,
+  "next": null,
+  "previous": null,
+  "per_page": 100,
+  "results": {
+    "courses": [
+      {
+        "id": 835,
+        "title": "BTREE AWS",
+        "description": "",
+        "image": "https://d36vpug2b5drql.cloudfront.net/static/courses/general/1442850373_115.png",
+        "created_by": 74,
+        "created": "2024-06-19T15:02:24.859569+05:30",
+        "modified": "2024-06-21T18:40:10.591087+05:30",
+        "contents_url": "https://lmsdemo.testpress.in/api/v3/courses/835/contents/",
+        "slug": "btree-aws",
+        "chapters_count": 1,
+        "contents_count": 5,
+        "exams_count": 1,
+        "videos_count": 1,
+        "attachments_count": 1,
+        "html_contents_count": 0,
+        "order": 282,
+        "external_content_link": null,
+        "external_link_label": "Register Here",
+        "enable_discussions": false,
+        "device_access_control": "Both Web and Mobile App",
+        "layout": "list",
+        "tag_ids": [],
+        "enable_progressive_lock": false,
+        "max_allowed_views_per_video": null,
+        "max_allowed_watch_minutes": null,
+        "allow_custom_test_generation": false
+      },
+      {
+        "id": 834,
+        "title": "Special class Biology",
+        "description": "",
+        "image": "https://d36vpug2b5drql.cloudfront.net/static/courses/general/1442850373_115.png",
+        "created_by": 74,
+        "created": "2024-06-13T11:25:24.427201+05:30",
+        "modified": "2024-07-01T11:13:59.470031+05:30",
+        "contents_url": "https://lmsdemo.testpress.in/api/v3/courses/834/contents/",
+        "slug": "content-move-check",
+        "chapters_count": 3,
+        "contents_count": 14,
+        "exams_count": 4,
+        "videos_count": 4,
+        "attachments_count": 2,
+        "html_contents_count": 2,
+        "order": 281,
+        "external_content_link": null,
+        "external_link_label": "Register Here",
+        "enable_discussions": false,
+        "device_access_control": "Both Web and Mobile App",
+        "layout": "list",
+        "tag_ids": [],
+        "enable_progressive_lock": false,
+        "max_allowed_views_per_video": null,
+        "max_allowed_watch_minutes": null,
+        "allow_custom_test_generation": false
+      }
+    ],
+    "tags": []
+  }
+}
+</pre>
+</details>
+
+</details>
