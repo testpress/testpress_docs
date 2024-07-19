@@ -314,6 +314,130 @@ print(response.text)
 }
 
 ```
+## Get Chapter Content Attempts 
+
+This endpoint retrieves the chapter content attempts list for all users.
+
+#### HTTP Request
+
+```
+GET /api/v3/admin/chapter-content-attempts/
+```
+#### Query Parameters
+
+| Parameter        | Type        | Description |
+| ----------- | ----------- |----------- |
+| user_ids    | int      | Unique user ID  |
+| chapter_ids    | int      | Unique chapter ID |
+| course_ids    | int      | Unique course ID |
+| chapter_content_ids    | int      | Unique chapter content ID |
+| exam_id    | int      | Unique exam ID |
+| content_type    |  int     | Type of content  |
+| state    | int      | Status of the attempt  |
+| completed_date    | string      | date in the format yyyy-mm-dd |
+| completed_before    | string      | date in the format yyyy-mm-dd |
+| completed_after    | string      | date in the format yyyy-mm-dd |
+
+<Tabs>
+<TabItem value="bash" label="cURL">
+
+
+```bash
+curl --request GET \
+  --url http://demo.testpress.in/api/v3/admin/chapter-content-attempts/ \
+  --header 'authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RwcmVzcyIsInVzZXJfaWQiOjE3LCJlbWFpbCI6InRlc3RwcmVzcy5pbkBnbWFpbC5jb20iLCJleHAiOjE0NDc4MzMyMjl9.Ik_yi4lHbNbrRGhqmRpsW82Nls_O9lgXakk_syV-vSw' \
+  --header 'cache-control: no-cache'
+
+```
+
+</TabItem>
+<TabItem value="rb" label="Ruby">
+
+```rb
+require 'uri'
+require 'net/http'
+
+url = URI("http://demo.testpress.in/api/v3/admin/chapter-content-attempts/")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Get.new(url)
+request["authorization"] = 'JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RwcmVzcyIsInVzZXJfaWQiOjE3LCJlbWFpbCI6InRlc3RwcmVzcy5pbkBnbWFpbC5jb20iLCJleHAiOjE0NDc4MzMyMjl9.Ik_yi4lHbNbrRGhqmRpsW82Nls_O9lgXakk_syV-vSw'
+request["cache-control"] = 'no-cache'
+
+response = http.request(request)
+puts response.read_body
+```
+
+</TabItem>
+<TabItem value="py" label="Python">
+
+```py
+import requests
+
+url = "http://demo.testpress.in/api/v3/admin/chapter-content-attempts/"
+
+headers = {
+    'authorization': "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RwcmVzcyIsInVzZXJfaWQiOjE3LCJlbWFpbCI6InRlc3RwcmVzcy5pbkBnbWFpbC5jb20iLCJleHAiOjE0NDc4MzMyMjl9.Ik_yi4lHbNbrRGhqmRpsW82Nls_O9lgXakk_syV-vSw",
+    'cache-control': "no-cache"
+    }
+
+response = requests.request("GET", url, headers=headers)
+
+print(response.text)
+
+```
+
+</TabItem>
+
+</Tabs>
+
+
+#### Response
+
+
+```json
+{
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "per_page": 250,
+    "results": {
+        "content_attempts": [
+           {
+                "id": 764,
+                "user_id": 9,
+                "course_id": 8,
+                "chapter_id": 33,
+                "chapter_content_id": 127,
+                "content_type": "video",
+                "state": "Started",
+                "remaining_time": null,
+                "assessment_id": null,
+                "user_video_conference_id": null,
+                "user_video_id": 55,
+                "user_live_stream_id": null,
+                "user_content_id": null,
+                "user_attachment_id": null,
+                "created": "2024-07-15T18:49:52.059055+05:30",
+                "completed_on": null
+            },
+        ],
+        "user_videos": [
+            {
+                "id": 55,
+                "video_id": 18,
+                "created": "2024-07-15T18:38:42.853855+05:30",
+                "watched_percentage": 0,
+                "remaining_duration": null,
+                "state": "Started",
+                "is_live_class_recording": false
+            }
+            
+        ]
+    }
+}
+```
 
 ## Get Video Conference Attempts 
 
