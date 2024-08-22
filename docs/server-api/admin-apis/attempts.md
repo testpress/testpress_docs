@@ -314,6 +314,144 @@ print(response.text)
 }
 
 ```
+## Get Student Exam Responses
+
+This endpoint retreives the student responses for a particular exam.
+
+
+#### HTTP Request
+
+```
+GET /api/v3/admin/attempts/<id>/user_answers/
+```
+
+#### URL Parameters
+
+
+| Parameter | Description |
+| --------- | ----------- |
+| id | The unique id of the attempt to retrieve the student responses. |
+
+<Tabs>
+<TabItem value="bash" label="cURL">
+
+
+```bash
+curl --request GET \
+  --url http://demo.testpress.in/api/v3/admin/attempts/423/user_answers/ \
+  --header 'authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RwcmVzcyIsInVzZXJfaWQiOjE3LCJlbWFpbCI6InRlc3RwcmVzcy5pbkBnbWFpbC5jb20iLCJleHAiOjE0NDc4MzMyMjl9.Ik_yi4lHbNbrRGhqmRpsW82Nls_O9lgXakk_syV-vSw' \
+  --header 'cache-control: no-cache'
+
+```
+
+</TabItem>
+<TabItem value="rb" label="Ruby">
+
+```rb
+require 'uri'
+require 'net/http'
+
+url = URI("http://demo.testpress.in/api/v3/admin/attempts/423/user_answers/")
+
+http = Net::HTTP.new(url.host, url.port)
+
+request = Net::HTTP::Get.new(url)
+request["authorization"] = 'JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RwcmVzcyIsInVzZXJfaWQiOjE3LCJlbWFpbCI6InRlc3RwcmVzcy5pbkBnbWFpbC5jb20iLCJleHAiOjE0NDc4MzMyMjl9.Ik_yi4lHbNbrRGhqmRpsW82Nls_O9lgXakk_syV-vSw'
+request["cache-control"] = 'no-cache'
+
+response = http.request(request)
+puts response.read_body
+```
+
+</TabItem>
+<TabItem value="py" label="Python">
+
+```py
+import requests
+
+url = "http://demo.testpress.in/api/v3/admin/attempts/423/user_answers/"
+
+headers = {
+    'authorization': "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RwcmVzcyIsInVzZXJfaWQiOjE3LCJlbWFpbCI6InRlc3RwcmVzcy5pbkBnbWFpbC5jb20iLCJleHAiOjE0NDc4MzMyMjl9.Ik_yi4lHbNbrRGhqmRpsW82Nls_O9lgXakk_syV-vSw",
+    'cache-control': "no-cache"
+    }
+
+response = requests.request("GET", url, headers=headers)
+
+print(response.text)
+
+```
+
+</TabItem>
+
+</Tabs>
+
+
+#### Response
+
+
+```json
+{
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "per_page": 250,
+    "results": {
+        "user_answers": [
+            {
+                "id": 476,
+                "exam_question_id": 39,
+                "selected_answers": [
+                    6
+                ],
+                "result": "Incorrect",
+                "duration": 5,
+                "review": false,
+                "guessed": null
+            },
+        ],
+        "exam_questions": [
+            {
+                
+                "id": 39,
+                "question_id": 2,
+                "section_id": 90,
+                "question_html": "<style type='text/css'>\n  \n</style>\n<p>where is Paris ?</p>",
+                "type": "MCQ, Single Correct",
+                "marks": "1.00",
+                "negative_marks": "0.00",
+                "partial_marks": null,
+                "direction": null,
+                "answers": [
+                    {
+                        "id": 5,
+                        "text_html": "<style type='text/css'>\n  \n</style>\n<p>France</p>"
+                    },
+                    {
+                        "id": 6,
+                        "text_html": "<style type='text/css'>\n  \n</style>\n<p>Italy</p>"
+                    },
+                    {
+                        "id": 7,
+                        "text_html": "<style type='text/css'>\n  \n</style>\n<p>Belgium</p>"
+                    },
+                    {
+                        "id": 8,
+                        "text_html": "<style type='text/css'>\n  \n</style>\n<p>Germany</p>"
+                    }
+                ],
+                "difficulty_level": null,
+                "order": 0,
+                "is_bonus": false,
+                "exam_id": 46
+            },
+            
+        ]
+    }
+}
+
+
+```
 ## Get Chapter Content Attempts 
 
 This endpoint retrieves the chapter content attempts list for all users.
