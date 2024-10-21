@@ -116,7 +116,6 @@ print(response.text)
 {
   "results": [
     {
-      "batches": [],
       "description": "",
       "title": "Science course",
       "created": "2024-07-25T07:03:03.093928+00:00",
@@ -124,13 +123,10 @@ print(response.text)
       "institute_subdomain": "demo",
       "state": "Published",
       "highlight": {"title": "Science <span class='highlight'>course</span>"},
-      "active": true,
-      "is_public": false,
       "type": "course",
       "id": 80
     },
     {
-      "batches": [],
       "description": "",
       "title": "Maths course",
       "created": "2024-07-25T06:52:16.206599+00:00",
@@ -138,8 +134,6 @@ print(response.text)
       "institute_subdomain": "demo",
       "state": "Published",
       "highlight": {"title": "Maths <span class='highlight'>course</span>"},
-      "active": true,
-      "is_public": false,
       "type": "course",
       "id": 79
     },
