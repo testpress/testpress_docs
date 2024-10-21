@@ -26,6 +26,17 @@ This endpoint creates a user.
 
 Except for username and password, all other fields are optional.
 
+#### Query Parameters
+
+
+| Parameter        | Type        | Description |
+| ----------- | ----------- |----------- |
+| auto_generate_password=true    | string      | 	Automatically generates a password. The user will receive login credentials via email and SMS. |
+| notify_credential=true   | string      | Sends email and SMS notifications to the user with their login credentials. |
+
+> Note: Password field is not required if the auto_generate_password=true query parameter is applied.
+
+
 ### Fields
 
 | Name       | Type       | Description                                                                         |
