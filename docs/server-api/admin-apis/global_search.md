@@ -19,8 +19,8 @@ This endpoint retrieves search results based on the query and filters provided b
 | Parameter | Type   | Description                                                                         |
 | --------- | ------ | ----------------------------------------------------------------------------------- |
 | q         | string | The search query string. Useful to search for specific keywords or phrases.         |
-| page      | int    | The page number for pagination. Defaults to 1.                                      |
-| size      | int    | The number of results to return per page. Defaults to 10.                           |
+| page      | int    | Optional: The page number for pagination (defaults to 1).                           |
+| size      | int    | Optional: The number of results to return per page (defaults to 10).                |
 
 
 ### Filter Parameters
@@ -51,7 +51,7 @@ The `param` query parameter can be accompanied by parameters that specify filter
 | subject                               | string        | Filter results for subjects.                              |
 | direction                             | string        | Filter results for directions.                            |
 
-## Additional Filters
+## Advanced Filters
 
 | Key                             | Parameter                             | Type          | Description                                               |
 |---------------------------------|---------------------------------------|---------------|-----------------------------------------------------------|
@@ -70,7 +70,7 @@ The `param` query parameter can be accompanied by parameters that specify filter
 **Note**: 
 - Base filters need to be included before adding additional filters. 
 - You can refer to the example usage below for clarity.
-- Currently, additional filters for chapter content type and user status are the only advanced filtering options available. More advanced filtering is not yet implemented. 
+- Currently, the only advanced filtering options available are for chapter content types and user statuses. More advanced filtering is not yet implemented.
 
 <Tabs>
 <TabItem value="`URL`" label="URL">
@@ -135,21 +135,21 @@ print(response.text)
       "created": "2024-05-16T09:12:35.641830+00:00",
       "id": 9,
       "institute_subdomain": "demo",
-      "highlight": {"name": "Batch <span class='highlight'>Course</span> Latha"},
+      "highlight": {"name": "Batch <span class='highlight'>Course</span>"},
       "is_hidden": false,
       "type": "batch",
       "slug": "batch3",
-      "name": "Batch Course Latha"
+      "name": "Batch Course"
     },
     {
       "batches": [],
       "description": "",
-      "title": "dhinesh course",
+      "title": "Science course",
       "created": "2024-07-25T07:03:03.093928+00:00",
-      "slug": "dhinesh-course",
+      "slug": "science-course",
       "institute_subdomain": "demo",
       "state": "Published",
-      "highlight": {"title": "dhinesh <span class='highlight'>course</span>"},
+      "highlight": {"title": "Science <span class='highlight'>course</span>"},
       "active": true,
       "is_public": false,
       "type": "course",
@@ -158,12 +158,12 @@ print(response.text)
     {
       "batches": [],
       "description": "",
-      "title": "Hari course",
+      "title": "Maths course",
       "created": "2024-07-25T06:52:16.206599+00:00",
-      "slug": "hari-course",
+      "slug": "maths-course",
       "institute_subdomain": "demo",
       "state": "Published",
-      "highlight": {"title": "Hari <span class='highlight'>course</span>"},
+      "highlight": {"title": "Maths <span class='highlight'>course</span>"},
       "active": true,
       "is_public": false,
       "type": "course",
@@ -184,9 +184,9 @@ print(response.text)
       "is_staff": false,
       "date_joined": "2024-05-17T08:37:13.851060+00:00",
       "last_name": "",
-      "membership_set": [{"batches": [{"id": 17, "name": "no_expiry_batch"}, {"id": 9, "name": "Batch Course Latha"}], "user_id": 23, "id": 23}],
+      "membership_set": [{"batches": [{"id": 17, "name": "no_expiry_batch"}, {"id": 9, "name": "Batch Course"}], "user_id": 23, "id": 23}],
       "user_permissions": [],
-      "highlight": {"membership_set.batches.name": "Batch <span class='highlight'>Course</span> Latha"},
+      "highlight": {"membership_set.batches.name": "Batch <span class='highlight'>Course</span>"},
       "coursepermission_set": [],
       "type": "user",
       "institute_subdomain": "demo",

@@ -110,32 +110,20 @@ print(response.text)
 
 ### Response 
 
-**Note**: The example response below is for the search query "course."
+**Note**: The following example response corresponds to a search query for the term "course".
 
 ```json
 {
   "results": [
     {
-      "is_local": false,
-      "description": "",
-      "created": "2024-05-16T09:12:35.641830+00:00",
-      "id": 9,
-      "institute_subdomain": "demo",
-      "highlight": {"name": "Batch <span class='highlight'>Course</span> Latha"},
-      "is_hidden": false,
-      "type": "batch",
-      "slug": "batch3",
-      "name": "Batch Course Latha"
-    },
-    {
       "batches": [],
       "description": "",
-      "title": "dhinesh course",
+      "title": "Science course",
       "created": "2024-07-25T07:03:03.093928+00:00",
-      "slug": "dhinesh-course",
+      "slug": "science-course",
       "institute_subdomain": "demo",
       "state": "Published",
-      "highlight": {"title": "dhinesh <span class='highlight'>course</span>"},
+      "highlight": {"title": "Science <span class='highlight'>course</span>"},
       "active": true,
       "is_public": false,
       "type": "course",
@@ -144,40 +132,17 @@ print(response.text)
     {
       "batches": [],
       "description": "",
-      "title": "Hari course",
+      "title": "Maths course",
       "created": "2024-07-25T06:52:16.206599+00:00",
-      "slug": "hari-course",
+      "slug": "maths-course",
       "institute_subdomain": "demo",
       "state": "Published",
-      "highlight": {"title": "Hari <span class='highlight'>course</span>"},
+      "highlight": {"title": "Maths <span class='highlight'>course</span>"},
       "active": true,
       "is_public": false,
       "type": "course",
       "id": 79
     },
-    {
-      "status": "Student",
-      "allow_access_to_all_records": false,
-      "first_name": "testpress",
-      "is_blocked_from_forum": false,
-      "created": "2024-05-17T08:37:13.851032+00:00",
-      "id": 23,
-      "is_active": true,
-      "relation_type": null,
-      "email": "testpress@x.com",
-      "username": "testpress",
-      "state": "",
-      "is_staff": false,
-      "date_joined": "2024-05-17T08:37:13.851060+00:00",
-      "last_name": "",
-      "membership_set": [{"batches": [{"id": 17, "name": "no_expiry_batch"}, {"id": 9, "name": "Batch Course Latha"}], "user_id": 23, "id": 23}],
-      "user_permissions": [],
-      "highlight": {"membership_set.batches.name": "Batch <span class='highlight'>Course</span> Latha"},
-      "coursepermission_set": [],
-      "type": "user",
-      "institute_subdomain": "demo",
-      "is_blocked": false
-    }
   ],
   "nextPage": 2
 }
