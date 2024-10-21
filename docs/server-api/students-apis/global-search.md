@@ -2,6 +2,9 @@
 sidebar_position: 7
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Global Search
 
 Global Search API provides access to search across various resources for the authenticated user.
