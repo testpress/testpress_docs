@@ -433,7 +433,11 @@ This endpoint allows you to get the list of course's contents.
       "course_url": "https://lmsdemo.testpress.in/api/v2.5/admin/courses/278/",
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/9bf1b833dbe94d319e28b98e0dba82cf.png",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1085/f8f26fdfd33e438f935659bd3232a0cf.png",
-      "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1085/54f6f153f69b47288398b271652ffa09.png"
+      "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1085/54f6f153f69b47288398b271652ffa09.png",
+      "exam_id": null,
+      "content_id": null,
+      "video_id": 43,
+      "attachment_id": null
     },
     {
       "id": 1153,
@@ -449,7 +453,11 @@ This endpoint allows you to get the list of course's contents.
       "course_url": "https://lmsdemo.testpress.in/api/v2.5/admin/courses/278/",
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/9bf1b833dbe94d319e28b98e0dba82cf.png",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1085/f8f26fdfd33e438f935659bd3232a0cf.png",
-      "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1085/54f6f153f69b47288398b271652ffa09.png"
+      "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1085/54f6f153f69b47288398b271652ffa09.png",
+      "exam_id": null,
+      "content_id": null,
+      "video_id": 6,
+      "attachment_id": null
     },
     {
       "id": 1344,
@@ -465,7 +473,11 @@ This endpoint allows you to get the list of course's contents.
       "course_url": "https://lmsdemo.testpress.in/api/v2.5/admin/courses/278/",
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1087/0e26d71129a1422dba09ab769f32f388.png",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1087/f9cd051fb3f7475d8c0a911f8f0ef08d.png",
-      "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1087/9c228486a7584b3da17fc5f46c4a83b5.png"
+      "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1087/9c228486a7584b3da17fc5f46c4a83b5.png",
+      "exam_id": null,
+      "content_id": null,
+      "video_id": null,
+      "attachment_id": null
     },
     {
       "id": 1158,
@@ -481,7 +493,11 @@ This endpoint allows you to get the list of course's contents.
       "course_url": "https://lmsdemo.testpress.in/api/v2.5/admin/courses/278/",
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/9bf1b833dbe94d319e28b98e0dba82cf.png",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1085/f8f26fdfd33e438f935659bd3232a0cf.png",
-      "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1085/54f6f153f69b47288398b271652ffa09.png"
+      "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1085/54f6f153f69b47288398b271652ffa09.png",
+      "exam_id": null,
+      "content_id": null,
+      "video_id": 5,
+      "attachment_id": null
     },
     {
       "id": 1085,
@@ -497,7 +513,11 @@ This endpoint allows you to get the list of course's contents.
       "course_url": "https://lmsdemo.testpress.in/api/v2.5/admin/courses/278/",
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1085/224da1a7811e453caee9716cce72932f.jpg",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1085/12e86e36818949d8a05703f03f91d99e.jpeg",
-      "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1085/238a8a0420ed4527b75cb28bdfcaa08a.jpeg"
+      "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1085/238a8a0420ed4527b75cb28bdfcaa08a.jpeg",
+      "exam_id": null,
+      "content_id": null,
+      "video_id": 6,
+      "attachment_id": null
     },
     {
       "id": 1143,
@@ -513,7 +533,11 @@ This endpoint allows you to get the list of course's contents.
       "course_url": "https://lmsdemo.testpress.in/api/v2.5/admin/courses/278/",
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/9bf1b833dbe94d319e28b98e0dba82cf.png",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1085/f8f26fdfd33e438f935659bd3232a0cf.png",
-      "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1085/54f6f153f69b47288398b271652ffa09.png"
+      "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1085/54f6f153f69b47288398b271652ffa09.png",
+      "exam_id": null,
+      "content_id": null,
+      "video_id": 23,
+      "attachment_id": null
     },
     {
       "id": 1148,
@@ -529,7 +553,11 @@ This endpoint allows you to get the list of course's contents.
       "course_url": "https://lmsdemo.testpress.in/api/v2.5/admin/courses/278/",
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/9bf1b833dbe94d319e28b98e0dba82cf.png",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1085/f8f26fdfd33e438f935659bd3232a0cf.png",
-      "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1085/54f6f153f69b47288398b271652ffa09.png"
+      "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1085/54f6f153f69b47288398b271652ffa09.png",
+      "exam_id": null,
+      "content_id": null,
+      "video_id": 22,
+      "attachment_id": null
     },
     {
       "id": 1087,
@@ -545,7 +573,11 @@ This endpoint allows you to get the list of course's contents.
       "course_url": "https://lmsdemo.testpress.in/api/v2.5/admin/courses/278/",
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1087/0e26d71129a1422dba09ab769f32f388.png",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1087/ff2ae0544ab6471fa07c36c5e541bfd2.png",
-      "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1087/447bae0613fd4fb6801a8c4dba9ba9d5.png"
+      "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1087/447bae0613fd4fb6801a8c4dba9ba9d5.png",
+      "exam_id": null,
+      "content_id": null,
+      "video_id": null,
+      "attachment_id": null
     },
     {
       "id": 1159,
@@ -562,6 +594,10 @@ This endpoint allows you to get the list of course's contents.
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/9a35980f6246454c8084d9c9a5346e93.png",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/e66e34e6be744256b9db27480fbbf0c8.png",
       "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/826e08b4528a45e58c43e4d660cceb45.png"
+      "exam_id": null,
+      "content_id": null,
+      "video_id": 43,
+      "attachment_id": null
     },
     {
       "id": 1144,
@@ -578,6 +614,10 @@ This endpoint allows you to get the list of course's contents.
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/9a35980f6246454c8084d9c9a5346e93.png",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/e66e34e6be744256b9db27480fbbf0c8.png",
       "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/826e08b4528a45e58c43e4d660cceb45.png"
+      "exam_id": null,
+      "content_id": null,
+      "video_id": 43,
+      "attachment_id": null
     },
     {
       "id": 1139,
@@ -594,6 +634,10 @@ This endpoint allows you to get the list of course's contents.
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/9a35980f6246454c8084d9c9a5346e93.png",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/e66e34e6be744256b9db27480fbbf0c8.png",
       "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/826e08b4528a45e58c43e4d660cceb45.png"
+      "exam_id": null,
+      "content_id": null,
+      "video_id": 43,
+      "attachment_id": null
     },
     {
       "id": 1345,
@@ -610,6 +654,10 @@ This endpoint allows you to get the list of course's contents.
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/aca6a4f028e24d17813331ccde9c9ab9.png",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/a2279f0a7e7a41b2a166a6ab481a81a3.png",
       "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/40571e0787a74d2cb20cc1add5bd7573.png"
+      "exam_id": null,
+      "content_id": null,
+      "video_id": null,
+      "attachment_id": null
     },
     {
       "id": 1086,
@@ -626,6 +674,10 @@ This endpoint allows you to get the list of course's contents.
       "cover_image": null,
       "cover_image_medium": null,
       "cover_image_small": null
+      "exam_id": null,
+      "content_id": null,
+      "video_id": 43,
+      "attachment_id": null
     },
     {
       "id": 1154,
@@ -642,6 +694,10 @@ This endpoint allows you to get the list of course's contents.
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/9a35980f6246454c8084d9c9a5346e93.png",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/e66e34e6be744256b9db27480fbbf0c8.png",
       "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/826e08b4528a45e58c43e4d660cceb45.png"
+      "exam_id": null,
+      "content_id": null,
+      "video_id": 43,
+      "attachment_id": null
     },
     {
       "id": 1149,
@@ -658,6 +714,10 @@ This endpoint allows you to get the list of course's contents.
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/9a35980f6246454c8084d9c9a5346e93.png",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/e66e34e6be744256b9db27480fbbf0c8.png",
       "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/826e08b4528a45e58c43e4d660cceb45.png"
+      "exam_id": null,
+      "content_id": null,
+      "video_id": 43,
+      "attachment_id": null
     },
     {
       "id": 1160,
@@ -674,6 +734,10 @@ This endpoint allows you to get the list of course's contents.
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/8f370c9219e3466f992425282821e648.png",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1084/a5f4729bac674655a58d8509ee713634.png",
       "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1084/88d50229def34cf5a0cfd0b37cfa0f35.png"
+      "exam_id": null,
+      "content_id": null,
+      "video_id": null,
+      "attachment_id": 2
     },
     {
       "id": 1084,
@@ -690,6 +754,10 @@ This endpoint allows you to get the list of course's contents.
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1084/db342c18f8ca41be8640d23faa9e6b3a.jpg",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1084/b340125e6aab46109d74247709413138.jpeg",
       "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1084/d920642378a844cca86820e5808bcf84.jpeg"
+      "exam_id": null,
+      "content_id": null,
+      "video_id": null,
+      "attachment_id": 2
     },
     {
       "id": 1155,
@@ -706,6 +774,10 @@ This endpoint allows you to get the list of course's contents.
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/8f370c9219e3466f992425282821e648.png",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1084/a5f4729bac674655a58d8509ee713634.png",
       "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1084/88d50229def34cf5a0cfd0b37cfa0f35.png"
+      "exam_id": null,
+      "content_id": null,
+      "video_id": null,
+      "attachment_id": 2
     },
     {
       "id": 1145,
@@ -722,6 +794,10 @@ This endpoint allows you to get the list of course's contents.
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/8f370c9219e3466f992425282821e648.png",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1084/a5f4729bac674655a58d8509ee713634.png",
       "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1084/88d50229def34cf5a0cfd0b37cfa0f35.png"
+      "exam_id": null,
+      "content_id": null,
+      "video_id": null,
+      "attachment_id": 2
     },
     {
       "id": 1150,
@@ -738,6 +814,10 @@ This endpoint allows you to get the list of course's contents.
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/8f370c9219e3466f992425282821e648.png",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1084/a5f4729bac674655a58d8509ee713634.png",
       "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1084/88d50229def34cf5a0cfd0b37cfa0f35.png"
+      "exam_id": null,
+      "content_id": null,
+      "video_id": 43,
+      "attachment_id": null
     },
     {
       "id": 1140,
@@ -754,6 +834,10 @@ This endpoint allows you to get the list of course's contents.
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/8f370c9219e3466f992425282821e648.png",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1084/a5f4729bac674655a58d8509ee713634.png",
       "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1084/88d50229def34cf5a0cfd0b37cfa0f35.png"
+      "exam_id": null,
+      "content_id": null,
+      "video_id": 43,
+      "attachment_id": null
     },
     {
       "id": 1088,
@@ -770,6 +854,10 @@ This endpoint allows you to get the list of course's contents.
       "cover_image": null,
       "cover_image_medium": null,
       "cover_image_small": null
+      "exam_id": null,
+      "content_id": 3,
+      "video_id": null,
+      "attachment_id": null
     },
     {
       "id": 1161,
@@ -786,6 +874,10 @@ This endpoint allows you to get the list of course's contents.
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1088/86019621329b401c801792cb3c0bb49b.png",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1088/b013d9c8443441a7b8db2f472c7d6d70.png",
       "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1088/1e27b40350f7494fa93c3226decd9500.png"
+      "exam_id": null,
+      "content_id": 23,
+      "video_id": null,
+      "attachment_id": null
     },
     {
       "id": 1156,
@@ -802,6 +894,10 @@ This endpoint allows you to get the list of course's contents.
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1088/86019621329b401c801792cb3c0bb49b.png",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1088/b013d9c8443441a7b8db2f472c7d6d70.png",
       "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1088/1e27b40350f7494fa93c3226decd9500.png"
+      "exam_id": null,
+      "content_id": null,
+      "video_id": 43,
+      "attachment_id": null
     },
     {
       "id": 1151,
@@ -818,6 +914,10 @@ This endpoint allows you to get the list of course's contents.
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1088/86019621329b401c801792cb3c0bb49b.png",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1088/b013d9c8443441a7b8db2f472c7d6d70.png",
       "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1088/1e27b40350f7494fa93c3226decd9500.png"
+      "exam_id": null,
+      "content_id": null,
+      "video_id": 43,
+      "attachment_id": null
     },
     {
       "id": 1146,
@@ -834,6 +934,10 @@ This endpoint allows you to get the list of course's contents.
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1088/86019621329b401c801792cb3c0bb49b.png",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1088/b013d9c8443441a7b8db2f472c7d6d70.png",
       "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1088/1e27b40350f7494fa93c3226decd9500.png"
+      "exam_id": null,
+      "content_id": null,
+      "video_id": 43,
+      "attachment_id": null
     },
     {
       "id": 1141,
@@ -850,6 +954,10 @@ This endpoint allows you to get the list of course's contents.
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1088/86019621329b401c801792cb3c0bb49b.png",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1088/b013d9c8443441a7b8db2f472c7d6d70.png",
       "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1088/1e27b40350f7494fa93c3226decd9500.png"
+      "exam_id": null,
+      "content_id": null,
+      "video_id": 43,
+      "attachment_id": null
     },
     {
       "id": 1142,
@@ -866,6 +974,10 @@ This endpoint allows you to get the list of course's contents.
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1089/c74b63a13ef04cf891d6c5384e3de0b1.png",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1089/1bc05f47ef334f7f9105d413921c74f6.png",
       "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1089/d74ad5f377974f12ba3f97961ac9a743.png"
+      "exam_id": null,
+      "content_id": null,
+      "video_id": 43,
+      "attachment_id": null
     },
     {
       "id": 1089,
@@ -882,6 +994,10 @@ This endpoint allows you to get the list of course's contents.
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1089/c74b63a13ef04cf891d6c5384e3de0b1.png",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1089/1bc05f47ef334f7f9105d413921c74f6.png",
       "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1089/d74ad5f377974f12ba3f97961ac9a743.png"
+      "exam_id": null,
+      "content_id": null,
+      "video_id": 43,
+      "attachment_id": null
     },
     {
       "id": 1147,
@@ -898,6 +1014,10 @@ This endpoint allows you to get the list of course's contents.
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1089/c74b63a13ef04cf891d6c5384e3de0b1.png",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1089/1bc05f47ef334f7f9105d413921c74f6.png",
       "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1089/d74ad5f377974f12ba3f97961ac9a743.png"
+      "exam_id": null,
+      "content_id": null,
+      "video_id": 43,
+      "attachment_id": null
     },
     {
       "id": 1152,
@@ -914,6 +1034,10 @@ This endpoint allows you to get the list of course's contents.
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1089/c74b63a13ef04cf891d6c5384e3de0b1.png",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1089/1bc05f47ef334f7f9105d413921c74f6.png",
       "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1089/d74ad5f377974f12ba3f97961ac9a743.png"
+      "exam_id": null,
+      "content_id": null,
+      "video_id": 43,
+      "attachment_id": null
     },
     {
       "id": 1157,
@@ -930,6 +1054,10 @@ This endpoint allows you to get the list of course's contents.
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1089/c74b63a13ef04cf891d6c5384e3de0b1.png",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1089/1bc05f47ef334f7f9105d413921c74f6.png",
       "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1089/d74ad5f377974f12ba3f97961ac9a743.png"
+      "exam_id": null,
+      "content_id": null,
+      "video_id": 43,
+      "attachment_id": null
     },
     {
       "id": 1162,
@@ -946,6 +1074,10 @@ This endpoint allows you to get the list of course's contents.
       "cover_image": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1089/c74b63a13ef04cf891d6c5384e3de0b1.png",
       "cover_image_medium": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1089/1bc05f47ef334f7f9105d413921c74f6.png",
       "cover_image_small": "https://static.testpress.in/institute/lmsdemo/chapter_contents/1089/d74ad5f377974f12ba3f97961ac9a743.png"
+      "exam_id": null,
+      "content_id": null,
+      "video_id": 43,
+      "attachment_id": null
     }
   ]
 }
