@@ -560,6 +560,26 @@ print(response.text)
                 "created": "2024-07-15T18:49:52.059055+05:30",
                 "completed_on": null
             },
+            {
+                "id": 27,
+                "user_id": 7713,
+                "course_id": 1,
+                "chapter_id": 1,
+                "chapter_content_id": 1,
+                "content_type": "assessment",
+                "state": "Completed",
+                "remaining_time": "0.00",
+                "assessment_id": 55,
+                "user_video_conference_id": null,
+                "user_video_id": null,
+                "user_live_stream_id": null,
+                "user_content_id": null,
+                "user_attachment_id": null,
+                "correct_answers_count": 0,
+                "incorrect_answers_count": 1,
+                "created": "2024-03-26T10:10:16.698629+05:30",
+                "completed_on": "2024-03-26T10:10:21.809999+05:30"
+            },
         ],
         "user_videos": [
             {
@@ -572,6 +592,22 @@ print(response.text)
                 "is_live_class_recording": false
             }
             
+        ],
+        "user_exams": [
+            {
+                "id": 56,
+                "exam_id": 1,
+                "user_id": 7713,
+                "total_score": "7.00",
+                "number_of_correct_answers": 0,
+                "number_of_incorrect_answers": 1,
+                "number_of_unanswered_questions": 0,
+                "number_of_answered_questions": 1,
+                "percentage": "0.00",
+                "rank": 4,
+                "result": "NA",
+                "total_questions": 7
+            },
         ]
     }
 }
