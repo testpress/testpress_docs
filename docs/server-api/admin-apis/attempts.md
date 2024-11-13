@@ -563,7 +563,7 @@ print(response.text)
             {
                 "id": 27,
                 "user_id": 7713,
-                "course_id": 1,
+                "course_id": 8,
                 "chapter_id": 1,
                 "chapter_content_id": 1,
                 "content_type": "assessment",
@@ -607,6 +607,61 @@ print(response.text)
                 "rank": 4,
                 "result": "NA",
                 "total_questions": 7
+            },
+        ],
+        "courses": [
+            {
+                "id": 8,
+                "title": "Course 3",
+                "description": "",
+                "image": "https://d7pdowhru2wq4.cloudfront.net/static/courses/general/1442850373_115.png",
+                "created_by": 1,
+                "created": "2023-10-18T15:51:33.887124+05:30",
+                "modified": "2024-11-13T10:48:46.555391+05:30",
+                "slug": "course-3",
+                "chapters_count": 3,
+                "contents_count": 29,
+                "exams_count": 5,
+                "videos_count": 0,
+                "attachments_count": 0,
+                "html_contents_count": 0,
+                "order": 2,
+                "max_allowed_views_per_video": null,
+                "max_allowed_watch_minutes": null
+            },
+        ],
+        "chapter_contents": [
+            {
+                "id": 127,
+                "order": 0,
+                "chapter_id": 195,
+                "free_preview": false,
+                "title": "Why You Should Say “Hi”",
+                "course_id": 8,
+                "exam_id": null,
+                "content_id": null,
+                "video_id": 18,
+                "attachment_id": null,
+                "content_type": "Video",
+                "start": "2024-06-24T12:11:30.950513+05:30",
+                "end": null,
+                "description": ""
+            },
+            {
+                "id": 1,
+                "order": 0,
+                "chapter_id": 1,
+                "free_preview": false,
+                "title": "UPSC Prelims Mock Test 23 - Physical Geography",
+                "course_id": 8,
+                "exam_id": 1,
+                "content_id": null,
+                "video_id": null,
+                "attachment_id": null,
+                "content_type": "Exam",
+                "start": "2023-10-15T18:17:15+05:30",
+                "end": null,
+                "description": ""
             },
         ]
     }
