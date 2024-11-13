@@ -476,6 +476,24 @@ GET /api/v3/admin/chapter-content-attempts/
 | completed_before    | string      | date in the format yyyy-mm-dd |
 | completed_after    | string      | date in the format yyyy-mm-dd |
 
+**content_type** (int):
+- Type of content. Possible values:
+  - 1: Exam
+  - 2: Quiz
+  - 3: Video
+  - 4: Attachment
+  - 5: Notes
+  - 7: Video Conference
+  - 8: Live Stream
+
+**state** (int):
+- Status of the attempt. Possible values:
+  - 0: Started
+  - 1: Completed
+  - 2: Pending Evaluation (in case of exams)
+  - 3: Evaluation Completed (in case of exams)
+
+
 <Tabs>
 <TabItem value="bash" label="cURL">
 
