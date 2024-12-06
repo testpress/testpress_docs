@@ -259,7 +259,7 @@ print(response.text)
     "subject_stats": [
         {
             "subject_id": 1,
-            "subject_name": "Geography",
+            "subject_name": "Geography"
             "total_count": 64,
             "correct_answers_count": 0,
             "unanswered_count": 63,
@@ -718,7 +718,7 @@ print(response.text)
                 "description": ""
             },
         ],
-        "user_video_conference": [
+        "user_video_conferences": [
             {
                 "id": 1,
                 "user_id": 2,
