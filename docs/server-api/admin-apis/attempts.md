@@ -598,6 +598,42 @@ print(response.text)
                 "created": "2024-03-26T10:10:16.698629+05:30",
                 "completed_on": "2024-03-26T10:10:21.809999+05:30"
             },
+            {
+                "id": 47,
+                "user_id": 2,
+                "course_id": 1,
+                "chapter_id": 1,
+                "chapter_content_id": 2,
+                "content_type": "videoConference",
+                "state": "Started",
+                "remaining_time": null,
+                "assessment_id": null,
+                "user_video_conference_id": 1,
+                "user_video_id": null,
+                "user_live_stream_id": null,
+                "user_content_id": null,
+                "user_attachment_id": null,
+                "created": "2024-10-16T11:08:33.756923+05:30",
+                "completed_on": null
+            },
+            {
+                "id": 80,
+                "user_id": 2,
+                "course_id": 1,
+                "chapter_id": 1,
+                "chapter_content_id": 14,
+                "content_type": "live_stream",
+                "state": "Started",
+                "remaining_time": null,
+                "assessment_id": null,
+                "user_video_conference_id": null,
+                "user_video_id": null,
+                "user_live_stream_id": 5,
+                "user_content_id": null,
+                "user_attachment_id": null,
+                "created": "2024-12-05T11:50:41.384054+05:30",
+                "completed_on": null
+            },
         ],
         "user_videos": [
             {
@@ -681,6 +717,44 @@ print(response.text)
                 "end": null,
                 "description": ""
             },
+        ],
+        "user_video_conferences": [
+            {
+                "id": 1,
+                "user_id": 2,
+                "duration": null,
+                "join_time": null,
+                "leave_time": null,
+                "video_conference": {
+                    "id": 1,
+                    "title": "intro",
+                    "conference_id": "79401700412",
+                    "start": "2024-10-16T05:15:21Z",
+                    "duration": 15,
+                    "provider": "Zoom",
+                    "join_url": "http://demo.testbench.in:8000/embed/zoom-meeting/1/",
+                    "password": "0UiKyr",
+                    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBLZXkiOiJQTTdPdlpBeFI3ZXJ3cXlqR2lsblR3IiwiaWF0IjoxNzMzNDYwMDAxLCJ0b2tlbkV4cCI6MTczMzU0NjQwMSwiZXhwIjoxNzMzNTQ2NDAxfQ.PsOgkWiHtRLWvQeya8yE9fiSKF6Bgyskqh94BP6-1SE",
+                    "show_recorded_video": null,
+                    "state": "Initiated",
+                    "has_recording_expired": false
+                }
+            }
+        ],
+        "user_live_streams": [
+            {
+                "id": 5,
+                "user_id": 2,
+                "live_stream": {
+                    "id": 5,
+                    "title": "demo live stream",
+                    "stream_url": "",
+                    "duration": 1,
+                    "show_recorded_video": true,
+                    "status": "Completed",
+                    "chat_embed_url": null
+                }
+            }
         ]
     }
 }
