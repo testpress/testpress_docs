@@ -259,7 +259,7 @@ print(response.text)
     "subject_stats": [
         {
             "subject_id": 1,
-            "subject_name": "Geography"
+            "subject_name": "Geography",
             "total_count": 64,
             "correct_answers_count": 0,
             "unanswered_count": 63,
