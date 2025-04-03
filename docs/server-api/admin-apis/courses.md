@@ -385,13 +385,23 @@ This endpoint allows you to get the list of course's contents.
 
 ### Parameters
 
-#### Query
+#### Path
 
 <table>
   <tr>
     <td>id</td>
     <td>string</td>
     <td>ID of the course whose contents are to be retrieved</td>
+  </tr>
+</table>
+
+#### Query
+
+<table>
+  <tr>
+    <td>chapter</td>
+    <td>integer</td>
+    <td>Filter the contents by chapter ID. If id of the parent chapter is provided, contents from all its child chapters will be listed.</td>
   </tr>
 </table>
 
