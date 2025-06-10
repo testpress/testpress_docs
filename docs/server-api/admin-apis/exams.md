@@ -17,7 +17,7 @@ This will return list of exams
   <tr>
     <td>ordering</td>
     <td>string</td>
-    <td>TThis will sort the results start_date (Exams with oldest start date will be displayed first)-start_date (Exams with latest start date will be displayed first)end_date (Exams with oldest end date will be displayed first)-end_date (Exams with latest end date will be displayed first)</td>
+    <td>This will sort the results start_date (Exams with oldest start date will be displayed first)-start_date (Exams with latest start date will be displayed first)end_date (Exams with oldest end date will be displayed first)-end_date (Exams with latest end date will be displayed first)</td>
   </tr>
     <tr>
     <td>end_date</td>
@@ -34,6 +34,24 @@ This will return list of exams
     <td>string</td>
     <td>Can be running, upcoming, completed</td>
   </tr>
+  <tr>
+  <td>subject</td>
+  <td>string</td>
+  <td>This will filter exams that contain questions from the provided subject name. (Case-insensitive match on subject name)</td>
+</tr>
+<tr>
+  <td>batch</td>
+  <td>string</td>
+  <td>This will filter exams linked to the given batch via associated courses.(Case-insensitive match on batch name)</td>
+</tr>
+<tr>
+  <td>exam_type</td>
+  <td>string</td>
+  <td>
+    This will filter exams based on template type. Allowed values: default, ibps, aiims, fmge, bitsat, gamified, ssc, gate, tnpsc, nmat, nta, ielts, act, cat, ctet, sat, gmat, toefl, new_gate
+  </td>
+</tr>
+
 </table>
 
 #### Responses
@@ -85,3 +103,7 @@ The above URL will display exams that have start date greater than 2nd Feb 2020 
 /api/v2.5/admin/exams/?status=running&ordering=start_date
 
 The above URL will display exams are running and exams with oldest start date will be displayed first
+
+/api/v2.5/admin/exams/?subject=accounting&exam_type=ibps&batch=test1
+
+The above URL will display exams that contain questions from the subject Accounting, use the IBPS template type, and are associated with the batch named test1.
