@@ -859,6 +859,7 @@ This endpoint allows you to update details of a particular user.
 | state        | string     | State of user in ISO 3166-2:IN format (https://en.wikipedia.org/wiki/ISO_3166-2:IN) |
 | phone        | string     | Phone of the user                                                                   |
 | is_active    | boolean    | Used to activate/deactivate the user. Accepts "true"/"false".                       |
+| is_blocked   | boolean    | Used to block/unblock the user from logging into the portal. Accepts "true"/"false".                       |
 | custom_fields | json | A dictionary containing custom field name and the response to be recorded for the user. The custom field name is case-insensitive. |
 
 
