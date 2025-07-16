@@ -1140,14 +1140,12 @@ This endpoint allows you to get the list of course's contents.
       "name": "18aeaab2bd0449829823e43d6b7c1404",
       "created": "2020-12-12T10:13:52.868314Z",
       "modified": "2020-12-12T10:13:52.870923Z",
-      "is_local": false
     },
     {
       "id": 270,
       "name": "59ec99e8e3c140ebbea0da5dd9dc9762",
       "created": "2020-12-12T05:40:33.246738Z",
       "modified": "2020-12-12T05:40:33.249473Z",
-      "is_local": false
     }
   ]
 }
@@ -1205,21 +1203,18 @@ This endpoint allows you to get the list of course's contents.
         "name": "18aeaab2bd0449829823e43d6b7c1404",
         "created": "2020-12-12T10:13:52.868314Z",
         "modified": "2020-12-12T10:13:52.870923Z",
-        "is_local": false
     },
     {
         "id": 270,
         "name": "59ec99e8e3c140ebbea0da5dd9dc9762",
         "created": "2020-12-12T05:40:33.246738Z",
         "modified": "2020-12-12T05:40:33.249473Z",
-        "is_local": false
     },
     {
         "id": 266,
         "name": "testing",
         "created": "2020-12-08T09:52:52.409952Z",
         "modified": "2020-12-08T09:52:52.415339Z",
-        "is_local": false
     }
 ]
 </pre>

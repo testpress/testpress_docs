@@ -43,7 +43,6 @@ GET /api/v2.5/admin/batches/
 | id    | int      | The batch unique ID |
 | name    | string      | Batch's Name |
 | url    | string      | URL to get details of the batch |
-| is_local    | boolean      | Is this a local batch, True or False |
 
 
 <Tabs>
@@ -282,7 +281,6 @@ func main() {
       "url": "http://demo.testpress.in/api/v2.5/admin/batches/33/"
       "created": "2021-12-01T12:17:22.293198Z", 
       "modified": "2021-12-01T12:17:22.296839Z", 
-      "is_local": null
     },
     {
       "id": 32,
@@ -290,7 +288,6 @@ func main() {
       "url": "http://demo.testpress.in/api/v2.5/admin/batches/32/"
       "created": "2021-12-01T12:17:22.293198Z", 
       "modified": "2021-12-01T12:17:22.296839Z", 
-      "is_local": null
     },
     {
       "id": 31,
@@ -298,7 +295,6 @@ func main() {
       "url": "http://demo.testpress.in/api/v2.5/admin/batches/31/"
       "created": "2021-12-01T12:17:22.293198Z", 
       "modified": "2021-12-01T12:17:22.296839Z", 
-      "is_local": null
     },
     {
       "id": 30,
@@ -306,7 +302,6 @@ func main() {
       "url": "http://demo.testpress.in/api/v2.5/admin/batches/30/"
       "created": "2021-12-01T12:17:22.293198Z", 
       "modified": "2021-12-01T12:17:22.296839Z", 
-      "is_local": null
     },
     {
       "id": 29,
@@ -314,7 +309,6 @@ func main() {
       "url": "http://demo.testpress.in/api/v2.5/admin/batches/29/"
       "created": "2021-12-01T12:17:22.293198Z", 
       "modified": "2021-12-01T12:17:22.296839Z", 
-      "is_local": null
     },
     {
       "id": 28,
@@ -322,7 +316,6 @@ func main() {
       "url": "http://demo.testpress.in/api/v2.5/admin/batches/28/"
       "created": "2021-12-01T12:17:22.293198Z", 
       "modified": "2021-12-01T12:17:22.296839Z", 
-      "is_local": null
     },
     {
       "id": 27,
@@ -330,7 +323,6 @@ func main() {
       "url": "http://demo.testpress.in/api/v2.5/admin/batches/27/"
       "created": "2021-12-01T12:17:22.293198Z", 
       "modified": "2021-12-01T12:17:22.296839Z", 
-      "is_local": null
     },
     {
       "id": 26,
@@ -338,7 +330,6 @@ func main() {
       "url": "http://demo.testpress.in/api/v2.5/admin/batches/26/"
       "created": "2021-12-01T12:17:22.293198Z", 
       "modified": "2021-12-01T12:17:22.296839Z", 
-      "is_local": null
     },
     {
       "id": 25,
@@ -346,7 +337,6 @@ func main() {
       "url": "http://demo.testpress.in/api/v2.5/admin/batches/25/"
       "created": "2021-12-01T12:17:22.293198Z", 
       "modified": "2021-12-01T12:17:22.296839Z", 
-      "is_local": null
     },
     {
       "id": 24,
@@ -354,7 +344,6 @@ func main() {
       "url": "http://demo.testpress.in/api/v2.5/admin/batches/24/"
       "created": "2021-12-01T12:17:22.293198Z", 
       "modified": "2021-12-01T12:17:22.296839Z", 
-      "is_local": null
     },
     {
       "id": 23,
@@ -362,7 +351,6 @@ func main() {
       "url": "http://demo.testpress.in/api/v2.5/admin/batches/23/"
       "created": "2021-12-01T12:17:22.293198Z", 
       "modified": "2021-12-01T12:17:22.296839Z", 
-      "is_local": null
     },
     {
       "id": 22,
@@ -370,7 +358,6 @@ func main() {
       "url": "http://demo.testpress.in/api/v2.5/admin/batches/22/"
       "created": "2021-12-01T12:17:22.293198Z", 
       "modified": "2021-12-01T12:17:22.296839Z", 
-      "is_local": null
     },
     {
       "id": 21,
@@ -378,7 +365,6 @@ func main() {
       "url": "http://demo.testpress.in/api/v2.5/admin/batches/21/"
       "created": "2021-12-01T12:17:22.293198Z", 
       "modified": "2021-12-01T12:17:22.296839Z", 
-      "is_local": null
     },
     {
       "id": 20,
@@ -386,7 +372,6 @@ func main() {
       "url": "http://demo.testpress.in/api/v2.5/admin/batches/20/"
       "created": "2021-12-01T12:17:22.293198Z", 
       "modified": "2021-12-01T12:17:22.296839Z", 
-      "is_local": null
     },
     {
       "id": 19,
@@ -394,7 +379,6 @@ func main() {
       "url": "http://demo.testpress.in/api/v2.5/admin/batches/19/"
       "created": "2021-12-01T12:17:22.293198Z", 
       "modified": "2021-12-01T12:17:22.296839Z", 
-      "is_local": null
     },
     {
       "id": 18,
@@ -402,7 +386,6 @@ func main() {
       "url": "http://demo.testpress.in/api/v2.5/admin/batches/18/"
       "created": "2021-12-01T12:17:22.293198Z", 
       "modified": "2021-12-01T12:17:22.296839Z", 
-      "is_local": null
     },
     {
       "id": 17,
@@ -410,7 +393,6 @@ func main() {
       "url": "http://demo.testpress.in/api/v2.5/admin/batches/17/"
       "created": "2021-12-01T12:17:22.293198Z", 
       "modified": "2021-12-01T12:17:22.296839Z", 
-      "is_local": null
     },
     {
       "id": 16,
@@ -418,7 +400,6 @@ func main() {
       "url": "http://demo.testpress.in/api/v2.5/admin/batches/16/"
       "created": "2021-12-01T12:17:22.293198Z", 
       "modified": "2021-12-01T12:17:22.296839Z", 
-      "is_local": null
     },
     {
       "id": 15,
@@ -426,7 +407,6 @@ func main() {
       "url": "http://demo.testpress.in/api/v2.5/admin/batches/15/"
       "created": "2021-12-01T12:17:22.293198Z", 
       "modified": "2021-12-01T12:17:22.296839Z", 
-      "is_local": null
     },
     {
       "id": 2,
@@ -434,7 +414,6 @@ func main() {
       "url": "http://demo.testpress.in/api/v2.5/admin/batches/2/"
       "created": "2021-12-01T12:17:22.293198Z", 
       "modified": "2021-12-01T12:17:22.296839Z", 
-      "is_local": null
     }
   ]
 }
@@ -684,8 +663,7 @@ func main() {
   "name": "UPSC Evening Batch",
   "url": "http://demo.testpress.in/api/v2.5/admin/batches/26/",
   "created": "2021-12-01T12:17:22.293198Z", 
-  "modified": "2021-12-01T12:17:22.296839Z", 
-  "is_local": null
+  "modified": "2021-12-01T12:17:22.296839Z"
 } 
 
 ```
@@ -708,7 +686,6 @@ POST /api/v2.5/admin/batches/
 | id    | int      | The batch unique ID |
 | name    | string      | Batch's Name |
 | url    | string      | URL to get details of the batch |
-| is_local    | boolean      | Is this a local batch, True or False |
 
 
 <Tabs>
@@ -930,8 +907,7 @@ func main() {
     "name": "Online Test Batch", 
     "url": "http://demo.testbench.in:8000/api/v2.5/admin/batches/28/",
     "created": "2021-12-01T12:17:22.293198Z", 
-    "modified": "2021-12-01T12:17:22.296839Z", 
-    "is_local": null
+    "modified": "2021-12-01T12:17:22.296839Z",
 }
 
 ```

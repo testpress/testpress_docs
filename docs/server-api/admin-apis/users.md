@@ -2731,7 +2731,6 @@ func main() {
                 "url": "http://demo.testbench.in:8000/api/v2.5/admin/batches/85/",
                 "created": "2023-01-12T11:06:19.298526+05:30",
                 "modified": "2023-01-12T11:06:19.298526+05:30",
-                "is_local": false
             },
             "expires": "2023-01-13"
         },
@@ -2743,7 +2742,6 @@ func main() {
                 "url": "http://demo.testbench.in:8000/api/v2.5/admin/batches/86/",
                 "created": "2023-01-12T11:07:16.060993+05:30",
                 "modified": "2023-01-12T11:07:16.060993+05:30",
-                "is_local": false
             },
             "expires": "2023-01-13"
         }
