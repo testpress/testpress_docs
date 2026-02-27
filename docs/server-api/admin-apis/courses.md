@@ -203,6 +203,8 @@ This endpoint allows you to get a course
 <details>
 <summary><b> POST</b> https://lmsdemo.testpress.in/api/v2.5/admin/courses/create/<br/> <b>Create a New Course</b></summary>
 
+### Parameters
+
 #### Header 
 
 <table>
@@ -282,7 +284,7 @@ This endpoint allows you to get a course
 
 ### Parameters
 
-#### Query Path
+#### Path
 
 <table>
   <tr>
@@ -304,7 +306,8 @@ This endpoint allows you to get a course
 
 #### Body 
 
-:::tipAll fields are optional.
+:::tip
+All fields are optional.
 :::
 
 <table>
