@@ -201,6 +201,178 @@ This endpoint allows you to get a course
 </details>
 
 <details>
+<summary><b> POST</b> https://lmsdemo.testpress.in/api/v2.5/admin/courses/create/<br/> <b>Create a New Course</b></summary>
+
+### Parameters
+
+#### Header 
+
+<table>
+  <tr>
+    <td>Authorization</td>
+    <td>string</td>
+    <td><b>Required.</b> Format: <code>JWT &lt;your_token&gt;</code></td>
+  </tr>
+</table>
+
+#### Body 
+
+<table>
+  <tr>
+    <td>title</td>
+    <td>string</td>
+    <td><b>Required.</b> Name of the course.</td>
+  </tr>
+  <tr>
+    <td>description</td>
+    <td>string</td>
+    <td>Description of the course.</td>
+  </tr>
+  <tr>
+    <td>is_public</td>
+    <td>boolean</td>
+    <td>Visibility status. Default: <code>false</code></td>
+  </tr>
+  <tr>
+    <td>enable_progressive_lock</td>
+    <td>boolean</td>
+    <td>Sequential access toggle. Default: <code>false</code></td>
+  </tr>
+  <tr>
+    <td>enable_discussions</td>
+    <td>boolean</td>
+    <td>Course discussions toggle. Default: <code>false</code></td>
+  </tr>
+  <tr>
+    <td>show_scheduled_content</td>
+    <td>boolean</td>
+    <td>Scheduled visibility toggle. Default: <code>true</code></td>
+  </tr>
+  <tr>
+    <td>tags</td>
+    <td>array</td>
+    <td>List of tag strings. E.g. <code>["api", "test"]</code></td>
+  </tr>
+</table>
+
+#### Response
+
+<details>
+<summary> 
+<b>201 Created</b>   
+  </summary>
+<pre>
+
+{
+    "id": 101,
+    "title": "New Course",
+    "description": "API Created",
+    "is_public": true,
+    "enable_progressive_lock": false,
+    "enable_discussions": true,
+    "show_scheduled_content": true,
+    "tags": ["api", "test"]
+}
+</pre>
+</details>
+
+</details>
+
+
+<details>
+<summary><b> PATCH</b> https://lmsdemo.testpress.in/api/v2.5/admin/courses/:id/update/<br/> <b>Update an Existing Course</b></summary>
+
+### Parameters
+
+#### Path
+
+<table>
+  <tr>
+    <td>id</td>
+    <td>integer</td>
+    <td><b>Required.</b> ID of the course to update.</td>
+  </tr>
+</table>
+
+#### Header 
+
+<table>
+  <tr>
+    <td>Authorization</td>
+    <td>string</td>
+    <td><b>Required.</b> Format: <code>JWT &lt;your_token&gt;</code></td>
+  </tr>
+</table>
+
+#### Body 
+
+:::tip
+All fields are optional.
+:::
+
+<table>
+  <tr>
+    <td>title</td>
+    <td>string</td>
+    <td>New title.</td>
+  </tr>
+  <tr>
+    <td>description</td>
+    <td>string</td>
+    <td>New description.</td>
+  </tr>
+  <tr>
+    <td>is_public</td>
+    <td>boolean</td>
+    <td>Public/Private status.</td>
+  </tr>
+  <tr>
+    <td>enable_progressive_lock</td>
+    <td>boolean</td>
+    <td>Progressive lock status.</td>
+  </tr>
+  <tr>
+    <td>enable_discussions</td>
+    <td>boolean</td>
+    <td>Discussions status.</td>
+  </tr>
+  <tr>
+    <td>show_scheduled_content</td>
+    <td>boolean</td>
+    <td>Scheduled content visibility.</td>
+  </tr>
+  <tr>
+    <td>tags</td>
+    <td>array</td>
+    <td>New tags (replaces current tags).</td>
+  </tr>
+</table>
+
+#### Response
+
+<details>
+<summary> 
+<b>200 OK</b>   
+  </summary>
+<pre>
+
+{
+    "id": 101,
+    "title": "Updated Title",
+    "description": "Updated Description",
+    "is_public": true,
+    "enable_progressive_lock": false,
+    "enable_discussions": true,
+    "show_scheduled_content": true,
+    "tags": ["updated"]
+}
+</pre>
+</details>
+
+</details>
+
+
+<details>
 <summary><b> GET</b> https://lmsdemo.testpress.in/api/v2.5/admin/courses/:id/chapters/ <br/> <b>Get Course's Chapters </b></summary>
 
 This endpoint allows you to get the list of course's chapters.
