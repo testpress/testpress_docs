@@ -549,20 +549,6 @@ print(response.text)
 </Tabs>
 
 
-#### Response Fields
-
-|Name|Type|Description|
-|----|----|-----------|
-|count|integer|Total number of results|
-|next|string|URL for the next page of results|
-|previous|string|URL for the previous page of results|
-|per_page|integer|Number of results per page|
-|results|object|Object containing lists of content attempts and related data|
-|results.users|list|A list of unique users who attempted the content|
-|results.users[].id|integer|Unique ID of the user|
-|results.users[].username|string|Username of the user|
-|results.users[].email|string|Email of the user|
-|results.users[].phone|string|Phone number of the user|
 
 #### Response
 
