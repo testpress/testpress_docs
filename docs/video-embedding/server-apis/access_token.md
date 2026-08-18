@@ -2,163 +2,79 @@
 sidebar_position: 1
 ---
 
-# Access token
+# Access tokens
 
-### List Access tokens
+These moderator-only APIs let your backend list and manage playback access tokens for a video chapter content.
 
-Make get request to the below API with your video id to list access tokens
+In every path below, `<chapter_content_uuid>` is the top-level `uuid` returned by the [Chapter Content Details API](../../server-api/students-apis/courses.md#get-chapter-content-details). It is sometimes called `video_id` in older integrations.
 
-```bash
-https://demo.testpress.in/api/v2.5/admin/videos/{video-id}/access-tokens
+## List access tokens
+
+```http
+GET /api/v2.5/admin/videos/<chapter_content_uuid>/access-tokens/
+Authorization: JWT <moderator_or_staff_jwt>
 ```
 
-**Query parameters**
+### Query parameters
 
-| Parameter      | Data type    | 
-| ---------      | ---------    |  
-| is_active      | boolean      | 
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| status | string | Optional. Filter by `active` or `expired`. |
+| page | integer | Optional. Page number to retrieve. |
+| page_size | integer | Optional. Number of tokens per page. |
 
+### Response
 
-**Response**
-```js
+```json
 {
-    "count": 4,
-    "next": null,
-    "previous": null,
-    "per_page": 20,
-    "results": [
-        {
-            "url": "https://demo.testpress.in/api/v2.5/admin/videos/T5ytuyF04NC/access-tokens/6c15094e-bd08-422c-93ba-2cd71867e035/",
-            "expires_after_first_usage": true,
-            "code": "6c15094e-bd08-422c-93ba-2cd71867e035",
-            "status": "Expired",
-            "valid_until": "2022-09-04T19:19:06.399581Z",
-            "annotations": [
-                {
-                    "text": "moving text",
-                    "type": "dynamic",
-                    "color": "#FFFF00",
-                    "opacity": "0.30",
-                    "size": 5,
-                    "interval": 2500,
-                    "skip": 20,
-                    "x": 21,
-                    "y": 21
-                },
-                {
-                    "text": "moving text",
-                    "type": "dynamic",
-                    "color": "#FFFF00",
-                    "opacity": "0.30",
-                    "size": 5,
-                    "interval": 2500,
-                    "skip": 20,
-                    "x": 21,
-                    "y": 21
-                }
-            ]
-        },
-        {
-            "url": "https://demo.testpress.in/api/v2.5/admin/videos/T5ytuyF04NC/access-tokens/2c6f4c16-9a8e-4739-9827-d141f68452aa/",
-            "expires_after_first_usage": false,
-            "code": "2c6f4c16-9a8e-4739-9827-d141f68452aa",
-            "status": "Expired",
-            "valid_until": "2022-09-04T19:13:01.619546Z",
-            "annotations": [
-                {
-                    "text": "moving text",
-                    "type": "dynamic",
-                    "color": "#FFFF00",
-                    "opacity": "0.30",
-                    "size": 5,
-                    "interval": 2500,
-                    "skip": 20,
-                    "x": 21,
-                    "y": 21
-                },
-
-        {
-            "url": "https://demo.testpress.in/api/v2.5/admin/videos/T5ytuyF04NC/access-tokens/26fe0ae0-6450-4b10-8541-2379815071ba/",
-            "expires_after_first_usage": false,
-            "code": "26fe0ae0-6450-4b10-8541-2379815071ba",
-            "status": "Expired",
-            "valid_until": "2022-09-04T19:13:01.639349Z",
-            "annotations": [
-                {
-                    "text": "moving text",
-                    "type": "dynamic",
-                    "color": "#FFFF00",
-                    "opacity": "0.90",
-                    "size": 25,
-                    "interval": 1500,
-                    "skip": 10,
-                    "x": 11,
-                    "y": 11
-                }
-            ]
-        },
-        {
-            "url": "https://demo.testpress.in/api/v2.5/admin/videos/T5ytuyF04NC/access-tokens/4a802a74-4ebb-473d-8f41-8e624279aba6/",
-            "expires_after_first_usage": false,
-            "code": "4a802a74-4ebb-473d-8f41-8e624279aba6",
-            "status": "Expired",
-            "valid_until": "2022-09-04T19:11:52.247073Z",
-            "annotations": []
-        }
-    ]
+  "count": 1,
+  "next": null,
+  "previous": null,
+  "per_page": 20,
+  "results": [
+    {
+      "playback_url": "https://lmsdemo.testpress.in/embed/7aBM7cOyDTi/?access_token=ef5c288a-ee85-4840-a4f3-f39d7091938f",
+      "expires_after_first_usage": false,
+      "code": "ef5c288a-ee85-4840-a4f3-f39d7091938f",
+      "status": "Active",
+      "valid_until": "2026-08-18T10:10:00+05:30",
+      "annotations": [],
+      "created": "2026-08-18T10:00:00+05:30",
+      "modified": "2026-08-18T10:00:00+05:30"
+    }
+  ]
 }
 ```
 
+## Get an access token
 
-
-
-### View Access token
-
-Make get request to the below API with your video id and access token code to get the access token details
-
-```bash
-https://demo.testpress.in/api/v2.5/admin/videos/{video-id}/access-tokens/{access_token_code}/
+```http
+GET /api/v2.5/admin/videos/<chapter_content_uuid>/access-tokens/<access_token_code>/
+Authorization: JWT <moderator_or_staff_jwt>
 ```
 
+The token must belong to the chapter content specified in the URL. Otherwise, the endpoint returns `404 Not Found`.
 
-**Response**
-```js
+## Update an access token
+
+```http
+PUT /api/v2.5/admin/videos/<chapter_content_uuid>/access-tokens/<access_token_code>/
+Authorization: JWT <moderator_or_staff_jwt>
+Content-Type: application/json
+```
+
+The update endpoint can replace annotations, change `expires_after_first_usage`, and reset validity relative to the current time with `time_to_live`:
+
+```json
 {
-    "url": "https://demo.testpress.in/api/v2.5/admin/videos/{video-id}/access-tokens/your_access_token_code/",
-    "expires_after_first_usage": false,
-    "code": "your_access_token_code",
-    "status": "Active",
-    "valid_until": "2022-08-30T14:24:23.835382Z",
-    "annotations":[]
+  "time_to_live": 300,
+  "expires_after_first_usage": false,
+  "annotations": []
 }
 ```
 
+Setting `time_to_live` to `0` expires an active token immediately.
 
+## Create an access token
 
-
-### Update Access token 
-
-```bash
-https://demo.testpress.in/api/v2.5/admin/videos/{video-id}/access-tokens/{access_token_code}/
-```
-
-This code below updates the access_token time_to_live.
-
-```js
-{
-    time_to_live: 300
-}
-```
-
-**Response**
-```js
-{
-    "url": "https://demo.testpress.in/api/v2.5/admin/videos/{video-id}/access-tokens/your_access_token_code/",
-    "expires_after_first_usage": false,
-    "code": "your_access_token_code",
-    "status": "Active",
-    "valid_until": "2022-08-30T14:24:23.835382Z",
-    "annotations":[]
-}
-```
-
+Token creation uses the same collection URL with `POST`. See [Playback Authentication](../authentication.md) for request examples, response fields, and security guidance.
