@@ -772,3 +772,118 @@ This shortened example represents notes content. Responses for other content typ
 ```
 
 Possible access-related responses include `401 Unauthorized`, `403 Forbidden`, and `404 Not Found`. Future scheduled content can return `403 Forbidden` with `error_code` set to `scheduled`; if scheduled content is hidden by the course configuration, it returns `404 Not Found` instead.
+
+## Get Chapter Content Artifacts
+
+Artifacts are downloadable attachments that an administrator can add to any chapter content. For example, a video can include a worksheet, an exam can include a reference document, or a live class can include supporting notes.
+
+This endpoint lists the artifacts currently available for a chapter content. The authenticated student must have permission to view that content.
+
+### HTTP Request
+
+`GET /api/v3/contents/<chapter_content_id>/artifacts/`
+
+### URL Parameters
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| chapter_content_id | integer | Numeric chapter-content ID. Use `results.contents[].id` from the [Course Contents API](#get-course-contents), not the chapter-content UUID or nested content ID. |
+
+### Query Parameters
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| page | integer | Optional. Page number to retrieve. Defaults to `1`. |
+| page_size | integer | Optional. Number of artifacts per page. Defaults to `20`. |
+
+<Tabs>
+<TabItem value="artifacts-curl" label="cURL">
+
+```bash
+curl --request GET \
+  --url 'https://lmsdemo.testpress.in/api/v3/contents/10639/artifacts/' \
+  --header 'authorization: JWT your_student_jwt'
+```
+
+</TabItem>
+<TabItem value="artifacts-ruby" label="Ruby">
+
+```ruby
+require 'uri'
+require 'net/http'
+
+url = URI('https://lmsdemo.testpress.in/api/v3/contents/10639/artifacts/')
+request = Net::HTTP::Get.new(url)
+request['authorization'] = 'JWT your_student_jwt'
+
+response = Net::HTTP.start(url.hostname, url.port, use_ssl: true) do |http|
+  http.request(request)
+end
+
+puts response.read_body
+```
+
+</TabItem>
+<TabItem value="artifacts-python" label="Python">
+
+```python
+import requests
+
+url = "https://lmsdemo.testpress.in/api/v3/contents/10639/artifacts/"
+headers = {"authorization": "JWT your_student_jwt"}
+
+response = requests.get(url, headers=headers)
+print(response.json())
+```
+
+</TabItem>
+</Tabs>
+
+### Response Fields
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| id | integer | Unique artifact ID. |
+| name | string | Download name configured by the administrator. |
+| url | string or null | Signed download URL. It is `null` when the artifact requires an attempt and this student has not attempted the chapter content. |
+| accessible_without_attempt | boolean | Whether the student may download the artifact before attempting the chapter content. |
+
+### Response
+
+```json
+{
+  "count": 2,
+  "next": null,
+  "previous": null,
+  "per_page": 20,
+  "results": [
+    {
+      "id": 81,
+      "name": "Course Worksheet",
+      "url": "https://d36vpug2b5drql.cloudfront.net/private/course-worksheet.pdf?Policy=...&Signature=...",
+      "accessible_without_attempt": true
+    },
+    {
+      "id": 82,
+      "name": "Answer Key",
+      "url": null,
+      "accessible_without_attempt": false
+    }
+  ]
+}
+```
+
+Only active artifacts are returned. An artifact is excluded while its configured availability start is in the future or after its availability end has passed.
+
+When `accessible_without_attempt` is `false`, the API returns the artifact metadata but withholds its download URL until the authenticated student has an attempt record for the parent chapter content. An attempt does not need to be completed to unlock the URL.
+
+Artifact URLs are generated as signed download links and can expire. Student frontends should request artifacts when displaying or downloading them instead of permanently storing the returned URLs.
+
+Possible responses include:
+
+| Status | Meaning |
+| ------ | ------- |
+| 200 | Artifacts retrieved successfully. The `results` array can be empty. |
+| 401 | The request is not authenticated. |
+| 403 | The student cannot view the chapter content, it is locked, or course access is unavailable. |
+| 404 | The chapter content does not exist or scheduled content is hidden. |
