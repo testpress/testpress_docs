@@ -20,6 +20,17 @@ Live Classes API lets you create live classes for your institute. You choose the
 - To create a live class on its own, call the endpoint without `course_id` and `chapter_id`.
 - To attach a live class to a course chapter, also send `course_id` and `chapter_id`.
 
+## Providers
+
+Every live class uses one of the following providers. Choose the provider based on how the class is delivered:
+
+| Provider | When to use | Notes |
+|---|---|---|
+| Fermion | Interactive live classes that need two-way communication, where the instructor and students can talk to and see each other. | Fully managed by Testpress; no external streaming software is required. |
+| TpStreams | One-way broadcasts, where students only watch the instructor's stream. | Depends on external streaming software such as OBS to broadcast the class. |
+
+Both providers must be enabled and configured for your institute in the LMS portal before they can be used in a live class.
+
 ## Permissions
 
 - The `instructor` must be an owner, moderator, or mentor of the institute.
