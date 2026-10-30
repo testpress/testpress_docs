@@ -22,13 +22,14 @@ All operations related to user attempt can be done using the following end point
 
 This endpoint returns all attempts. Attempts can be filtered based on user or exams
 
-<details>
-  <summary> <b>Get</b> https:// institute_url /api/v2.5/admin/attempts<br />Attempts List API </summary>
-  
-  <p> This endpoint returns all attempts.</p>
-  <h4> Parameters</h4>
+#### HTTP Request
 
-  <h4> Query</h4>
+```
+GET /api/v2.5/admin/attempts/
+```
+
+#### Query Parameters
+
   <table>
   <tr>
     <td  text-align="left">ordering</td>
@@ -65,11 +66,35 @@ This endpoint returns all attempts. Attempts can be filtered based on user or ex
     <td>To filter attempts by exam. Value should be exam id exams<br />
     Ex: exams=3</td>
     </tr>
+    <tr>
+    <td  text-align="left">email</td>
+    <td>string</td>
+    <td>Filters attempts by email. The value is matched against the email saved on the attempt or the email of the registered user. The match is case-insensitive.<br />
+    Ex: email=student@example.com</td>
+    </tr>
+    <tr>
+    <td  text-align="left">phone</td>
+    <td>string</td>
+    <td>Filters attempts by phone number. The value is matched against the phone number saved on the attempt or the phone number of the registered user.<br />
+    Ex: phone=9876543210</td>
+    </tr>
+    <tr>
+    <td  text-align="left">name</td>
+    <td>string</td>
+    <td>Filters attempts by name. The value is matched against the name saved on the attempt or the registered user's first name. The match is case-insensitive and can match part of a name.<br />
+    Ex: name=Alex</td>
+    </tr>
+    <tr>
+    <td  text-align="left">is_public</td>
+    <td>boolean</td>
+    <td>Filters attempts based on whether they were made by a registered user. Set to <code>true</code> to return public attempts made without a registered Testpress user account, or <code>false</code> to return attempts made by registered users.<br />
+    Ex: is_public=true</td>
+    </tr>
     </table>
-    <h4>Responses</h4>
-<details  >
-<summary> 200  </summary>
-<pre>
+
+#### Response
+
+```json
 
 {
    "count":1,
@@ -102,15 +127,14 @@ This endpoint returns all attempts. Attempts can be filtered based on user or ex
    }]
 }
 
-</pre>
-</details>
-</details>
+```
 
 #### Examples
 
 - `/api/v2.5/admin/attempts/?exams=5` - This will display attempt of exam with id 5
 - `/api/v2.5/admin/attempts/?users=1&exams=2` - This will display attempts of exam whose id is 2 for the user id 1
 - `/api/v2.5/admin/attempts/?date_0=2020-01-11&date_1=2021-02-02&ordering=date` - This will display attempts that are attempted between 11/1/2020 and 2/2/2021. Oldest attempted exams will be displayed first
+- `/api/v2.5/admin/attempts/?is_public=true` - This will display attempts made without a registered user account
 
 
 ## Get A Single Attempt
@@ -883,4 +907,40 @@ print(response.text)
         }
     ]
 }
+```
+
+## Delete an Attempt
+
+This endpoint permanently deletes an attempt using its unique attempt ID. It can also be used to delete public attempts, which are attempts made without a registered user account.
+
+#### HTTP Request
+
+```
+DELETE /api/v2.5/admin/attempts/<id>/
+```
+
+#### URL Parameters
+
+| Parameter | Description |
+| --------- | ----------- |
+| id | The unique ID of the attempt to delete |
+
+The request must be authenticated by a user with permission to add exams. A successful request returns `204 No Content`.
+
+<Tabs>
+<TabItem value="bash" label="cURL">
+
+```bash
+curl --request DELETE \
+  --url http://demo.testpress.in/api/v2.5/admin/attempts/125894/ \
+  --header 'authorization: JWT <token>'
+```
+
+</TabItem>
+</Tabs>
+
+#### Response
+
+```text
+204 No Content
 ```
